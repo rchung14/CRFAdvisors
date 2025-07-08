@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Scheherazade+New:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Scheherazade New','Newsreader', serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: white;
+  color: rgb(0, 0, 0);
+  background-color: #e6e6e6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  background-color: #1d7ebf;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  color: #e6e6e6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;          
+  vertical-align: middle;  
+  min-height: 60px;        
+}
+nav a {
+  font-weight: 500;
+  color: #ebe8e8;
+  text-decoration: inherit;
+  padding: 1rem;
+}
+nav a.font-bold {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+footer {
+  background-color: #1d7ebf;
+  width: 100%;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #e6e6e6;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  /* Override Tailwind utility classes if present */
+  background: #1d7ebf !important;
+  color: #e6e6e6 !important;
+  padding: 0 !important;
+}
+footer p {
+  margin: 0;
+  padding: 1rem;
+  font-weight: 500;
+  color: #ebe8e8;
+}
+footer a {
+  font-weight: 500;
+  color: #ebe8e8;
+  text-decoration: none;
+  padding: 1rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 320px;
+  min-height: 100vh;
+  padding-top: 4em;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Responsive Hamburger Menu */
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #ebe8e8;
+    cursor: pointer;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background-color: #ebe8e8;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    color:black;
+  }
+}
+@media (min-width: 801px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+  }
+}
