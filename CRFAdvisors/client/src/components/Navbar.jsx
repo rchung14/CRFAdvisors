@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Navbar() {
+  const [isShrunk, setIsShrunk] = useState(false)
+  const lastScrollY = useRef(0)
   const [menuOpen, setMenuOpen] = useState(false)
   const menuRef = useRef(null)
 
@@ -17,10 +19,23 @@ export default function Navbar() {
     }
   }, [menuOpen])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY.current && window.scrollY > 50) {
+        setIsShrunk(true)
+      } else {
+        setIsShrunk(false)
+      }
+      lastScrollY.current = window.scrollY
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <nav ref={menuRef}>
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="font-bold">CRF Advisors, Inc.</Link>
+    <nav ref={menuRef} className={`navbar ${(isShrunk && !menuOpen) ? 'shrink' : ''}`}>
+      <div className="navbar-container">
+        <Link to="/" className="brand">CRF Advisors, Inc.</Link>
         <button
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}

@@ -1,14 +1,25 @@
+import { Container } from 'postcss'
+import React from 'react'
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Welcome to CRF Advisors
-        </h1>
-        <p className="text-lg text-center text-gray-600">
-          This is the homepage of our internal site. Use the navigation bar above to browse available sections.
-        </p>
-      </div>
-    </div>
+    <main>
+      <section className='pilotPhoto'>
+          <img src="" alt="" />
+            <p className='tedBlurb'>
+              Based on our experience servicing financial institutions in the Tri-State area, 
+              I have found many institutions having trouble classifying, accounting for, and
+              valuing troubled credits and assets. In this highly criticized and fragile FI 
+              industry, I strongly believe that the credit risk management function is more 
+              than just an assertion that a loan is properly classified, but also to evaluate 
+              for any potential impairment as well as determine the impact on the Allowance for 
+              Loan Losses
+            </p>
+            <span>- Ted Ahn, President <br />CRF Advisors, Inc.</span>
+      </section>
+      <section className='intro'>
+        
+      </section>
+    </main>
   )
 }
