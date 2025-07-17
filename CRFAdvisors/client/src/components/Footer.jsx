@@ -8,9 +8,11 @@ export default function Footer() {
   return (
     <footer>
       <p>&copy; {year} CRF Advisors, Inc. All rights reserved.</p>
-      <Link to="/privacy">Privacy Policy</Link>
-      <Link to="/terms">Terms of Service</Link>
-      <Link to="/contact">Contact Us</Link>
+      <section className="flex space-x-4 justify-center mt-2">
+        <Link to="/privacy">Privacy Policy</Link>
+        <Link to="/terms">Terms of Service</Link>
+        <Link to="/contact">Contact Us</Link>
+      </section>
     </footer>
   )
 }
