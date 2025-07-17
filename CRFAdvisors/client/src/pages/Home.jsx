@@ -21,7 +21,26 @@ export default function Home() {
         </section>
       </section>
       <section className='intro'>
-        <h1>Your ______</h1>
+        <section className="w-[70%] text-left">
+          <h1 className='text-lg'>Your credit risk decisions shape your future. Ours help shape them.</h1>
+          <p>Backed by decades of frontline experience, CRF Advisors brings independent insight to complex loan portfolios.</p>
+        </section>
+        <section className='trustedbanks'>
+          <ul>
+            <li>BANK1</li>
+            <li>BANK2</li>
+            <li>BANK3</li>
+          </ul>
+        </section>
+        <section className='card1'>
+
+        </section>
+        <section className='card2'>
+          
+        </section>
+        <section className='card3'>
+          
+        </section>
       </section>
     </main>
   )

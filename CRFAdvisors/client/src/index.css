@@ -145,7 +145,7 @@ footer p {
   display: flex;
   flex-direction: column;
   margin-top: clamp(-200px, -16vw, -60px);
-  width: 80%;
+  width: 90%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
