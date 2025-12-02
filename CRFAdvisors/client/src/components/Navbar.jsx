@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import '../styles/Navbar.css'
 
 export default function Navbar() {
   const [isShrunk, setIsShrunk] = useState(false)

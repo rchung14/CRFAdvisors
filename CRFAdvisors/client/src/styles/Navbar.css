@@ -1,0 +1,107 @@
+.navbar {
+    background-color: #245fb8;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    z-index: 100;
+}
+    .navbar-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a {
+    text-decoration: none;
+    color: #ebe8e8;
+}
+    .navbar .brand {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0 1rem;
+}
+    .navbar .nav-links a {
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+}
+    .navbar .nav-links a:hover,
+    .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.navbar, .navbar .brand, .navbar .nav-links a, .navbar .hamburger {
+    transition: all 0.3s ease;
+}
+.navbar.shrink {
+    min-height: 60px;
+}
+.navbar.shrink .brand {
+    font-size: 1.7rem;
+}
+.navbar.shrink .nav-links a {
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+}
+
+.navbar.shrink .hamburger {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .hamburger {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #ebe8e8;
+        cursor: pointer;
+    }
+    .navbar-container {
+        position: relative;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        background-color: #ebe8e8;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0.1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links a {
+        color: black;
+    }
+}
+
+@media (min-width: 801px) {
+    .hamburger {
+        display: none;
+    }
+    .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+    }
+}

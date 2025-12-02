@@ -1,6 +1,6 @@
-import { Container } from 'postcss'
 import React from 'react'
 import pilotPhoto from '../assets/test.jpg';
+import '../styles/Home.css';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
             for any potential impairment as well as determine the impact on the Allowance for 
             Loan Losses.
           </p>
-          <span>Ted Ahn, President <br />CRF Advisors, Inc.</span>
+          <span>Ted Ahn, President</span>
         </section>
       </section>
       <section className='intro'>
