@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <nav ref={menuRef} className={`navbar ${(isShrunk && !menuOpen) ? 'shrink' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="brand">CRF Advisors, Inc.</Link>
+        <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>CRF Advisors, Inc.</Link>
         <button
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -45,10 +45,10 @@ export default function Navbar() {
           &#9776;
         </button>
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <Link to="/consulting">Consulting Services</Link>
-          <Link to="/clients">Clients</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/consulting" onClick={() => setMenuOpen(false)}>CONSULTING SERVICES</Link>
+          <Link to="/clients" onClick={() => setMenuOpen(false)}>CLIENTS</Link>
+          <Link to="/about" onClick={() => setMenuOpen(false)}>ABOUT US</Link>
+          <Link to="/contact" onClick={() => setMenuOpen(false)}>CONTACT US</Link>
         </div>
       </div>
     </nav>

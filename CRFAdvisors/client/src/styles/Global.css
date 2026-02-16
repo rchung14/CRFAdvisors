@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Scheherazade+New:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 
 :root {
-  font-family: 'Scheherazade New','Newsreader', serif;
+  font-family: 'Roboto Flex','Scheherazade New','Newsreader';
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: normal;
 
   color-scheme: white;
   color: rgb(0, 0, 0);

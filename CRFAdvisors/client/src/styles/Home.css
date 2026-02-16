@@ -1,6 +1,10 @@
 h1 {
   font-size: clamp(1.5rem, 4vw, 3.2rem);
+  font-weight: normal;
   line-height: 1.1;
+}
+.spacer { 
+  padding: 1rem;
 }
 
 .pilotPhoto {
@@ -30,7 +34,7 @@ h1 {
   border: 2px solid rgba(206, 206, 206, 0.5);
 }
 
-.intro{ 
+.intro { 
   display: flex;
   flex-direction: column;
   margin-top: clamp(-200px, -16vw, -60px);
@@ -39,7 +43,35 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;
-  padding-bottom: 6em;
+}
+
+.directory {
+  width: 80%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  padding-bottom: 5rem;
+}
+.directory a {
+  display: block;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  padding: 4rem;
+  font-size: clamp(1px, 2vw, 1.5rem);
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  border-radius: 0.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.directory a:hover {
+  color: #245fb8;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 800px) {

@@ -1,6 +1,7 @@
 import React from 'react'
 import pilotPhoto from '../assets/test.jpg';
 import '../styles/Home.css';
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -21,26 +22,33 @@ export default function Home() {
         </section>
       </section>
       <section className='intro'>
-        <section className="w-[70%] text-left">
-          <h1 className='text-lg'>Your credit risk decisions shape your future. Ours help shape them.</h1>
+        <section className='hero'>
+          <h1>Your credit risk decisions shape your future. Ours help shape them.</h1>
           <p>Backed by decades of frontline experience, CRF Advisors brings independent insight to complex loan portfolios.</p>
         </section>
-        <section className='trustedbanks'>
-          <ul>
-            <li>BANK1</li>
-            <li>BANK2</li>
-            <li>BANK3</li>
-          </ul>
+      </section>
+      <div className="spacer" />
+      <section className='directory'>
+        <section className='loanreview'>
+          <Link to="/">LOAN REVIEW</Link>
         </section>
-        <section className='card1'>
-
+        <div className="spacer" />
+        <section className='duediligence'>
+          <Link to="/">DUE DILIGENCE</Link>
         </section>
-        <section className='card2'>
-          
+        <div className="spacer" />
+        <section className='portfolio-stress'>
+          <Link to="/">PORTFOLIO STRESS TESTING</Link>
         </section>
-        <section className='card3'>
-          
+        <div className="spacer" />
+        <section className='ALLLmethod'>
+          <Link to="/">ALLL METHODOLOGY & REVIEW</Link>
         </section>
+        <div className="spacer" />
+        <section className='ceclmodel'>
+          <Link to="/">CECL MODEL & IMPLEMENTATION</Link>
+        </section>
+        <div className="spacer" />
       </section>
     </main>
   )
