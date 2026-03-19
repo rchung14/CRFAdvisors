@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <main>
+
       <section className='pilotPhoto'>
         <img src={pilotPhoto} alt="A city skyline" />
         <section className='tedBlurb'>
@@ -21,34 +22,49 @@ export default function Home() {
           <span>Ted Ahn, President</span>
         </section>
       </section>
+
       <section className='intro'>
         <section className='hero'>
           <h1>Your credit risk decisions shape your future. Ours help shape them.</h1>
           <p>Backed by decades of frontline experience, CRF Advisors brings independent insight to complex loan portfolios.</p>
         </section>
       </section>
-      <div className="spacer" />
-      <section className='directory'>
-        <section className='loanreview'>
-          <Link to="/">LOAN REVIEW</Link>
-        </section>
+
+      <section className="directory">
+        <Link to="/" className="loanreview">Loan Review</Link>
         <div className="spacer" />
-        <section className='duediligence'>
-          <Link to="/">DUE DILIGENCE</Link>
-        </section>
+        <Link to="/" className="duediligence">Due Diligence</Link>
         <div className="spacer" />
-        <section className='portfolio-stress'>
-          <Link to="/">PORTFOLIO STRESS TESTING</Link>
-        </section>
+        <Link to="/" className="portfolio-stress">Portfolio Stress Testing</Link>
         <div className="spacer" />
-        <section className='ALLLmethod'>
-          <Link to="/">ALLL METHODOLOGY & REVIEW</Link>
-        </section>
+        <Link to="/" className="alllmethod">ALLL Methodology & Review</Link>
         <div className="spacer" />
-        <section className='ceclmodel'>
-          <Link to="/">CECL MODEL & IMPLEMENTATION</Link>
-        </section>
-        <div className="spacer" />
+        <Link to="/" className="ceclmodel">CECL Model & Implementation</Link>
+      </section>
+
+      <section className="approach">
+        <div>
+          <h2>Our Approach</h2>
+        </div>
+        <div className="approachbody">
+          <p>
+            CRF Advisors delivers independent credit review and asset valuation services designed to reduce portfolio, audit, and reporting risk.
+          </p>
+          <section className="approachcards">
+            <li>
+              <h3>Comprehensive Risk Assessment</h3>
+              <span>We identify key credit, valuation, and risk rating issues early to support timely reporting and portfolio analysis.</span>
+            </li>
+            <li>
+              <h3>Independent Credit Review</h3>
+              <span>We perform independent loan review, credit analysis, and risk rating validation to assess portfolio quality and underwriting standards.</span>
+            </li>
+            <li>
+              <h3>Regulatory Alignment</h3>
+              <span>Our reviews support regulatory compliance, audit readiness, and risk management for banks and financial institutions.</span>
+            </li>
+          </section>
+        </div>
       </section>
     </main>
   )
