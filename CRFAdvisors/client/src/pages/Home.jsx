@@ -25,8 +25,8 @@ export default function Home() {
 
       <section className='intro'>
         <section className='hero'>
-          <h1>Your credit risk decisions shape your future. Ours help shape them.</h1>
-          <p>Backed by decades of frontline experience, CRF Advisors brings independent insight to complex loan portfolios.</p>
+          <h1>Credit Risk & Loan Review Services</h1>
+          <p>Your credit risk decisions shape your future. Ours help shape them.</p>
         </section>
       </section>
 
