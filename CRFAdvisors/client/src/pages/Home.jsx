@@ -65,6 +65,11 @@ export default function Home() {
             </li>
           </section>
         </div>
+        <div>
+          <button>
+            <Link to="/" className="learnmore">Learn more about our approach and processees</Link>
+          </button>
+        </div>
       </section>
     </main>
   )

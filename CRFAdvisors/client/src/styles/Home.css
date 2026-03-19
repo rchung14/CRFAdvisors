@@ -1,6 +1,11 @@
 .spacer { 
   padding: 1.25rem;
 }
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
 
 .pilotPhoto {
   width: 100%;
@@ -125,6 +130,7 @@
     width: 90%;
     max-width: 2000px;
     margin: auto;
+    padding-bottom: 5rem;
   }
   .approachcards {
     display: flex;
@@ -162,6 +168,25 @@
     font-size: clamp(1rem, 1vw, 1.5rem);
     padding-top: 2rem;
     padding-bottom: 1rem;
+  }
+.learnmore {
+  display: inline-block;
+  margin: auto;
+  padding: 1rem;
+  font-weight: 150;
+  background-color: #e6e6e6;
+  border: 1px solid #e8e8e8;
+  color: #245fb8;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  border-radius: .3rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .learnmore:hover {
+    color: #0086b7;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
 @media (max-width: 800px) {
