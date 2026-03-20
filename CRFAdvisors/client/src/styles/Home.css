@@ -48,7 +48,8 @@ button {
   justify-content: center;
   padding-bottom: clamp(1rem, 2vw, 10rem);
   color: #052351;
-  margin-top: 2rem;
+  margin: auto;
+  padding-top: clamp(1rem, 2vw, 5rem);
   /* border: 1px solid black; */
   }
   .intro h1 {
@@ -187,6 +188,9 @@ button {
     padding-top: 2rem;
     padding-bottom: 1rem;
   }
+
+
+  
 .learnmore {
   display: inline-block;
   margin: auto;

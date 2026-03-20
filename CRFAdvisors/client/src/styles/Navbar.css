@@ -23,21 +23,21 @@
 .navbar a {
     text-decoration: none;
     color: #ebe8e8;
-}
+    } 
     .navbar .brand {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 400;
     padding: 0 1rem;
-}
+    }
     .navbar .nav-links a {
     display: inline-block;
     font-size: 1rem;
     font-weight: 500;
     padding: 1rem 1.5rem;
-}
+    }
     .nav-links a:hover {
         color:#09316d;
-    }
+}
 
 .navbar, .navbar .brand, .navbar .nav-links a, .navbar .hamburger {
     transition: all 0.3s ease;

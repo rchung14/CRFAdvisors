@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
     const navigate = useNavigate();
   useEffect(() => {
-    document.title = "Home | CRF Advisors, Inc.";
+    document.title = "CRF Advisors, Inc.";
 
     // Call backend on page load
     fetch('https://crfadvisors.onrender.com/')
