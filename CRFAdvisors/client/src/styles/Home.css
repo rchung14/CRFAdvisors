@@ -11,52 +11,70 @@ button {
   width: 100%;
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  height: clamp(420px, 48vh, 620px);
   margin-top: -10px;
   }
   .pilotPhoto img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
   }
-  .pilotPhoto .tedBlurb {
+  .tedBlurb {
     position: absolute;
-    width: 50%;
+    width: min(50%, 900px);
     padding: 1rem;
-    top: 20vw;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    font-size: clamp(6px, 1.5vw, 2rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    line-height: 1.5;
     background-color: rgba(78, 76, 76, 0.5);
     border: 2px solid rgba(206, 206, 206, 0.5);
+    box-sizing: border-box;
   }
 
 .intro { 
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: clamp(-50rem, -16vw, -60px);
-  width: 90%;
+  position: relative;
+  z-index: 2;
+  width: 75%;
   justify-content: center;
   padding-bottom: clamp(1rem, 2vw, 10rem);
   color: #052351;
+  margin-top: 2rem;
   /* border: 1px solid black; */
   }
   .intro h1 {
-    font-size: clamp(1.5rem, 3vw, 5rem);
+    display: inline-block;
+    font-size: clamp(1.5rem, 2vw, 3rem);
+    margin: auto;
     font-weight: normal;
     line-height: 1.1;
+    /* border: 1px solid black; */
+  }
+  .intro h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 0.5rem;
+    background: #245fb8;
   }
   .intro p {
-    font-size: clamp(1rem, 1vw, 3rem);
+    font-size: clamp(1rem, 1vw, 2rem);
     font-weight: normal;
+    /* border: 1px solid black; */
   }
 
 .directory {
-  width: 80%;
+  width: 70%;
   max-width: 1800px;
   position: relative;
   justify-content: center;
@@ -71,7 +89,7 @@ button {
     max-width: 80%;
     margin: auto;
     padding: 4rem;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 1.5vw, 2rem);
     text-decoration: none;
     color: inherit;
     text-align: center;
@@ -172,7 +190,7 @@ button {
 .learnmore {
   display: inline-block;
   margin: auto;
-  padding: 1rem;
+  padding: 0.9rem 1.8rem;
   font-weight: 150;
   background-color: #e6e6e6;
   border: 1px solid #e8e8e8;
@@ -199,9 +217,5 @@ button {
   .approachcards li {
     width: 100%;
     max-width: 100%;
-  }
-
-  .tedBlurb {
-    display: none;
   }
 }
