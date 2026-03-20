@@ -8,6 +8,20 @@ export default function Home() {
     const navigate = useNavigate();
   useEffect(() => {
     document.title = "Home | CRF Advisors, Inc.";
+
+    // Call backend on page load
+    fetch('https://crfadvisors.onrender.com/')
+      .then((res) => {
+        console.log('Backend ping status:', res.status);
+        return res.text();
+      })
+      .then((data) => {
+        console.log('Backend response:', data);
+      })
+      .catch((err) => {
+        console.error('Backend ping failed:', err);
+      });
+
   }, []);
   return (
     <main>

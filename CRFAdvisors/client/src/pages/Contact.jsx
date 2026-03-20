@@ -31,7 +31,7 @@ export const Contact = () => {
     setStatusMessage('');
 
     try {
-      // If not set, it falls back to a relative URL.
+      console.log('About to send request:', formData);
       const response = await fetch(`https://crfadvisors.onrender.com/send-email`, {
         method: 'POST',
         headers: {

@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Root route for health check / ping
+app.get('/', (req, res) => {
+  res.send('Ping successful - CRF Advisors backend is running');
+});
+
 // Route Handlers
 app.use(contactRoutes);
 
