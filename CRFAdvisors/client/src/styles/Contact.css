@@ -1,0 +1,139 @@
+.contactcontainer {
+    width: 80%;
+    max-width: 1800px;
+    margin: auto;
+    position: relative;
+    /* border: 1px solid black; */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  /* Intro Section */
+  .contactmsg {
+    text-align: left;
+    color: #052351;
+    position: relative;
+    font-weight: 300;
+  }
+  .contactmsg h1 { 
+    font-size: clamp(1em, 1vw, 3rem);
+    font-weight: normal;
+  }
+  .contactmsg span {
+    width: 80%;
+    font-size: clamp(2em, 4vw, 4rem);
+  }  
+  .feedback {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .contactmsg p {
+    margin: auto;
+  }
+
+  
+  /* Contact Form */
+  .contactform {
+    width: 100%;
+    max-width: 800px;
+    margin: 2em auto;
+    background: #f9f9f9;
+    padding: 2em 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: .3rem;
+    color: #052351;
+  }
+  
+  .contactform form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #011766;
+  }
+  
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .submit {
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: #245fb8;
+    text-decoration: none;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .submit:hover {
+    color: #09316d;
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive Styles for Mobile Devices (max-width: 600px) */
+  @media (max-width: 600px) {
+    .contactcontainer {
+      width: 95%;
+      padding: 0.5em;
+      padding-top: 4em;
+    }
+    
+    .contactmsg {
+      padding: 2em 5%;
+    }
+    
+    .contactmsg h1 {
+      font-size: 1.5em;
+    }
+    
+    .contactmsg span {
+      font-size: 2em;
+    }
+    
+    .contactform {
+      padding: 1.5em 3%;
+      margin: 1.5em auto;
+    }
+    
+    .form-group label {
+      font-size: 0.9em;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 0.6em;
+      font-size: 0.9em;
+    }
+    
+    .submit {
+      padding: 0.6em 1em;
+      font-size: 0.9em;
+    }
+  }

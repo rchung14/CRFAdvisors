@@ -43,7 +43,7 @@ footer {
         font-weight: 600;
     }
     .contactushome span, .aboutushome p {
-        font-size: clamp(1rem, 1.2vw, 1.5rem);
+        font-size: clamp(1rem, 1vw, 1.25rem);
     }
     .contact-item {
         display: flex;

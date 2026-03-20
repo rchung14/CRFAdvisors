@@ -1,9 +1,14 @@
 import React from 'react'
 import pilotPhoto from '../assets/test.jpg';
 import '../styles/Home.css';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+    const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "Home | CRF Advisors, Inc.";
+  }, []);
   return (
     <main>
 
