@@ -33,7 +33,7 @@
   .contactform {
     width: 100%;
     max-width: 800px;
-    margin: 2em auto;
+    margin: auto;
     background: #f9f9f9;
     padding: 2em 2%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -1,5 +1,5 @@
 .spacer { 
-  padding: 1.25rem;
+  padding: 5px;
 }
 button {
   background: none;
@@ -13,6 +13,7 @@ button {
   overflow: hidden;
   height: clamp(420px, 48vh, 620px);
   margin-top: -10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   .pilotPhoto img {
     position: absolute;
@@ -24,14 +25,14 @@ button {
   }
   .tedBlurb {
     position: absolute;
-    width: min(50%, 900px);
+    width: min(60%, 900px);
     padding: 1rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.5vw, 1.5rem);
     line-height: 1.5;
     background-color: rgba(78, 76, 76, 0.5);
     border: 2px solid rgba(206, 206, 206, 0.5);
@@ -44,12 +45,12 @@ button {
   margin: auto;
   position: relative;
   z-index: 2;
-  width: 75%;
+  width: 70%;
   justify-content: center;
   padding-bottom: clamp(1rem, 2vw, 10rem);
   color: #052351;
   margin: auto;
-  padding-top: clamp(1rem, 2vw, 5rem);
+  padding-top: clamp(1rem, 3vw, 5rem);
   /* border: 1px solid black; */
   }
   .intro h1 {
@@ -69,7 +70,7 @@ button {
     background: #245fb8;
   }
   .intro p {
-    font-size: clamp(1rem, 1vw, 2rem);
+    font-size: clamp(1rem, 1vw, 1.25rem);
     font-weight: normal;
     /* border: 1px solid black; */
   }
@@ -85,7 +86,7 @@ button {
   /* border: 1px solid black; */
 }
   .directory a{
-    background-color: #425166;
+    background-color: #455365d4;
     display: block;
     max-width: 80%;
     margin: auto;
@@ -94,14 +95,14 @@ button {
     text-decoration: none;
     color: inherit;
     text-align: center;
-    border-radius: .3rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: .3rem; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .directory a:hover {
     color: #0086b7;
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   /* adds the photo to the background of button, but extremely hard to find an image that will stretch that far and look good as background of button */
   /* a.loanreview {
@@ -122,6 +123,7 @@ button {
   padding-bottom: 6rem;
   background-color: #0086b7;
   color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   .approach h2 { 
     position: relative;
@@ -171,12 +173,12 @@ button {
     color: #245fb8;;
     background-color: #e6e6e6;
     border-radius: .3rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .approachcards li:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   .approachcards h3 {
     font-weight: normal;
@@ -190,7 +192,6 @@ button {
   }
 
 
-  
 .learnmore {
   display: inline-block;
   margin: auto;
@@ -203,12 +204,12 @@ button {
   font-size: clamp(0.9rem, 1vw, 1.1rem);
   border-radius: .3rem;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
   .learnmore:hover {
     color: #0086b7;
     transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   }
 
 @media (max-width: 800px) {

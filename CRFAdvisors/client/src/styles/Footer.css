@@ -8,8 +8,8 @@ footer {
     display: flex;
     justify-content: center;
     gap: clamp(1.5rem, 10vw, 20rem);
-    padding-top: 5rem;
-    padding-bottom: 6rem;
+    padding-top: clamp(3rem, 3vw, 5rem);
+    padding-bottom: clamp(4rem, 3vw, 6rem);
     background-color: #052351;
     color: white;
     }

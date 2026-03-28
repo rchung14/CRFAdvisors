@@ -5,22 +5,22 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
-    document.title = "CRF Advisors, Inc.";
+  document.title = "CRF Advisors, Inc.";
 
-    // Call backend on page load
-    fetch('https://crfadvisors.onrender.com/')
-      .then((res) => {
-        console.log('Backend ping status:', res.status);
-        return res.text();
-      })
-      .then((data) => {
-        console.log('Backend response:', data);
-      })
-      .catch((err) => {
-        console.error('Backend ping failed:', err);
-      });
+  // Call backend on page load
+  fetch('https://crfadvisors.onrender.com/')
+    .then((res) => {
+      console.log('Backend ping status:', res.status);
+      return res.text();
+    })
+    .then((data) => {
+      console.log('Backend response:', data);
+    })
+    .catch((err) => {
+      console.error('Backend ping failed:', err);
+    });
 
   }, []);
   return (
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
         <div className="approachbody">
           <p>
-            CRF Advisors delivers independent credit review and asset valuation services designed to reduce portfolio, audit, and reporting risk.
+            Our approach focuses on providing objective insight, consistent methodology, and practical recommendations that strengthen credit oversight and support informed decision‑making.
           </p>
           <section className="approachcards">
             <li>
