@@ -14,19 +14,19 @@
 
 .team-featured .team-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 350px;
 }
 
 .team-card--featured .team-card__initials {
-  font-size: 88px;
+  font-size: 68px;
 }
 
 .team-card--featured .team-card__name {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .team-card--featured .team-card__title {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .team-grid {
