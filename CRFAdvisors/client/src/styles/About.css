@@ -116,16 +116,6 @@
   text-decoration: underline;
 }
 
-.team-card__linkedin {
-  color: var(--accent-steel);
-  line-height: 0;
-  transition: color var(--ease);
-}
-
-.team-card__linkedin:hover {
-  color: var(--blue-mid);
-}
-
 /* ---------- Why CRF ---------- */
 .why-grid {
   display: grid;
