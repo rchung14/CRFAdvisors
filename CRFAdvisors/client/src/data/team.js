@@ -1,6 +1,7 @@
 import tedPhoto from '../assets/ted.webp'
 import joshPhoto from '../assets/josh.webp'
 import ryanPhoto from '../assets/ryan.webp'
+import blankPhoto from '../assets/blank.webp'
 
 // Team roster for the /about page. Members without a `photo` get a gradient
 // placeholder with initials until a real headshot is provided.
@@ -23,12 +24,14 @@ export const TEAM = [
     name: 'Evan Cywinsky',
     title: 'Senior Credit Analyst',
     initials: 'EC',
+    photo: blankPhoto,
     bio: 'Evan is a senior credit analyst performing detailed credit review and stress test analysis for bank and credit union engagements. His background in banking and credit underwriting supports risk rating validation and portfolio quality assessment across commercial loan portfolios.',
   },
   {
     name: 'Dan Kim',
     title: 'Senior Credit Analyst',
     initials: 'DK',
+    photo: blankPhoto,
     bio: "Dan is a senior credit analyst performing detailed credit review and stress test analysis. He is also involved in the implementation of CRF Advisors' CECL model. Dan holds a Bachelor's degree in Economics from the University of Pennsylvania.",
   },
   {
