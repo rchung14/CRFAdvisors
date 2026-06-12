@@ -83,7 +83,7 @@ export const SERVICES = [
       'End-to-end CECL model development, validation, and implementation tailored to institution size and portfolio complexity.',
     h2: 'CECL Model Development and Implementation for Financial Institutions',
     paragraphs: [
-      'We provide end-to-end support for Current Expected Credit Loss (CECL) model development, validation, and implementation. Our CECL consulting is tailored to institution size and portfolio complexity, making the standard practical for community banks and credit unions as well as larger institutions.',
+      'We provide end-to-end support for Current Expected Credit Loss (CECL) model development, validation, and implementation. Our CECL model implementation and consulting is tailored to institution size and portfolio complexity, making the standard practical for community banks and credit unions as well as larger institutions.',
       'Engagements include data gap analysis, model selection, parallel run support, and documentation prepared to stand up to regulatory review.',
     ],
     bullets: [
@@ -102,7 +102,7 @@ export const APPROACH = [
   },
   {
     title: 'Independent Credit Review',
-    body: 'We perform independent loan review, credit analysis, and risk rating validation to assess portfolio quality and underwriting standards.',
+    body: 'We perform independent loan review, loan portfolio credit analysis, and risk rating validation to assess portfolio quality and underwriting standards.',
   },
   {
     title: 'Regulatory Alignment',

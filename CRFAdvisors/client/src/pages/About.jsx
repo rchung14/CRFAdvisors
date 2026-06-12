@@ -80,9 +80,9 @@ export default function About() {
           <h2>Independent Credit Risk Management Since 20XX</h2>
           <div className="text-block firm-overview">
             <p>
-              CRF Advisors is a credit risk management firm that services financial
-              institutions, non-profit organizations, and financial services
-              companies. We focus on assisting clients with the identification of
+              CRF Advisors is a Tri-State credit risk firm, based in
+              Philadelphia, serving financial institutions, non-profit
+              organizations, and financial services companies. We focus on assisting clients with the identification of
               potential credit issues through{' '}
               <Link to="/consulting-services#loan-review">independent loan review</Link>,
               loan portfolio credit review, and{' '}

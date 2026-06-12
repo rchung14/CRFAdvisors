@@ -24,6 +24,13 @@
   padding: 2px 8px;
 }
 
+.client-group__blurb {
+  margin-top: var(--sp-2);
+  font-size: 15px;
+  color: var(--gray-mid);
+  max-width: var(--text-block);
+}
+
 .client-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

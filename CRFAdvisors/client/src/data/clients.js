@@ -3,6 +3,8 @@ export const CLIENT_GROUPS = [
   {
     label: 'Pennsylvania',
     abbr: 'PA',
+    blurb:
+      'CRF Advisors has performed independent loan review and credit review for Pennsylvania financial institutions of all sizes, from community banks in Philadelphia to savings institutions across the state.',
     clients: [
       { name: 'Bird in Hand Bank', city: 'Bird in Hand, PA' },
       { name: 'Customers Bank', city: 'Reading, PA' },
@@ -26,6 +28,8 @@ export const CLIENT_GROUPS = [
   {
     label: 'New Jersey',
     abbr: 'NJ',
+    blurb:
+      'New Jersey engagements cover loan portfolio review and credit due diligence for community banks and savings institutions from Cherry Hill to Hamilton.',
     clients: [
       { name: '1st Colonial Community Bank', city: 'Cherry Hill, NJ' },
       { name: 'First Bank of NJ', city: 'Hamilton, NJ' },
@@ -37,6 +41,8 @@ export const CLIENT_GROUPS = [
   {
     label: 'Delaware',
     abbr: 'DE',
+    blurb:
+      'Wilmington-based banks engage CRF Advisors for independent credit review and portfolio risk analysis.',
     clients: [
       { name: 'Artisans Bank', city: 'Wilmington, DE' },
       { name: 'Bancorp Bank', city: 'Wilmington, DE' },
@@ -45,6 +51,8 @@ export const CLIENT_GROUPS = [
   {
     label: 'Maryland',
     abbr: 'MD',
+    blurb:
+      'Maryland institutions rely on CRF Advisors for loan review, ALLL methodology support, and regulatory compliance.',
     clients: [
       { name: 'Congressional Bank', city: 'Bethesda, MD' },
       { name: 'Jarrettsville Federal Savings and Loan', city: 'Jarrettsville, MD' },
@@ -53,6 +61,8 @@ export const CLIENT_GROUPS = [
   {
     label: 'Beyond the Tri-State',
     abbr: 'Other',
+    blurb:
+      'Beyond the Tri-State area, CRF Advisors has served banks, credit unions, and FCUs nationwide, from New York to San Francisco.',
     clients: [
       { name: 'CAMC FCU', city: 'Charleston, WV' },
       { name: 'Habib American Bank', city: 'New York, NY' },

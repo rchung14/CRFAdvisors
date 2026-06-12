@@ -19,9 +19,9 @@ export default function Footer() {
           <div className="footer__about">
             <p className="footer__brand">CRF Advisors, Inc.</p>
             <p className="footer__blurb">
-              Independent loan review, credit review, risk rating validation, and
-              portfolio analytics supporting regulatory compliance for banks and
-              financial institutions.
+              Independent loan review and credit review for banks and credit
+              unions, risk rating validation, and portfolio analytics supporting
+              regulatory compliance for financial institutions.
             </p>
             <nav className="footer__nav" aria-label="Footer navigation">
               {FOOTER_LINKS.map(({ to, label }) => (

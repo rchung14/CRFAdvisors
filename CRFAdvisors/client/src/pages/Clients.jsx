@@ -30,12 +30,13 @@ export default function Clients() {
             and <Link to="/consulting-services#stress-testing">loan portfolio review and stress testing</Link>.
           </p>
 
-          {CLIENT_GROUPS.map(({ label, abbr, clients }) => (
+          {CLIENT_GROUPS.map(({ label, abbr, blurb, clients }) => (
             <div key={abbr} className="client-group">
               <h3 className="client-group__label">
                 {label}
                 <span className="client-group__count">{clients.length}</span>
               </h3>
+              <p className="client-group__blurb">{blurb}</p>
               <ul className="client-grid">
                 {clients.map(({ name, city }) => (
                   <li key={name} className="card client-card">
