@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
-import { breadcrumbSchema } from '../config'
+import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -9,12 +10,7 @@ import '../styles/Clients.css'
 export default function Clients() {
   return (
     <main className="page">
-      <Seo
-        title="Our Clients | CRF Advisors — Trusted by Banks & Credit Unions"
-        description={`CRF Advisors has served ${CLIENT_COUNT}+ banks, credit unions, and financial institutions across the Tri-State area and beyond. References available upon request.`}
-        path="/clients"
-        schemas={[breadcrumbSchema('Clients', '/clients')]}
-      />
+      <Seo {...ROUTES_META['/clients']} />
 
       <PageHero
         title="Financial Institutions We've Served"
@@ -28,8 +24,10 @@ export default function Clients() {
           <h2>{CLIENT_COUNT} Institutions Across the Tri-State Area and Beyond</h2>
           <p className="section-sub">
             Banks, savings institutions, credit unions, and financial services
-            companies that rely on CRF Advisors for independent loan review,
-            credit due diligence, and portfolio risk analysis.
+            companies that rely on CRF Advisors for{' '}
+            <Link to="/consulting-services#loan-review">independent loan review</Link>,{' '}
+            <Link to="/consulting-services#due-diligence">credit review and due diligence</Link>,
+            and <Link to="/consulting-services#stress-testing">loan portfolio review and stress testing</Link>.
           </p>
 
           {CLIENT_GROUPS.map(({ label, abbr, clients }) => (

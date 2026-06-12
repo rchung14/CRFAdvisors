@@ -11,13 +11,13 @@ export const SERVICES = [
       'Independent assessment of loan portfolio quality, underwriting standards, risk rating accuracy, and regulatory compliance.',
     h2: 'Independent Loan Review for Banks and Financial Institutions',
     paragraphs: [
-      'Our independent loan review provides an objective assessment of loan portfolio quality for national and community banks, federal credit unions, and savings institutions. Each engagement evaluates credit underwriting standards, risk rating accuracy, loan classification, and compliance with applicable regulatory guidelines.',
+      'Our independent loan review provides an objective assessment of loan portfolio quality for national and community banks, federal credit unions, and savings institutions. Each loan portfolio review engagement evaluates credit underwriting standards, risk rating accuracy, loan classification, and compliance with applicable regulatory guidelines.',
       'By identifying potential problem credits early, our credit review helps management strengthen credit administration, support examination readiness, and maintain confidence in portfolio reporting with regulators, auditors, and the board.',
     ],
     bullets: [
       'Risk rating validation and loan classification review',
       'Credit underwriting and documentation assessment',
-      'Early identification of potential problem credits',
+      'Annual and targeted loan portfolio review programs',
       'Regulatory compliance and examination support',
     ],
   },

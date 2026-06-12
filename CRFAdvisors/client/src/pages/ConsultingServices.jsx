@@ -1,5 +1,5 @@
 import Seo from '../components/Seo'
-import { breadcrumbSchema } from '../config'
+import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -9,12 +9,7 @@ import '../styles/Services.css'
 export default function ConsultingServices() {
   return (
     <main className="page">
-      <Seo
-        title="Loan Review & Credit Risk Consulting Services | CRF Advisors"
-        description="CRF Advisors offers independent loan review, due diligence, CECL implementation, portfolio stress testing, and ALLL methodology review for banks and FCUs."
-        path="/consulting-services"
-        schemas={[breadcrumbSchema('Consulting Services', '/consulting-services')]}
-      />
+      <Seo {...ROUTES_META['/consulting-services']} />
 
       <PageHero
         title="Credit Risk & Loan Review Consulting Services"

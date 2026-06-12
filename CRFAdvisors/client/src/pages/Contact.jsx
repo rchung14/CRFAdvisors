@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import Seo from '../components/Seo'
+import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
-import { API_URL, CONTACT, breadcrumbSchema } from '../config'
+import { API_URL, CONTACT } from '../config'
 import '../styles/Contact.css'
 
 const SERVICE_OPTIONS = [
@@ -90,12 +91,7 @@ export default function Contact() {
 
   return (
     <main className="page">
-      <Seo
-        title="Contact CRF Advisors — Loan Review & Credit Risk Consultants"
-        description="Contact CRF Advisors to discuss loan review, CECL implementation, or portfolio stress testing for your financial institution. Philadelphia, PA."
-        path="/contact"
-        schemas={[breadcrumbSchema('Contact Us', '/contact')]}
-      />
+      <Seo {...ROUTES_META['/contact']} />
 
       <PageHero
         title="Get in Touch"

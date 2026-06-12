@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import ConsultingServices from './pages/ConsultingServices'
 import Clients from './pages/Clients'
@@ -9,9 +9,11 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import ErrorBoundary from './components/ErrorBoundary'
 
+// Router-agnostic app shell: main.jsx wraps it in BrowserRouter for the
+// client; entry-server.jsx wraps it in StaticRouter for build-time prerender.
 function App() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Navbar />
       <ErrorBoundary>
@@ -26,7 +28,7 @@ function App() {
         </Routes>
       </ErrorBoundary>
       <Footer />
-    </Router>
+    </>
   )
 }
 

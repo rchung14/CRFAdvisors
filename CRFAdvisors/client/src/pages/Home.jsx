@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
+import { ROUTES_META } from '../seo/routesMeta'
 import Button from '../components/Button'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -11,17 +12,16 @@ import '../styles/Home.css'
 export default function Home() {
   return (
     <main className="page">
-      <Seo
-        title="CRF Advisors — Independent Loan Review & Credit Risk Management"
-        description="Independent credit review, CECL modeling, and portfolio stress testing for banks, credit unions, and financial institutions in the Tri-State area."
-        path="/"
-      />
+      <Seo {...ROUTES_META['/']} />
 
       {/* Hero: dark photo + navy overlay + centered quote card */}
       <section className="hero">
         <img
           className="hero__photo"
           src={heroPhoto}
+          width="1600"
+          height="900"
+          fetchPriority="high"
           alt="Dark city skyline of a financial district, representing CRF Advisors' institutional credit risk management clients"
         />
         <div className="hero__overlay" aria-hidden="true" />
@@ -77,6 +77,12 @@ export default function Home() {
               )
             })}
           </div>
+          <p className="services-note">
+            Every engagement is independent and objective — whether you need a
+            full <Link to="/consulting-services#loan-review">independent loan review</Link>,
+            a targeted <Link to="/consulting-services#due-diligence">credit review for an acquisition</Link>,
+            or an annual <Link to="/consulting-services#stress-testing">loan portfolio review and stress test</Link>.
+          </p>
         </div>
       </section>
 

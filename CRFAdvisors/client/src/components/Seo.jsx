@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { SITE_URL, ORG_SCHEMA } from '../config'
+import { SITE_URL } from '../config'
 
 function setMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`)
@@ -22,11 +22,12 @@ function setCanonical(url) {
 }
 
 /**
- * Per-page head manager for this SPA: title, description, canonical,
- * Open Graph / Twitter tags, and JSON-LD structured data.
+ * Per-page head manager for client-side navigation: title, description,
+ * canonical, Open Graph / Twitter tags, and JSON-LD structured data.
  *
- * ProfessionalService schema is included on every page; pages pass extra
- * schemas (Person, BreadcrumbList) via `schemas`.
+ * Crawlers get the same values baked into static HTML by scripts/prerender.mjs;
+ * both read from src/seo/routesMeta.js. This component keeps the head in sync
+ * as users navigate the SPA.
  */
 export default function Seo({ title, description, path = '/', schemas = [] }) {
   const schemaJson = JSON.stringify(schemas)
@@ -40,6 +41,8 @@ export default function Seo({ title, description, path = '/', schemas = [] }) {
     setMeta('property', 'og:description', description)
     setMeta('property', 'og:type', 'website')
     setMeta('property', 'og:url', url)
+    setMeta('property', 'og:site_name', 'CRF Advisors, Inc.')
+    setMeta('property', 'og:locale', 'en_US')
     setMeta('name', 'twitter:card', 'summary')
     setCanonical(url)
 
@@ -47,8 +50,7 @@ export default function Seo({ title, description, path = '/', schemas = [] }) {
       .querySelectorAll('script[data-seo-jsonld]')
       .forEach((el) => el.remove())
 
-    const allSchemas = [ORG_SCHEMA, ...JSON.parse(schemaJson)]
-    allSchemas.forEach((schema) => {
+    JSON.parse(schemaJson).forEach((schema) => {
       const script = document.createElement('script')
       script.type = 'application/ld+json'
       script.setAttribute('data-seo-jsonld', '')

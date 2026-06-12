@@ -38,13 +38,31 @@ export const ORG_SCHEMA = {
   },
   areaServed: ['PA', 'NJ', 'DE', 'MD', 'NY'],
   description:
-    'Independent loan review, credit risk management, CECL implementation, and portfolio stress testing for banks and financial institutions.',
+    'Independent loan review, credit review, loan portfolio review, CECL implementation, and portfolio stress testing for banks and financial institutions.',
+  foundingDate: '2004',
+  slogan: 'Your credit risk decisions shape your future. Ours help shape them.',
   knowsAbout: [
-    'Loan Review',
+    'Independent Loan Review',
+    'Credit Review',
+    'Loan Portfolio Review',
     'CECL',
     'ALLL',
     'Portfolio Stress Testing',
     'Credit Risk Management',
     'Due Diligence',
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Credit Risk & Loan Review Services',
+    itemListElement: [
+      'Loan Review',
+      'Due Diligence',
+      'Portfolio Stress Testing',
+      'ALLL Methodology & Review',
+      'CECL Model & Implementation',
+    ].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name },
+    })),
+  },
 }

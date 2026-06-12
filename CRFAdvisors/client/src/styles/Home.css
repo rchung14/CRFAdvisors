@@ -114,6 +114,13 @@
   flex-grow: 1;
 }
 
+.services-note {
+  margin-top: var(--sp-4);
+  font-size: 15px;
+  color: var(--gray-mid);
+  max-width: var(--text-block);
+}
+
 /* ---------- Approach (blue gradient) ---------- */
 .approach {
   background: var(--blue-gradient);

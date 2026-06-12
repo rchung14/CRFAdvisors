@@ -1,10 +1,23 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './styles/Global.css'
 import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
+const app = (
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 )
+
+const container = document.getElementById('root')
+
+// Production HTML is prerendered (scripts/prerender.mjs) — hydrate it.
+// Dev server has an empty root — render from scratch.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app)
+} else {
+  createRoot(container).render(app)
+}

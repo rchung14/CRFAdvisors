@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Award, Users, ShieldCheck } from 'lucide-react'
 import Seo from '../components/Seo'
-import { breadcrumbSchema } from '../config'
+import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -68,22 +69,9 @@ function TeamCard({ name, title, initials, bio }) {
 }
 
 export default function About() {
-  const personSchemas = TEAM.map(({ name, title }) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name,
-    jobTitle: title,
-    worksFor: { '@type': 'Organization', name: 'CRF Advisors, Inc.' },
-  }))
-
   return (
     <main className="page">
-      <Seo
-        title="About CRF Advisors — Credit Risk Management Experts"
-        description="Meet the CRF Advisors team. 20+ years of independent loan review, CECL, and credit risk management expertise serving banks and financial institutions."
-        path="/about"
-        schemas={[breadcrumbSchema('About Us', '/about'), ...personSchemas]}
-      />
+      <Seo {...ROUTES_META['/about']} />
 
       <PageHero title="About CRF Advisors, Inc." breadcrumb="About Us" />
 
@@ -97,8 +85,10 @@ export default function About() {
               CRF Advisors is a credit risk management firm that services financial
               institutions, non-profit organizations, and financial services
               companies. We focus on assisting clients with the identification of
-              potential credit issues through loan portfolio credit review and
-              portfolio stress testing.
+              potential credit issues through{' '}
+              <Link to="/consulting-services#loan-review">independent loan review</Link>,
+              loan portfolio credit review, and{' '}
+              <Link to="/consulting-services#stress-testing">portfolio stress testing</Link>.
             </p>
             <p>
               Specialties include implementation of ALLL methodology to ensure
