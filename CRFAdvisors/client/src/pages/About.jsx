@@ -12,8 +12,8 @@ import '../styles/About.css'
 const DIFFERENTIATORS = [
   {
     icon: Award,
-    title: '20+ Years of Tri-State Experience',
-    body: 'Two decades serving community banks, savings institutions, and credit unions across Pennsylvania, New Jersey, Delaware, and Maryland.',
+    title: 'XX+ Years of Tri-State Experience',
+    body: 'XX+ years serving community banks, savings institutions, and credit unions across Pennsylvania, New Jersey, Delaware, and Maryland.',
   },
   {
     icon: Users,
@@ -79,7 +79,7 @@ export default function About() {
       <section className="section">
         <div className="container">
           <SectionEyebrow>The Firm</SectionEyebrow>
-          <h2>Independent Credit Risk Management Since 2004</h2>
+          <h2>Independent Credit Risk Management Since 20XX</h2>
           <div className="text-block firm-overview">
             <p>
               CRF Advisors is a credit risk management firm that services financial

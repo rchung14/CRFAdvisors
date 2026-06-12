@@ -64,7 +64,7 @@ export const ROUTES_META = {
     path: '/about',
     title: 'About CRF Advisors — Credit Review & Loan Portfolio Experts',
     description:
-      'Meet the CRF Advisors team. 20+ years of independent loan review, credit review, CECL, and loan portfolio risk expertise serving financial institutions.',
+      'Meet the CRF Advisors team. XX+ years of independent loan review, credit review, CECL, and loan portfolio risk expertise serving financial institutions.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('About Us', '/about'), ...PERSON_SCHEMAS],
   },
   '/contact': {

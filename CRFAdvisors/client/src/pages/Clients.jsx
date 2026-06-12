@@ -15,7 +15,7 @@ export default function Clients() {
       <PageHero
         title="Financial Institutions We've Served"
         breadcrumb="Clients"
-        subtext="Over two decades of independent credit review engagements with community banks, savings institutions, and credit unions."
+        subtext="XX+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
       />
 
       <section className="section">

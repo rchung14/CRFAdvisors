@@ -5,7 +5,7 @@ export const TEAM = [
     name: 'Ted Ahn',
     title: 'President',
     initials: 'TA',
-    bio: 'Ted is the engagement leader and Director of the credit risk division. He has over 20 years in banking, including 9 years as external and internal auditor (RSM) for financial institutions ranging from $40M to $5B in assets. His experience includes managing credit risk and audit engagements, implementing ALLL methodology per Interagency Policy, valuation of impaired loans, TDRs, and OREO, and developing analytical models for credit risk.',
+    bio: 'Ted is the engagement leader and Director of the credit risk division. He has over XX years in banking, including 9 years as external and internal auditor (RSM) for financial institutions ranging from $40M to $5B in assets. His experience includes managing credit risk and audit engagements, implementing ALLL methodology per Interagency Policy, valuation of impaired loans, TDRs, and OREO, and developing analytical models for credit risk.',
   },
   {
     name: 'Joshua Cash',
