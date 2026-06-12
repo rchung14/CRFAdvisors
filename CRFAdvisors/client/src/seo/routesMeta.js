@@ -74,4 +74,18 @@ export const ROUTES_META = {
       'Contact CRF Advisors to discuss independent loan review, credit review, CECL implementation, or portfolio stress testing for your financial institution.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('Contact Us', '/contact')],
   },
+  '/privacy': {
+    path: '/privacy',
+    title: 'Privacy Policy | CRF Advisors',
+    description:
+      'How CRF Advisors collects, uses, and protects information submitted through this website.',
+    schemas: [ORG_SCHEMA, breadcrumbSchema('Privacy Policy', '/privacy')],
+  },
+  '/terms': {
+    path: '/terms',
+    title: 'Terms of Service | CRF Advisors',
+    description:
+      'Terms governing the use of the CRF Advisors website, including disclaimers and intellectual property.',
+    schemas: [ORG_SCHEMA, breadcrumbSchema('Terms of Service', '/terms')],
+  },
 }

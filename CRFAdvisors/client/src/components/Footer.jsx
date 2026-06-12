@@ -56,8 +56,8 @@ export default function Footer() {
             &copy; {year} CRF Advisors, Inc. All rights reserved.
           </span>
           <span className="footer__legal">
-            <Link to="/contact">Privacy Policy</Link>
-            <Link to="/contact">Terms of Service</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
           </span>
         </div>
       </div>
