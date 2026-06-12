@@ -108,7 +108,7 @@ export default function Contact() {
 
             {status === 'sent' ? (
               <p className="contact-success" role="status">
-                Thank you — your message has been sent. We typically respond
+                Thank you, your message has been sent. We typically respond
                 within 1 business day.
               </p>
             ) : (

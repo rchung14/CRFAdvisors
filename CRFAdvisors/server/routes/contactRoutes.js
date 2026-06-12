@@ -86,7 +86,7 @@ router.post('/api/contact', async (req, res) => {
     const { error: resendError } = await resend.emails.send({
       from: process.env.EMAIL_USER,
       to: process.env.CONTACT_RECIPIENT,
-      subject: 'New Contact Form Submission — CRF Advisors',
+      subject: 'New Contact Form Submission - CRF Advisors',
       text: [
         `Name: ${name}`,
         `Institution / Company: ${institution}`,

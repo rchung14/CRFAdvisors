@@ -78,7 +78,7 @@ export default function Home() {
             })}
           </div>
           <p className="services-note">
-            Every engagement is independent and objective — whether you need a
+            Every engagement is independent and objective, whether you need a
             full <Link to="/consulting-services#loan-review">independent loan review</Link>,
             a targeted <Link to="/consulting-services#due-diligence">credit review for an acquisition</Link>,
             or an annual <Link to="/consulting-services#stress-testing">loan portfolio review and stress test</Link>.

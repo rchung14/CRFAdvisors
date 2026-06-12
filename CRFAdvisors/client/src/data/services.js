@@ -30,7 +30,7 @@ export const SERVICES = [
     h2: 'Credit Due Diligence for Mergers, Acquisitions, and Transactions',
     paragraphs: [
       'CRF Advisors performs comprehensive credit due diligence for merger and acquisition activity, whole bank acquisitions, and loan portfolio purchases. Our work gives acquirers a clear, independent view of the credit quality they are taking on before a transaction closes.',
-      'Each loan portfolio due diligence engagement evaluates credit quality, portfolio concentrations, underwriting standards, and reserve adequacy — equipping decision-makers with the credit insight needed to price and structure the transaction with confidence.',
+      'Each loan portfolio due diligence engagement evaluates credit quality, portfolio concentrations, underwriting standards, and reserve adequacy, equipping decision-makers with the credit insight needed to price and structure the transaction with confidence.',
     ],
     bullets: [
       'Whole bank and branch acquisition credit review',
@@ -66,7 +66,7 @@ export const SERVICES = [
     h2: 'ALLL Methodology Review and FFIEC Compliance',
     paragraphs: [
       'CRF Advisors reviews and implements Allowance for Loan and Lease Losses (ALLL) methodology to ensure compliance with the FFIEC Interagency Policy Statement and GAAP. We assess directional consistency, qualitative factor support, and documentation quality across the allowance process.',
-      'Engagements also cover impaired loan valuation, troubled debt restructuring (TDR) accounting, and other real estate owned (OREO) review — the areas examiners scrutinize most closely.',
+      'Engagements also cover impaired loan valuation, troubled debt restructuring (TDR) accounting, and other real estate owned (OREO) review. These are the areas examiners scrutinize most closely.',
     ],
     bullets: [
       'FFIEC Interagency Policy Statement compliance',

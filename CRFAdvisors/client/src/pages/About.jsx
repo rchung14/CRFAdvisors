@@ -18,7 +18,7 @@ const DIFFERENTIATORS = [
   {
     icon: Users,
     title: 'Staffed to Engagement Complexity',
-    body: 'Every engagement is staffed at the proper experience level relative to portfolio size and complexity — never trained on your time.',
+    body: 'Every engagement is staffed at the proper experience level relative to portfolio size and complexity, never trained on your time.',
   },
   {
     icon: ShieldCheck,
@@ -34,10 +34,10 @@ function TeamCard({ name, title, initials, bio, featured = false }) {
       <div
         className="img-placeholder team-card__photo"
         role="img"
-        aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA — photo placeholder`}
+        aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA, photo placeholder`}
       >
         <span className="team-card__initials">{initials}</span>
-        <span className="img-placeholder__label">{name} — Photo</span>
+        <span className="img-placeholder__label">{name} Photo</span>
       </div>
       <div className="team-card__body">
         <h3 className="team-card__name">{name}</h3>
