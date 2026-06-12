@@ -1,13 +1,20 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
+/** Scrolls to top on route change, or to the anchor target when a hash is present. */
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    // Instantly scrolls to the top of the page
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      const target = document.querySelector(hash)
+      if (target) {
+        target.scrollIntoView()
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
 
-  return null;
+  return null
 }
