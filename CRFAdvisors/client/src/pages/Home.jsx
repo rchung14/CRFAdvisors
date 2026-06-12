@@ -19,8 +19,8 @@ export default function Home() {
         <img
           className="hero__photo"
           src={heroPhoto}
-          width="1600"
-          height="900"
+          width="2230"
+          height="833"
           fetchPriority="high"
           alt="Dark city skyline of a financial district, representing CRF Advisors' institutional credit risk management clients"
         />
