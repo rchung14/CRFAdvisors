@@ -1,4 +1,5 @@
-import Seo, { breadcrumbSchema } from '../components/Seo'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../config'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'

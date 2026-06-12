@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import Seo, { breadcrumbSchema } from '../components/Seo'
+import Seo from '../components/Seo'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
-import { API_URL, CONTACT } from '../config'
+import { API_URL, CONTACT, breadcrumbSchema } from '../config'
 import '../styles/Contact.css'
 
 const SERVICE_OPTIONS = [

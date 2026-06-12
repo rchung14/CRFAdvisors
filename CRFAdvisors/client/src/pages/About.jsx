@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Award, Users, ShieldCheck } from 'lucide-react'
-import Seo, { breadcrumbSchema } from '../components/Seo'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../config'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -134,13 +135,16 @@ export default function About() {
           <SectionEyebrow>Why CRF</SectionEyebrow>
           <h2>Why Institutions Choose CRF Advisors</h2>
           <div className="why-grid">
-            {DIFFERENTIATORS.map(({ icon: Icon, title, body }) => (
+            {DIFFERENTIATORS.map(({ icon, title, body }) => {
+              const Icon = icon
+              return (
               <div key={title} className="why-item">
                 <Icon size={40} strokeWidth={1.5} className="why-item__icon" aria-hidden="true" />
                 <h3>{title}</h3>
                 <p>{body}</p>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

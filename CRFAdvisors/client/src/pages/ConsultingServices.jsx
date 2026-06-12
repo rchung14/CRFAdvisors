@@ -1,4 +1,5 @@
-import Seo, { breadcrumbSchema } from '../components/Seo'
+import Seo from '../components/Seo'
+import { breadcrumbSchema } from '../config'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
@@ -22,7 +23,9 @@ export default function ConsultingServices() {
       />
 
       {/* Service detail sections — alternating backgrounds, anchor ids */}
-      {SERVICES.map(({ id, name, icon: Icon, h2, paragraphs, bullets }, i) => (
+      {SERVICES.map(({ id, name, icon, h2, paragraphs, bullets }, i) => {
+        const Icon = icon
+        return (
         <section
           key={id}
           id={id}
@@ -50,7 +53,8 @@ export default function ConsultingServices() {
             </div>
           </div>
         </section>
-      ))}
+        )
+      })}
 
       {/* Approach + Process, two columns */}
       <section className="section approach-process">

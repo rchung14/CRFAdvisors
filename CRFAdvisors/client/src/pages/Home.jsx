@@ -61,7 +61,9 @@ export default function Home() {
             Your credit risk decisions shape your future. Ours help shape them.
           </p>
           <div className="services-grid">
-            {SERVICES.map(({ id, name, icon: Icon, summary }) => (
+            {SERVICES.map(({ id, name, icon, summary }) => {
+              const Icon = icon
+              return (
               <article key={id} className="card service-card">
                 <span className="service-card__icon" aria-hidden="true">
                   <Icon size={24} strokeWidth={1.5} />
@@ -72,7 +74,8 @@ export default function Home() {
                   Learn more &rarr;
                 </Link>
               </article>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
