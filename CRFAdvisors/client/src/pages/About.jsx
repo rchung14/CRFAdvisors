@@ -27,18 +27,27 @@ const DIFFERENTIATORS = [
   },
 ]
 
-function TeamCard({ name, title, initials, bio, featured = false }) {
+function TeamCard({ name, title, initials, bio, photo, featured = false }) {
   const [expanded, setExpanded] = useState(false)
   return (
     <article className={`card team-card${featured ? ' team-card--featured' : ''}`}>
-      <div
-        className="img-placeholder team-card__photo"
-        role="img"
-        aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA, photo placeholder`}
-      >
-        <span className="team-card__initials">{initials}</span>
-        <span className="img-placeholder__label">{name} Photo</span>
-      </div>
+      {photo ? (
+        <img
+          className="team-card__photo team-card__img"
+          src={photo}
+          alt={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA`}
+          loading="lazy"
+        />
+      ) : (
+        <div
+          className="img-placeholder team-card__photo"
+          role="img"
+          aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA, photo placeholder`}
+        >
+          <span className="team-card__initials">{initials}</span>
+          <span className="img-placeholder__label">{name} Photo</span>
+        </div>
+      )}
       <div className="team-card__body">
         <h3 className="team-card__name">{name}</h3>
         <p className="team-card__title">{title}</p>
