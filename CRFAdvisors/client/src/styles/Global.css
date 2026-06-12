@@ -5,11 +5,11 @@
 
 :root {
   /* Color */
-  --navy: #1B2A6B;
-  --navy-dark: #111E52;
-  --blue-mid: #3B5BDB;
-  --blue-light: #4C6EF5;
-  --blue-gradient: linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%);
+  --navy: #1A4480;
+  --navy-dark: #11305E;
+  --blue-mid: #2774CC;
+  --blue-light: #4D94E8;
+  --blue-gradient: linear-gradient(135deg, #1A4480 0%, #2E7FD9 100%);
   --white: #FFFFFF;
   --off-white: #F8F9FC;
   --ink: #0D0D0D;
@@ -228,7 +228,7 @@ h4 {
 }
 
 .card:hover {
-  box-shadow: 0 4px 20px rgba(27, 42, 107, 0.10);
+  box-shadow: 0 4px 20px rgba(26, 68, 128, 0.10);
   transform: translateY(-2px);
 }
 

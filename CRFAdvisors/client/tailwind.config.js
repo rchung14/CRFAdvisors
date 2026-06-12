@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: '#1B2A6B',
-        'navy-dark': '#111E52',
-        'blue-mid': '#3B5BDB',
-        'blue-light': '#4C6EF5',
+        navy: '#1A4480',
+        'navy-dark': '#11305E',
+        'blue-mid': '#2774CC',
+        'blue-light': '#4D94E8',
         'off-white': '#F8F9FC',
         ink: '#0D0D0D',
         'gray-mid': '#6B7280',
@@ -23,7 +23,7 @@ export default {
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'blue-gradient': 'linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%)',
+        'blue-gradient': 'linear-gradient(135deg, #1A4480 0%, #2E7FD9 100%)',
       },
     },
   },

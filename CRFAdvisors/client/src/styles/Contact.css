@@ -60,7 +60,7 @@
 .form-field textarea:focus {
   outline: none;
   border-color: var(--blue-mid);
-  box-shadow: 0 0 0 3px rgba(59, 91, 219, 0.12);
+  box-shadow: 0 0 0 3px rgba(39, 116, 204, 0.12);
 }
 
 .form-field input[aria-invalid='true'],

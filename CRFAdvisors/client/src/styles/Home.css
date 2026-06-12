@@ -19,7 +19,7 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(27, 42, 107, 0.72);
+  background-color: rgba(26, 68, 128, 0.72);
 }
 
 .hero__content {
