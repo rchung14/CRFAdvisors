@@ -52,7 +52,6 @@
 .hero__quote {
   font-family: var(--font-display);
   font-size: 20px;
-  font-style: italic;
   line-height: 1.7;
   color: var(--white);
 }

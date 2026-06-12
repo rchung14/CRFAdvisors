@@ -241,6 +241,12 @@ h4 {
   padding: var(--sp-6) 0;
 }
 
+/* As a flex item the container would shrink to its content and drift with
+   auto margins — force full width so hero text aligns with page content. */
+.page-hero .container {
+  width: 100%;
+}
+
 .page-hero h1 {
   color: var(--white);
   margin-top: var(--sp-1);
