@@ -1,84 +1,152 @@
-import React from 'react'
+import { useState } from 'react'
+import { Linkedin, Award, Users, ShieldCheck } from 'lucide-react'
+import Seo, { breadcrumbSchema } from '../components/Seo'
+import PageHero from '../components/PageHero'
+import SectionEyebrow from '../components/SectionEyebrow'
+import CTABanner from '../components/CTABanner'
+import { TEAM } from '../data/team'
 import '../styles/About.css'
-import aboutPhoto from '../assets/room.avif';
-import tedPhoto from '../assets/ted.avif';
-import { useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react';
 
-export default function Clients() {
-  const navigate = useNavigate();
-  useEffect(() => {
-  document.title = "About Us | CRF Advisors, Inc.";
+const DIFFERENTIATORS = [
+  {
+    icon: Award,
+    title: '20+ Years of Tri-State Experience',
+    body: 'Two decades serving community banks, savings institutions, and credit unions across Pennsylvania, New Jersey, Delaware, and Maryland.',
+  },
+  {
+    icon: Users,
+    title: 'Staffed to Engagement Complexity',
+    body: 'Every engagement is staffed at the proper experience level relative to portfolio size and complexity — never trained on your time.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Selective Client Acceptance',
+    body: 'Client acceptance is limited to institutions with high integrity management, protecting the independence our opinions depend on.',
+  },
+]
 
-  const meta = document.querySelector('meta[name="description"]');
-  if (meta) {
-    meta.setAttribute(
-      "content",
-      "Learn about CRF Advisors and our experience providing independent loan review, credit risk analysis, and portfolio advisory services to banks, credit unions, and financial institutions."
-    );
-  }
+function TeamCard({ name, title, initials, bio }) {
+  const [expanded, setExpanded] = useState(false)
+  return (
+    <article className="card team-card">
+      <div
+        className="img-placeholder team-card__photo"
+        role="img"
+        aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA — photo placeholder`}
+      >
+        <span className="team-card__initials">{initials}</span>
+        <span className="img-placeholder__label">{name} — Photo</span>
+      </div>
+      <div className="team-card__body">
+        <h3 className="team-card__name">{name}</h3>
+        <p className="team-card__title">{title}</p>
+        <p className={`team-card__bio${expanded ? '' : ' team-card__bio--clamped'}`}>{bio}</p>
+        <div className="team-card__footer">
+          <button
+            type="button"
+            className="team-card__more"
+            onClick={() => setExpanded((v) => !v)}
+          >
+            {expanded ? 'Read less' : 'Read more'}
+          </button>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="team-card__linkedin"
+            aria-label={`${name} on LinkedIn`}
+          >
+            <Linkedin size={18} />
+          </a>
+        </div>
+      </div>
+    </article>
+  )
+}
 
-  }, []);
-    return (
-      <main>
-        <section className='aboutusimg'>
-            <img src={aboutPhoto} alt="Business professional meeting room, awaiting a conference." />
-        </section>
+export default function About() {
+  const personSchemas = TEAM.map(({ name, title }) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name,
+    jobTitle: title,
+    worksFor: { '@type': 'Organization', name: 'CRF Advisors, Inc.' },
+  }))
 
-        <section className='aboutusintro'>
-          <h1>Independent Credit Review & Portfolio Risk Management</h1>
-          <p>At CRF Advisors, we provide independent credit risk management, loan review, and portfolio risk assessment services to financial institutions, non-profit organizations, and financial services companies. Our team specializes in commercial loan portfolio credit review, credit risk analysis, asset quality evaluation, and portfolio stress testing to help clients identify potential credit deterioration, strengthen underwriting oversight, and improve regulatory compliance. We assist banks and lenders in evaluating commercial real estate (CRE) and commercial & industrial (C&I) loan portfolios through detailed financial analysis, risk rating validation, covenant compliance review, collateral assessment, and portfolio monitoring. <br/>
-          <br />
-          Our specialties include Allowance for Loan and Lease Losses (ALLL) methodology implementation and validation in accordance with FFIEC Interagency Guidance, impaired loan valuation, troubled debt restructuring (TDR) analysis, and other real estate owned (OREO) valuation and accounting support. We also assist clients with GAAP and SEC financial reporting requirements, including the preparation and review of 10-K filings, 10-Q filings, financial statements, and related disclosures. CRF Advisors delivers independent credit review, regulatory compliance support, and portfolio risk management solutions designed to help financial institutions enhance asset quality oversight, reduce credit risk exposure, and maintain strong regulatory reporting standards.</p>
-        </section>
+  return (
+    <main className="page">
+      <Seo
+        title="About CRF Advisors — Credit Risk Management Experts"
+        description="Meet the CRF Advisors team. 20+ years of independent loan review, CECL, and credit risk management expertise serving banks and financial institutions."
+        path="/about"
+        schemas={[breadcrumbSchema('About Us', '/about'), ...personSchemas]}
+      />
 
-        <section className='tedsection'>
-          <div className='photocontainer'>
-            <h2>Meet Our President</h2>
-            <div className='tedimg'>
-              <img src={tedPhoto} alt="Handsome businessman." />
-            </div>
-            <h3>Ted Ahn</h3>
-          </div>
+      <PageHero title="About CRF Advisors, Inc." breadcrumb="About Us" />
 
-          <div className='tedtext'>
-            <p>Ted Ahn leads credit risk and loan review engagements for CRF Advisors and has more than 20 years of banking and financial services experience, including 9 years in external and internal audit with RSM serving financial institutions ranging from $40 million to $5 billion in assets.
-              <br />
-              <br />
-              Ted's experience includes commercial loan portfolio credit review, ALLL methodology implementation, impaired loan and TDR analysis, OREO valuation, portfolio stress testing, and regulatory compliance review for CRE and C&I loan portfolios. Ted also assists clients with GAAP and SEC financial reporting, including 10-K and 10-Q filings, financial statement disclosures, and credit risk analytical modeling.
+      {/* Firm overview */}
+      <section className="section">
+        <div className="container">
+          <SectionEyebrow>The Firm</SectionEyebrow>
+          <h2>Independent Credit Risk Management Since 2004</h2>
+          <div className="text-block firm-overview">
+            <p>
+              CRF Advisors is a credit risk management firm that services financial
+              institutions, non-profit organizations, and financial services
+              companies. We focus on assisting clients with the identification of
+              potential credit issues through loan portfolio credit review and
+              portfolio stress testing.
+            </p>
+            <p>
+              Specialties include implementation of ALLL methodology to ensure
+              compliance with FFIEC Interagency policy, and the valuation and
+              accounting of impaired loans, TDRs, and OREO. We also provide
+              assistance with preparation and review of 10-K and 10-Q financial
+              statements and disclosures in compliance with GAAP and SEC
+              regulation.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className='employees'>
-          <h2>meet the team</h2>
+      {/* Team */}
+      <section className="section section--off-white">
+        <div className="container">
+          <SectionEyebrow>Our People</SectionEyebrow>
+          <h2>Our Team</h2>
+          <p className="section-sub">
+            Experienced credit professionals with deep roots in banking, audit, and
+            regulatory compliance.
+          </p>
+          <div className="team-grid">
+            {TEAM.map((member) => (
+              <TeamCard key={member.name} {...member} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className='employeecard'>
-            <img src="" alt="" />
-            <h3>josh cash, manager</h3>
-            <span>josh description</span>
+      {/* Why CRF */}
+      <section className="section">
+        <div className="container">
+          <SectionEyebrow>Why CRF</SectionEyebrow>
+          <h2>Why Institutions Choose CRF Advisors</h2>
+          <div className="why-grid">
+            {DIFFERENTIATORS.map(({ icon: Icon, title, body }) => (
+              <div key={title} className="why-item">
+                <Icon size={40} strokeWidth={1.5} className="why-item__icon" aria-hidden="true" />
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </div>
+            ))}
           </div>
-          <div className='employeecard'>
-            <img src="" alt="" />
-            <h3>evan cywinsky, senior credit analyst</h3>
-            <span>evan description</span>
-          </div>
-          <div className='employeecard'>
-            <img src="" alt="" />
-            <h3>dan kim, senior credit analyst</h3>
-            <span>dan description</span>
-          </div>
-          <div className='employeecard'>
-            <img src="" alt="" />
-            <h3>ryan chung, credit analyst</h3>
-            <span>ryan description</span>
-          </div>
+        </div>
+      </section>
 
-          <section className='aboutuscontact'>
-            stuff idk
-          </section>
-
-        </section>
-      </main>
-    )
-  }
+      <CTABanner
+        heading="Work with a team that knows your industry."
+        subtext="Independent credit expertise, scoped to your institution."
+      />
+    </main>
+  )
+}

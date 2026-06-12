@@ -1,83 +1,136 @@
-.aboutusimg {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    height: clamp(420px, 48vh, 620px);
-    margin-top: -10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-    .aboutusimg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center; 
-    }
+/* ---------- Firm overview ---------- */
+.firm-overview p {
+  color: var(--gray-mid);
+  margin-top: var(--sp-3);
+}
 
-.aboutusintro { 
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    width: 70%;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-bottom: clamp(1rem, 3vw, 5rem);
-    padding-top: clamp(1rem, 3vw, 5rem);
-    color: #052351;
-    /* border: 1px solid black; */
-    }
-    .aboutusintro h1 {
-        display: inline-block;
-        font-size: clamp(1.5rem, 2vw, 3rem);
-        margin: 0;
-        font-weight: normal;
-        line-height: 1.1;
-        /* border: 1px solid black; */
-    }
-    .aboutusintro h1::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin-top: 0.5rem;
-        background: #245fb8;
-    }
-    .aboutusintro p {
-        font-size: clamp(1rem, 1vw, 1.25rem);
-        font-weight: normal;
-        /* border: 1px solid black; */
-    }
+/* ---------- Team grid ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
 
-.tedsection { 
-    background-color: #052351;
-    color: #e6e6e6;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1rem, 8vw, 20rem);
-    height: clamp(420px, 30vh, 550px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    padding: 1rem;
-    }
-    .tedsection h2 {
-        display: inline-block;
-        font-size: clamp(1.5rem, 2vw, 3rem);
-        margin: 0;
-        font-weight: normal;
-        line-height: 1.1;
-        padding-bottom: 1rem;
-    }
-    .tedsection h2::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        margin-top: 0.5rem;
-        background: #245fb8;
-    }
-    .tedtext {
-        width: 40%;
-    }
+.team-card {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card__photo {
+  aspect-ratio: 1 / 1;
+}
+
+.team-card__initials {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.team-card__body {
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.team-card__name {
+  font-size: 18px;
+}
+
+.team-card__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blue-mid);
+  margin-top: 2px;
+}
+
+.team-card__bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gray-mid);
+  margin-top: var(--sp-2);
+}
+
+.team-card__bio--clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.team-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+.team-card__more {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-mid);
+}
+
+.team-card__more:hover {
+  text-decoration: underline;
+}
+
+.team-card__linkedin {
+  color: var(--accent-steel);
+  line-height: 0;
+  transition: color var(--ease);
+}
+
+.team-card__linkedin:hover {
+  color: var(--blue-mid);
+}
+
+/* ---------- Why CRF ---------- */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-6);
+}
+
+.why-item__icon {
+  color: var(--blue-mid);
+}
+
+.why-item h3 {
+  font-size: 18px;
+  margin-top: var(--sp-2);
+}
+
+.why-item p {
+  font-size: 15px;
+  color: var(--gray-mid);
+  margin-top: var(--sp-1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
