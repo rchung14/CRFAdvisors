@@ -1,28 +1,401 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Scheherazade+New:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
+/* ============================================================
+   CRF Advisors — Global design system
+   Tokens + resets + shared components (see .stitch/designs/DESIGN.md)
+   ============================================================ */
 
 :root {
-  font-family: 'Roboto Flex','Scheherazade New','Newsreader';
-  line-height: 1.5;
-  font-weight: normal;
+  /* Color */
+  --navy: #1B2A6B;
+  --navy-dark: #111E52;
+  --blue-mid: #3B5BDB;
+  --blue-light: #4C6EF5;
+  --blue-gradient: linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%);
+  --white: #FFFFFF;
+  --off-white: #F8F9FC;
+  --ink: #0D0D0D;
+  --gray-mid: #6B7280;
+  --gray-light: #E5E7EB;
+  --gray-bg: #F1F3F5;
+  --accent-steel: #CBD5E1;
+  --error: #DC2626;
 
-  color-scheme: white;
-  color: rgb(0, 0, 0);
-  background-color: #e6e6e6;
+  /* Type */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Spacing (8px base) */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-6: 48px;
+  --sp-8: 64px;
+  --sp-12: 96px;
+  --sp-16: 128px;
+
+  /* Layout */
+  --container: 1280px;
+  --text-block: 740px;
+  --nav-height: 68px;
+
+  /* Motion */
+  --ease: 200ms ease;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: auto;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--white);
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--blue-mid);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Page fade-in */
+.page {
+  animation: page-fade 300ms ease;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-block {
+  max-width: var(--text-block);
+}
+
+.section {
+  padding: var(--sp-12) 0;
+}
+
+.section--off-white {
+  background-color: var(--off-white);
+}
+
+/* ---------- Eyebrow label ---------- */
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  margin-bottom: var(--sp-2);
+}
+
+.eyebrow--light {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+  transition: background-color var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.btn--primary {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background-color: var(--navy-dark);
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  padding: 12.5px 26.5px;
+}
+
+.btn--ghost:hover {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.btn--ghost-light {
+  background-color: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: var(--white);
+  padding: 12.5px 26.5px;
+}
+
+.btn--ghost-light:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn--white {
+  background-color: var(--white);
+  color: var(--navy);
+}
+
+.btn--white:hover {
+  background-color: var(--off-white);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 6px;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(27, 42, 107, 0.10);
+  transform: translateY(-2px);
+}
+
+/* ---------- Page hero (interior pages) ---------- */
+.page-hero {
+  background: var(--blue-gradient);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  padding: var(--sp-6) 0;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  margin-top: var(--sp-1);
+}
+
+.page-hero__sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: var(--sp-2);
+  max-width: var(--text-block);
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumb a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--ease);
+}
+
+.breadcrumb a:hover {
+  color: var(--white);
+}
+
+.breadcrumb__sep {
+  margin: 0 8px;
+}
+
+.breadcrumb__current {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------- CTA banner ---------- */
+.cta-banner {
+  background: var(--blue-gradient);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 34px;
+  color: var(--white);
+}
+
+.cta-banner__sub {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: var(--sp-2);
+}
+
+.cta-banner .btn {
+  margin-top: var(--sp-4);
+}
+
+/* ---------- Image placeholder ---------- */
+.img-placeholder {
+  background: var(--blue-gradient);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  min-width: 320px;
-  min-height: 100vh;
-  padding-top: 4em;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-1);
+  color: var(--white);
+}
+
+.img-placeholder__label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 0 12px;
+}
+
+/* ---------- Inline text link ---------- */
+.text-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue-mid);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Error boundary fallback ---------- */
+.error-fallback {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  text-align: center;
+  padding: var(--sp-8) 24px;
+}
+
+.error-fallback p {
+  color: var(--gray-mid);
+  max-width: 480px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--sp-8) 0;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-height: 60px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: var(--sp-6) 0;
+  }
+
+  .page-hero {
+    min-height: 140px;
+    padding: var(--sp-4) 0;
+  }
+
+  .cta-banner {
+    padding: var(--sp-8) 0;
+  }
+
+  .cta-banner h2 {
+    font-size: 28px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Clients.css'
-import clientsPhoto from '../assets/handshake.jpg';
-import loanPhoto from '../assets/loan.jpg';
+import clientsPhoto from '../assets/handshake.avif';
+import loanPhoto from '../assets/loan.avif';
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
@@ -9,6 +9,14 @@ export default function Clients() {
   const navigate = useNavigate();
   useEffect(() => {
   document.title = "Clients | CRF Advisors, Inc.";
+
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) {
+    meta.setAttribute(
+      "content",
+      "Representative clients served by CRF Advisors, including banks and credit unions utilizing independent loan review, credit risk analysis, and portfolio advisory services."
+    );
+  }
 
   }, []);
     return (

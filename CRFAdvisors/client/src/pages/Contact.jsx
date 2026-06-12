@@ -6,6 +6,13 @@ export const Contact = () => {
   const navigate = useNavigate();
   useEffect(() => {
     document.title = "Contact | CRF Advisors, Inc.";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute(
+        "content",
+        "Get in touch with CRF Advisors to discuss independent loan review, credit risk analysis, and portfolio advisory services for banks, credit unions, and financial institutions."
+      );
+    }
   }, []);
   const [formData, setFormData] = useState({
     name: '',

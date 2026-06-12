@@ -1,5 +1,5 @@
 import React from 'react'
-import pilotPhoto from '../assets/test.jpg';
+import pilotPhoto from '../assets/test.avif';
 import '../styles/Home.css';
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
@@ -8,6 +8,13 @@ export default function Home() {
   const navigate = useNavigate();
   useEffect(() => {
   document.title = "CRF Advisors, Inc.";
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) {
+    meta.setAttribute(
+      "content",
+      "CRF Advisors provides independent loan review, credit risk analysis, and portfolio advisory services for banks, credit unions, and financial institutions."
+    );
+  }
 
   // Call backend on page load
   fetch('https://crfadvisors.onrender.com/')

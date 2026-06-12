@@ -1,106 +1,114 @@
-footer {
-    width: 100%;
-    margin: auto;
+.footer__top {
+  background-color: var(--navy);
+  padding: var(--sp-8) 0;
 }
 
-.bottomhome {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: clamp(1.5rem, 10vw, 20rem);
-    padding-top: clamp(3rem, 3vw, 5rem);
-    padding-bottom: clamp(4rem, 3vw, 6rem);
-    background-color: #052351;
-    color: white;
-    }
-    .aboutushome {
-        width: 30%;
-        /* border: 1px solid black; */
-    }
-    .contactushome {
-        width: 20%;
-        /* border: 1px solid black; */
-    }
-    .contactus-title, .aboutus-title { 
-        font-size: clamp(1.5rem, 2vw, 2rem);
-        font-weight: normal;
-        position: relative;
-        padding-bottom: 10px;
-        display: inline-block;
-    }
-    .contactus-title::after, .aboutus-title::after { 
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 90px;        /* length of the line */
-        height: 2px;
-        background: #4da3ff;
-    }
-    .aboutushome span {
-        display: block;
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    .contactushome span, .aboutushome p {
-        font-size: clamp(1rem, 1vw, 1.25rem);
-    }
-    .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 12px;
-    }
-    .icon {
-        width: 18px;
-        height: 18px;
-        fill: #9aa4b2;
-        flex-shrink: 0;
-    }
-    .contact-item span,
-    .contact-item a {
-        min-width: 0;
-        overflow-wrap: anywhere;
-        word-break: break-word;
-    }
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--sp-8);
+}
 
-.lastfooter {
-    background-color: #245fb8;
-    color: #e6e6e6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px;
-    margin-top: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    }
-    .crfcopyright {
-        padding: 1rem;
-        font-weight: 500;
-        color: #ebe8e8;
-    }
-    footer ul {
-        display: flex;
-        gap: 1rem;
-        list-style: none; 
-        padding: 0;      
-    }
-    footer a {
-        text-decoration: none;
-        color: inherit;
-    }
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+}
 
-@media (max-width: 800px) {
-    .bottomhome {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-start;
-    }
+.footer__blurb {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  margin-top: var(--sp-2);
+  max-width: 480px;
+}
 
-    .aboutushome,
-    .contactushome {
-        width: 100%;
-    }
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+.footer__nav a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  transition: color var(--ease);
+}
+
+.footer__nav a:hover {
+  color: var(--white);
+}
+
+.footer__heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: var(--sp-2);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.footer__contact-item svg {
+  color: var(--accent-steel);
+  flex-shrink: 0;
+}
+
+.footer__contact-item a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--ease);
+}
+
+.footer__contact-item a:hover {
+  color: var(--white);
+}
+
+.footer__bottom {
+  background-color: var(--navy-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--sp-3) 0;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.footer__legal a {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  transition: color var(--ease);
+}
+
+.footer__legal a:hover {
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-4);
+  }
 }

@@ -1,51 +1,66 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import { MapPin, Phone, Mail } from 'lucide-react'
+import { CONTACT } from '../config'
 import '../styles/Footer.css'
+
+const FOOTER_LINKS = [
+  { to: '/consulting-services', label: 'Consulting Services' },
+  { to: '/clients', label: 'Clients' },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact Us' },
+]
 
 export default function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer>
-      <section className='bottomhome'>
-        <section className='aboutushome'>
-          <h1 className='aboutus-title'>About Us</h1>
-          <span>CRF Advisors, Inc.</span>
-          <p>CRF Advisors delivers independent loan review, credit review, risk rating validation, and portfolio analytics to support regulatory compliance for banks and financial institutions.</p>
-        </section>
+    <footer className="footer">
+      <div className="footer__top">
+        <div className="container footer__grid">
+          <div className="footer__about">
+            <p className="footer__brand">CRF Advisors, Inc.</p>
+            <p className="footer__blurb">
+              Independent loan review, credit review, risk rating validation, and
+              portfolio analytics supporting regulatory compliance for banks and
+              financial institutions.
+            </p>
+            <nav className="footer__nav" aria-label="Footer navigation">
+              {FOOTER_LINKS.map(({ to, label }) => (
+                <Link key={to} to={to}>
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-        <section className='contactushome'>
-          <h2 className='contactus-title'>Contact Us</h2>
-            <div className="contact-item">
-              <svg className="icon" viewBox="0 0 24 24">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM12 11.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
-              </svg>
-              <span>Philadelphia, PA</span>
-            </div>
-            <div className="contact-item">
-              <svg className="icon" viewBox="0 0 24 24">
-                <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.3.57 3.58.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.3 22 2 13.7 2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.28.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z"/>
-              </svg>
-              <span>267.816.4272</span>
-            </div>
-            <div className="contact-item">
-              <svg className="icon" viewBox="0 0 24 24">
-                <path d="M20 4H4a2 2 0 0 0-2 2v.01l10 6.25L22 6.01V6a2 2 0 0 0-2-2zm0 4.24-7.4 4.63a1 1 0 0 1-1.2 0L4 8.24V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.24z"/>
-              </svg>
-              <span>Tedahn@crfadvisors.com</span>
-            </div>
-        </section>
-      </section>
+          <div className="footer__contact">
+            <p className="footer__heading">Contact</p>
+            <p className="footer__contact-item">
+              <MapPin size={16} aria-hidden="true" />
+              <span>{CONTACT.location}</span>
+            </p>
+            <p className="footer__contact-item">
+              <Phone size={16} aria-hidden="true" />
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+            </p>
+            <p className="footer__contact-item">
+              <Mail size={16} aria-hidden="true" />
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <section className='lastfooter'>
-        <span className='crfcopyright'>&copy; {year} CRF Advisors, Inc. All rights reserved.</span>
-        <section>
-          <ul>
-            <li><Link to="/privacy">Privacy Policy</Link></li>
-            <li><Link to="/terms">Terms of Service</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-          </ul>
-        </section>
-      </section>
+      <div className="footer__bottom">
+        <div className="container footer__bottom-inner">
+          <span className="footer__copyright">
+            &copy; {year} CRF Advisors, Inc. All rights reserved.
+          </span>
+          <span className="footer__legal">
+            <Link to="/contact">Privacy Policy</Link>
+            <Link to="/contact">Terms of Service</Link>
+          </span>
+        </div>
+      </div>
     </footer>
   )
 }

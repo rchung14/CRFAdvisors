@@ -25,14 +25,14 @@ button {
   }
   .tedBlurb {
     position: absolute;
-    width: min(60%, 900px);
+    width: min(60%, 800px);
     padding: 1rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
-    font-size: clamp(0.75rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.3vw, 1.5rem);
     line-height: 1.5;
     background-color: rgba(78, 76, 76, 0.5);
     border: 2px solid rgba(206, 206, 206, 0.5);
