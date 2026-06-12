@@ -5,11 +5,40 @@
 }
 
 /* ---------- Team grid ---------- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-3);
+/* President featured on his own centered row, larger than the rest */
+.team-featured {
+  display: flex;
+  justify-content: center;
   margin-top: var(--sp-6);
+}
+
+.team-featured .team-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.team-card--featured .team-card__initials {
+  font-size: 88px;
+}
+
+.team-card--featured .team-card__name {
+  font-size: 22px;
+}
+
+.team-card--featured .team-card__title {
+  font-size: 16px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.team-grid .team-card {
+  width: 282px;
 }
 
 .team-card {
@@ -118,8 +147,9 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .team-grid .team-card {
+    width: calc(50% - var(--sp-3) / 2);
+    min-width: 260px;
   }
 
   .why-grid {
@@ -129,7 +159,11 @@
 }
 
 @media (max-width: 640px) {
-  .team-grid,
+  .team-grid .team-card {
+    width: 100%;
+    min-width: 0;
+  }
+
   .why-grid {
     grid-template-columns: 1fr;
   }

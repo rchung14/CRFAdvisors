@@ -27,10 +27,10 @@ const DIFFERENTIATORS = [
   },
 ]
 
-function TeamCard({ name, title, initials, bio }) {
+function TeamCard({ name, title, initials, bio, featured = false }) {
   const [expanded, setExpanded] = useState(false)
   return (
-    <article className="card team-card">
+    <article className={`card team-card${featured ? ' team-card--featured' : ''}`}>
       <div
         className="img-placeholder team-card__photo"
         role="img"
@@ -111,8 +111,11 @@ export default function About() {
             Experienced credit professionals with deep roots in banking, audit, and
             regulatory compliance.
           </p>
+          <div className="team-featured">
+            <TeamCard {...TEAM[0]} featured />
+          </div>
           <div className="team-grid">
-            {TEAM.map((member) => (
+            {TEAM.slice(1).map((member) => (
               <TeamCard key={member.name} {...member} />
             ))}
           </div>
