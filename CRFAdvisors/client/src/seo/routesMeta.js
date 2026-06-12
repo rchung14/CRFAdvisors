@@ -38,7 +38,7 @@ const SERVICE_SCHEMAS = SERVICES.map(({ id, name, summary }) => ({
 export const ROUTES_META = {
   '/': {
     path: '/',
-    title: 'CRF Advisors — Independent Loan Review & Credit Risk Management',
+    title: 'CRF Advisors | Independent Loan Review & Credit Risk Management',
     description:
       'Independent loan review, credit review, and portfolio stress testing for banks, credit unions, and financial institutions in the Tri-State area.',
     schemas: [ORG_SCHEMA, WEBSITE_SCHEMA],
@@ -56,20 +56,20 @@ export const ROUTES_META = {
   },
   '/clients': {
     path: '/clients',
-    title: 'Our Clients | CRF Advisors — Loan Review for Banks & Credit Unions',
+    title: 'Our Clients | Loan Review for Banks & Credit Unions | CRF Advisors',
     description: `CRF Advisors has provided independent loan review and credit review to ${CLIENT_COUNT}+ banks, credit unions, and financial institutions. References available upon request.`,
     schemas: [ORG_SCHEMA, breadcrumbSchema('Clients', '/clients')],
   },
   '/about': {
     path: '/about',
-    title: 'About CRF Advisors — Credit Review & Loan Portfolio Experts',
+    title: 'About CRF Advisors | Credit Review & Loan Portfolio Experts',
     description:
       'Meet the CRF Advisors team. XX+ years of independent loan review, credit review, CECL, and loan portfolio risk expertise serving financial institutions.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('About Us', '/about'), ...PERSON_SCHEMAS],
   },
   '/contact': {
     path: '/contact',
-    title: 'Contact CRF Advisors — Loan Review & Credit Risk Consultants',
+    title: 'Contact CRF Advisors | Loan Review & Credit Risk Consultants',
     description:
       'Contact CRF Advisors to discuss independent loan review, credit review, CECL implementation, or portfolio stress testing for your financial institution.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('Contact Us', '/contact')],
