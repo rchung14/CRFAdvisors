@@ -43,7 +43,9 @@ export default function Seo({ title, description, path = '/', schemas = [] }) {
     setMeta('property', 'og:url', url)
     setMeta('property', 'og:site_name', 'CRF Advisors, Inc.')
     setMeta('property', 'og:locale', 'en_US')
+    setMeta('property', 'og:image', `${SITE_URL}/logo1.png`)
     setMeta('name', 'twitter:card', 'summary')
+    setMeta('name', 'robots', 'index, follow, max-image-preview:large')
     setCanonical(url)
 
     document.head

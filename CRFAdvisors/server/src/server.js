@@ -12,10 +12,13 @@ app.disable('x-powered-by');
 // Security headers on every response
 app.use((req, res, next) => {
   res.set({
+    'Strict-Transport-Security': 'max-age=63072000; includeSubDomains',
     'X-Frame-Options': 'DENY',
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+    'Cross-Origin-Opener-Policy': 'same-origin',
+    'Cross-Origin-Resource-Policy': 'same-origin',
     'Content-Security-Policy':
       "default-src 'none'; frame-ancestors 'none'; base-uri 'self'",
   });

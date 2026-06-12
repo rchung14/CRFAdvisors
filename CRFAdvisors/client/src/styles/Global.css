@@ -3,6 +3,24 @@
    Tokens + resets + shared components (see .stitch/designs/DESIGN.md)
    ============================================================ */
 
+/* Self-hosted variable fonts (downloaded from Google Fonts, latin subset).
+   No third-party connection; preloaded in index.html. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('/fonts/playfair-var.woff2') format('woff2');
+}
+
 :root {
   /* Color */
   --navy: #1A4480;

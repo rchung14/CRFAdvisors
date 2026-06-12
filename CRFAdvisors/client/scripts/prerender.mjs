@@ -25,7 +25,9 @@ function headTags({ path: routePath, title, description, schemas }) {
     `<meta property="og:url" content="${url}" />`,
     `<meta property="og:site_name" content="CRF Advisors, Inc." />`,
     `<meta property="og:locale" content="en_US" />`,
+    `<meta property="og:image" content="${SITE_URL}/logo1.png" />`,
     `<meta name="twitter:card" content="summary" />`,
+    `<meta name="robots" content="index, follow, max-image-preview:large" />`,
     // data-seo-jsonld lets the runtime Seo component replace these on
     // client-side navigation without duplicating schemas.
     ...schemas.map(
