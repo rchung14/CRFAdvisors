@@ -5,6 +5,7 @@ import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import { API_URL, CONTACT } from '../config'
+import heroImg from '../assets/page-contact.webp'
 import '../styles/Contact.css'
 
 const SERVICE_OPTIONS = [
@@ -97,6 +98,8 @@ export default function Contact() {
         title="Get in Touch"
         breadcrumb="Contact Us"
         subtext="Looking to see if a CRF Advisors service is a good fit? Fill out the form and we'll follow up promptly."
+        image={heroImg}
+        imageAlt="Business professionals in discussion, representing a consultation with CRF Advisors"
       />
 
       <section className="section">

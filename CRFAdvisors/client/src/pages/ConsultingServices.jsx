@@ -18,7 +18,7 @@ export default function ConsultingServices() {
         breadcrumb="Consulting Services"
         subtext="Independent, objective credit risk management consulting for banks, credit unions, and financial institutions."
         image={hubBanner}
-        imageAlt="Financial district office towers, representing CRF Advisors' credit risk and loan review consulting services"
+        imageAlt="Professionals in a boardroom presentation, representing CRF Advisors' credit risk and loan review consulting services"
       />
 
       {/* Service overview sections — each links to a dedicated deep-dive page */}

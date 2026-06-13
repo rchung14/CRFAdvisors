@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
+import heroImg from '../assets/page-clients.webp'
 import '../styles/Clients.css'
 
 export default function Clients() {
@@ -16,6 +17,8 @@ export default function Clients() {
         title="Financial Institutions We've Served"
         breadcrumb="Clients"
         subtext="XX+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
+        image={heroImg}
+        imageAlt="Advisory meeting between a CRF Advisors consultant and a client institution"
       />
 
       <section className="section">

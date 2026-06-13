@@ -7,6 +7,7 @@ import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { TEAM } from '../data/team'
+import heroImg from '../assets/page-about.webp'
 import '../styles/About.css'
 
 const DIFFERENTIATORS = [
@@ -71,7 +72,12 @@ export default function About() {
     <main className="page">
       <Seo {...ROUTES_META['/about']} />
 
-      <PageHero title="About CRF Advisors, Inc." breadcrumb="About Us" />
+      <PageHero
+        title="About CRF Advisors, Inc."
+        breadcrumb="About Us"
+        image={heroImg}
+        imageAlt="CRF Advisors team meeting in a boardroom"
+      />
 
       {/* Firm overview */}
       <section className="section">
