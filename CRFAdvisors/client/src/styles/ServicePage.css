@@ -1,0 +1,158 @@
+/* ---------- Intro ---------- */
+.service-page__intro-grid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--sp-4);
+}
+
+.service-page__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: var(--navy);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-page__lead {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gray-mid);
+  margin-top: var(--sp-2);
+}
+
+/* ---------- Content sections ---------- */
+.service-page__para {
+  color: var(--gray-mid);
+  margin-top: var(--sp-3);
+}
+
+.service-page__list {
+  margin-top: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.service-page__item {
+  display: flex;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--gray-mid);
+}
+
+/* unordered: blue square marker */
+.service-page__list:not(.service-page__list--ordered) .service-page__item {
+  padding-left: 22px;
+  position: relative;
+}
+
+.service-page__list:not(.service-page__list--ordered) .service-page__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--blue-mid);
+}
+
+.service-page__item strong {
+  color: var(--ink);
+}
+
+/* ordered: numbered circles */
+.service-page__num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--navy);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-page__list--ordered .service-page__item {
+  align-items: flex-start;
+}
+
+.service-page__list--ordered .service-page__item span:last-child {
+  padding-top: 3px;
+}
+
+/* ---------- FAQ ---------- */
+.service-page__faq {
+  margin-top: var(--sp-4);
+}
+
+.service-page__faq-item {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.service-page__faq-item:first-child {
+  border-top: 1px solid var(--gray-light);
+}
+
+.service-page__faq dt {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.service-page__faq dd {
+  margin-top: var(--sp-1);
+  color: var(--gray-mid);
+}
+
+/* ---------- Approach / Why CRF lists ---------- */
+.service-page__approach {
+  margin-top: var(--sp-4);
+  max-width: var(--text-block);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.service-page__approach li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--gray-mid);
+}
+
+.service-page__approach li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--blue-mid);
+}
+
+.service-page__approach strong {
+  color: var(--ink);
+}
+
+.service-page__related {
+  margin-top: var(--sp-6);
+  max-width: var(--text-block);
+  color: var(--gray-mid);
+  font-size: 15px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .service-page__intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}

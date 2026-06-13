@@ -25,9 +25,9 @@ export default function Clients() {
           <p className="section-sub">
             Banks, savings institutions, credit unions, and financial services
             companies that rely on CRF Advisors for{' '}
-            <Link to="/consulting-services#loan-review">independent loan review</Link>,{' '}
-            <Link to="/consulting-services#due-diligence">credit review and due diligence</Link>,
-            and <Link to="/consulting-services#stress-testing">loan portfolio review and stress testing</Link>.
+            <Link to="/services/loan-review">independent loan review</Link>,{' '}
+            <Link to="/services/due-diligence">credit review and due diligence</Link>,
+            and <Link to="/services/portfolio-stress-testing">loan portfolio review and stress testing</Link>.
           </p>
 
           {CLIENT_GROUPS.map(({ label, abbr, blurb, clients }) => (

@@ -23,6 +23,20 @@
   margin-top: var(--sp-3);
 }
 
+.service-detail__h2-link {
+  color: inherit;
+  transition: color var(--ease);
+}
+
+.service-detail__h2-link:hover {
+  color: var(--blue-mid);
+}
+
+.service-detail__more {
+  display: inline-block;
+  margin-top: var(--sp-3);
+}
+
 .service-detail__bullets {
   margin-top: var(--sp-3);
   display: grid;

@@ -5,6 +5,7 @@ import { FileSearch, Search, Activity, Calculator, Layers } from 'lucide-react'
 export const SERVICES = [
   {
     id: 'loan-review',
+    slug: 'loan-review',
     name: 'Loan Review',
     icon: FileSearch,
     summary:
@@ -23,6 +24,7 @@ export const SERVICES = [
   },
   {
     id: 'due-diligence',
+    slug: 'due-diligence',
     name: 'Due Diligence',
     icon: Search,
     summary:
@@ -41,6 +43,7 @@ export const SERVICES = [
   },
   {
     id: 'stress-testing',
+    slug: 'portfolio-stress-testing',
     name: 'Portfolio Stress Testing',
     icon: Activity,
     summary:
@@ -59,6 +62,7 @@ export const SERVICES = [
   },
   {
     id: 'alll',
+    slug: 'alll-methodology',
     name: 'ALLL Methodology & Review',
     icon: Calculator,
     summary:
@@ -77,6 +81,7 @@ export const SERVICES = [
   },
   {
     id: 'cecl',
+    slug: 'cecl-implementation',
     name: 'CECL Model & Implementation',
     icon: Layers,
     summary:

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
@@ -17,8 +18,8 @@ export default function ConsultingServices() {
         subtext="Independent, objective credit risk management consulting for banks, credit unions, and financial institutions."
       />
 
-      {/* Service detail sections — alternating backgrounds, anchor ids */}
-      {SERVICES.map(({ id, name, icon, h2, paragraphs, bullets }, i) => {
+      {/* Service overview sections — each links to a dedicated deep-dive page */}
+      {SERVICES.map(({ id, slug, name, icon, h2, paragraphs, bullets }, i) => {
         const Icon = icon
         return (
         <section
@@ -34,7 +35,11 @@ export default function ConsultingServices() {
             </div>
             <div className="service-detail__content">
               <SectionEyebrow>{name}</SectionEyebrow>
-              <h2>{h2}</h2>
+              <h2>
+                <Link to={`/services/${slug}`} className="service-detail__h2-link">
+                  {h2}
+                </Link>
+              </h2>
               {paragraphs.map((text) => (
                 <p key={text.slice(0, 32)} className="service-detail__para">
                   {text}
@@ -45,6 +50,9 @@ export default function ConsultingServices() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+              <Link to={`/services/${slug}`} className="text-link service-detail__more">
+                Read the full {name} guide &rarr;
+              </Link>
             </div>
           </div>
         </section>
