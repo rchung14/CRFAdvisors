@@ -46,6 +46,8 @@ export default function ServicePage() {
         title={page.h1}
         breadcrumb={page.breadcrumb}
         parent={{ label: 'Consulting Services', to: '/consulting-services' }}
+        image={page.banner}
+        imageAlt={page.bannerAlt}
       />
 
       {/* Intro / definition */}

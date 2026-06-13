@@ -1,14 +1,20 @@
 import { Link } from 'react-router-dom'
 
 /**
- * Interior-page hero: blue gradient, breadcrumb, white Playfair H1.
- * Pass `parent={{ label, to }}` to add an intermediate breadcrumb crumb
- * (e.g. Home / Consulting Services / This Page).
+ * Interior-page hero: blue gradient by default, or a dark photo with a navy
+ * overlay when `image` is provided. Breadcrumb + white Playfair H1.
+ * Pass `parent={{ label, to }}` for an intermediate breadcrumb crumb.
  */
-export default function PageHero({ title, breadcrumb, subtext, parent }) {
+export default function PageHero({ title, breadcrumb, subtext, parent, image, imageAlt }) {
   return (
-    <section className="page-hero">
-      <div className="container">
+    <section className={`page-hero${image ? ' page-hero--photo' : ''}`}>
+      {image && (
+        <>
+          <img className="page-hero__photo" src={image} alt={imageAlt || ''} aria-hidden={!imageAlt} />
+          <div className="page-hero__overlay" aria-hidden="true" />
+        </>
+      )}
+      <div className="container page-hero__content">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span className="breadcrumb__sep">/</span>

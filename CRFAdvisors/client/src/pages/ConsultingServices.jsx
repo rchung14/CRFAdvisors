@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { SERVICES, APPROACH, PROCESS_STEPS } from '../data/services'
+import hubBanner from '../assets/svc-hub.webp'
 import '../styles/Services.css'
 
 export default function ConsultingServices() {
@@ -16,6 +17,8 @@ export default function ConsultingServices() {
         title="Credit Risk & Loan Review Consulting Services"
         breadcrumb="Consulting Services"
         subtext="Independent, objective credit risk management consulting for banks, credit unions, and financial institutions."
+        image={hubBanner}
+        imageAlt="Financial district office towers, representing CRF Advisors' credit risk and loan review consulting services"
       />
 
       {/* Service overview sections — each links to a dedicated deep-dive page */}

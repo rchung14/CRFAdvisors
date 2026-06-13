@@ -265,6 +265,32 @@ h4 {
   width: 100%;
 }
 
+/* Photo hero variant: dark image + navy overlay (keeps the brand feel). */
+.page-hero--photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+}
+
+.page-hero__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(17, 48, 94, 0.82);
+}
+
+.page-hero--photo .page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
 .page-hero h1 {
   color: var(--white);
   margin-top: var(--sp-1);

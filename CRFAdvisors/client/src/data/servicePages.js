@@ -1,4 +1,9 @@
 import { FileSearch, Search, Activity, Calculator, Layers } from 'lucide-react'
+import bannerLoanReview from '../assets/svc-loan-review.webp'
+import bannerDueDiligence from '../assets/svc-due-diligence.webp'
+import bannerStressTesting from '../assets/svc-stress-testing.webp'
+import bannerAlll from '../assets/svc-alll.webp'
+import bannerCecl from '../assets/svc-cecl.webp'
 
 // Long-form content for the five standalone service pages (/services/:slug).
 // Rendered by ServicePage.jsx; metadata + JSON-LD derived in routesMeta.js.
@@ -16,6 +21,8 @@ export const SERVICE_PAGES = [
     slug: 'loan-review',
     id: 'loan-review',
     icon: FileSearch,
+    banner: bannerLoanReview,
+    bannerAlt: 'Financial district skyscrapers, representing the banks and financial institutions CRF Advisors serves with independent loan review',
     eyebrow: 'Loan Review',
     breadcrumb: 'Independent Loan Review',
     h1: 'Independent Loan Review for Banks and Financial Institutions',
@@ -104,6 +111,8 @@ export const SERVICE_PAGES = [
     slug: 'due-diligence',
     id: 'due-diligence',
     icon: Search,
+    banner: bannerDueDiligence,
+    bannerAlt: 'City financial skyline at dusk, representing bank mergers, acquisitions, and portfolio transactions',
     eyebrow: 'Due Diligence',
     breadcrumb: 'Credit Due Diligence',
     h1: 'Credit Due Diligence for Mergers, Acquisitions, and Portfolio Transactions',
@@ -193,6 +202,8 @@ export const SERVICE_PAGES = [
     slug: 'portfolio-stress-testing',
     id: 'stress-testing',
     icon: Activity,
+    banner: bannerStressTesting,
+    bannerAlt: 'Financial data and analytics dashboard, representing scenario-based loan portfolio stress testing',
     eyebrow: 'Portfolio Stress Testing',
     breadcrumb: 'Portfolio Stress Testing',
     h1: 'Loan Portfolio Stress Testing for Regulatory Compliance and Capital Planning',
@@ -280,6 +291,8 @@ export const SERVICE_PAGES = [
     slug: 'alll-methodology',
     id: 'alll',
     icon: Calculator,
+    banner: bannerAlll,
+    bannerAlt: 'Modern glass office building, representing financial institutions and ALLL/ACL methodology compliance',
     eyebrow: 'ALLL Methodology & Review',
     breadcrumb: 'ALLL Methodology',
     h1: 'ALLL/ACL Methodology Review and FFIEC Compliance Support',
@@ -366,6 +379,8 @@ export const SERVICE_PAGES = [
     slug: 'cecl-implementation',
     id: 'cecl',
     icon: Layers,
+    banner: bannerCecl,
+    bannerAlt: 'City financial skyline at dusk, representing community banks and credit unions implementing CECL',
     eyebrow: 'CECL Model & Implementation',
     breadcrumb: 'CECL Implementation',
     h1: 'CECL Model Development and Implementation for Financial Institutions',
