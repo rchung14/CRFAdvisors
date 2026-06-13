@@ -39,7 +39,7 @@ export default function ServicePage() {
   const { icon: Icon } = page
 
   return (
-    <main className="page">
+    <main className="page service-detail-page">
       <Seo {...ROUTES_META[`/services/${slug}`]} />
 
       <PageHero
@@ -74,7 +74,7 @@ export default function ServicePage() {
           className={`section${i % 2 === 0 ? ' section--off-white' : ''}`}
         >
           <div className="container">
-            <div className="text-block">
+            <div className="service-page__head text-block">
               <h2>{section.heading}</h2>
               {section.paragraphs?.map((text) => (
                 <p key={text.slice(0, 32)} className="service-page__para">
@@ -84,10 +84,10 @@ export default function ServicePage() {
               {section.itemsLead && (
                 <p className="service-page__para">{section.itemsLead}</p>
               )}
-              {section.items && (
-                <SectionList items={section.items} ordered={section.ordered} />
-              )}
             </div>
+            {section.items && (
+              <SectionList items={section.items} ordered={section.ordered} />
+            )}
           </div>
         </section>
       ))}
@@ -97,7 +97,7 @@ export default function ServicePage() {
         <div className="container">
           <SectionEyebrow>Frequently Asked Questions</SectionEyebrow>
           <h2>{page.eyebrow} FAQ</h2>
-          <dl className="service-page__faq text-block">
+          <dl className="service-page__faq">
             {page.faqs.map(({ q, a }) => (
               <div key={q} className="service-page__faq-item">
                 <dt>{q}</dt>
