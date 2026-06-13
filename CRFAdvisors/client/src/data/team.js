@@ -15,7 +15,7 @@ export const TEAM = [
   },
   {
     name: 'Joshua Cash',
-    title: 'Manager',
+    title: 'Senior Credit Manager',
     initials: 'JC',
     photo: joshPhoto,
     bio: "Joshua is a senior credit professional with 10+ years in banking. He holds a Bachelor's degree in Economics from Penn State University. Previously at Wells Fargo as a relationship manager and assistant branch manager, Joshua has been with CRF Advisors for 7+ years managing portfolio risk activities, credit underwriting review, risk rating, and structured loan portfolio reviews.",
