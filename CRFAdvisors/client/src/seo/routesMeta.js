@@ -29,8 +29,8 @@ const PERSON_SCHEMAS = TEAM.map(({ name, title }) => ({
 const SERVICE_SCHEMAS = SERVICES.map(({ name, summary, slug }) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': `${SITE_URL}/services/${slug}`,
-  url: `${SITE_URL}/services/${slug}`,
+  '@id': `${SITE_URL}/consulting-services/${slug}`,
+  url: `${SITE_URL}/consulting-services/${slug}`,
   name,
   description: summary,
   serviceType: name,
@@ -42,9 +42,9 @@ const SERVICE_SCHEMAS = SERVICES.map(({ name, summary, slug }) => ({
 // Service + FAQPage + 3-level BreadcrumbList structured data.
 const SERVICE_PAGE_META = Object.fromEntries(
   SERVICE_PAGES.map((p) => [
-    `/services/${p.slug}`,
+    `/consulting-services/${p.slug}`,
     {
-      path: `/services/${p.slug}`,
+      path: `/consulting-services/${p.slug}`,
       title: p.metaTitle,
       description: p.metaDescription,
       schemas: [
@@ -52,13 +52,13 @@ const SERVICE_PAGE_META = Object.fromEntries(
         breadcrumbTrail([
           { name: 'Home', path: '/' },
           { name: 'Consulting Services', path: '/consulting-services' },
-          { name: p.breadcrumb, path: `/services/${p.slug}` },
+          { name: p.breadcrumb, path: `/consulting-services/${p.slug}` },
         ]),
         {
           '@context': 'https://schema.org',
           '@type': 'Service',
-          '@id': `${SITE_URL}/services/${p.slug}`,
-          url: `${SITE_URL}/services/${p.slug}`,
+          '@id': `${SITE_URL}/consulting-services/${p.slug}`,
+          url: `${SITE_URL}/consulting-services/${p.slug}`,
           name: p.h1,
           description: p.metaDescription,
           serviceType: p.eyebrow,

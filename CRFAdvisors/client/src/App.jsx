@@ -24,7 +24,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/consulting-services" element={<ConsultingServices />} />
           <Route path="/consulting" element={<Navigate to="/consulting-services" replace />} />
-          <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/consulting-services/:slug" element={<ServicePage />} />
+          {/* Redirects from the earlier flat /services/* URLs to the nested ones */}
+          <Route path="/services/loan-review" element={<Navigate to="/consulting-services/loan-review" replace />} />
+          <Route path="/services/due-diligence" element={<Navigate to="/consulting-services/due-diligence" replace />} />
+          <Route path="/services/portfolio-stress-testing" element={<Navigate to="/consulting-services/stress-testing" replace />} />
+          <Route path="/services/alll-methodology" element={<Navigate to="/consulting-services/alll" replace />} />
+          <Route path="/services/cecl-implementation" element={<Navigate to="/consulting-services/cecl" replace />} />
           <Route path="/clients" element={<Clients />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

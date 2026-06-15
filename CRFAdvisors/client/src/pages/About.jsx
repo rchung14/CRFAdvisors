@@ -90,9 +90,9 @@ export default function About() {
               Philadelphia, serving financial institutions, non-profit
               organizations, and financial services companies. We focus on assisting clients with the identification of
               potential credit issues through{' '}
-              <Link to="/services/loan-review">independent loan review</Link>,
+              <Link to="/consulting-services/loan-review">independent loan review</Link>,
               loan portfolio credit review, and{' '}
-              <Link to="/services/portfolio-stress-testing">portfolio stress testing</Link>.
+              <Link to="/consulting-services/stress-testing">portfolio stress testing</Link>.
             </p>
             <p>
               Specialties include implementation of ALLL methodology to ensure

@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://crf-advisors.vercel.app/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/consulting-services</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/services/loan-review</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://crf-advisors.vercel.app/consulting-services/loan-review</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/services/due-diligence</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://crf-advisors.vercel.app/consulting-services/due-diligence</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/services/portfolio-stress-testing</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://crf-advisors.vercel.app/consulting-services/stress-testing</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/services/alll-methodology</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://crf-advisors.vercel.app/consulting-services/alll</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/services/cecl-implementation</loc>
-    <lastmod>2026-06-12</lastmod>
+    <loc>https://crf-advisors.vercel.app/consulting-services/cecl</loc>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/clients</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/about</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/contact</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/privacy</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://crf-advisors.vercel.app/terms</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

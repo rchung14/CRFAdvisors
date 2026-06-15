@@ -70,7 +70,7 @@ export default function Home() {
                 </span>
                 <h3>{name}</h3>
                 <p>{summary}</p>
-                <Link className="text-link" to={`/services/${slug}`}>
+                <Link className="text-link" to={`/consulting-services/${slug}`}>
                   Learn more &rarr;
                 </Link>
               </article>
@@ -79,9 +79,9 @@ export default function Home() {
           </div>
           <p className="services-note">
             Every engagement is independent and objective, whether you need a
-            full <Link to="/services/loan-review">independent loan review</Link>,
-            a targeted <Link to="/services/due-diligence">credit review for an acquisition</Link>,
-            or an annual <Link to="/services/portfolio-stress-testing">loan portfolio review and stress test</Link>.
+            full <Link to="/consulting-services/loan-review">independent loan review</Link>,
+            a targeted <Link to="/consulting-services/due-diligence">credit review for an acquisition</Link>,
+            or an annual <Link to="/consulting-services/stress-testing">loan portfolio review and stress test</Link>.
           </p>
         </div>
       </section>

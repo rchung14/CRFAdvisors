@@ -5,7 +5,8 @@ import bannerStressTesting from '../assets/svc-stress-testing.webp'
 import bannerAlll from '../assets/svc-alll.webp'
 import bannerCecl from '../assets/svc-cecl.webp'
 
-// Long-form content for the five standalone service pages (/services/:slug).
+// Long-form content for the five standalone service pages
+// (/consulting-services/:slug).
 // Rendered by ServicePage.jsx; metadata + JSON-LD derived in routesMeta.js.
 //
 // Section item shapes:
@@ -96,13 +97,13 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'Loan review findings often inform ',
-      { to: '/services/alll-methodology', label: 'ALLL methodology and ACL calculation' },
+      { to: '/consulting-services/alll', label: 'ALLL methodology and ACL calculation' },
       ', ',
-      { to: '/services/cecl-implementation', label: 'CECL model assumptions' },
+      { to: '/consulting-services/cecl', label: 'CECL model assumptions' },
       ', and ',
-      { to: '/services/portfolio-stress-testing', label: 'loan portfolio stress testing' },
+      { to: '/consulting-services/stress-testing', label: 'loan portfolio stress testing' },
       '. Acquisition contexts call for our ',
-      { to: '/services/due-diligence', label: 'credit due diligence services' },
+      { to: '/consulting-services/due-diligence', label: 'credit due diligence services' },
       '.',
     ],
   },
@@ -116,7 +117,7 @@ export const SERVICE_PAGES = [
     eyebrow: 'Due Diligence',
     breadcrumb: 'Credit Due Diligence',
     h1: 'Credit Due Diligence for Mergers, Acquisitions, and Portfolio Transactions',
-    metaTitle: 'Credit Due Diligence for Bank M&A and Portfolio Acquisitions | CRF Advisors',
+    metaTitle: 'Credit Due Diligence for Bank M&A & Acquisitions | CRF Advisors',
     metaDescription:
       'Independent credit due diligence for whole-bank acquisitions, branch acquisitions, and loan portfolio purchases. Risk identification, day-one credit marks, reserve adequacy.',
     intro: [
@@ -189,17 +190,17 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'Diligence findings often inform post-closing ',
-      { to: '/services/loan-review', label: 'loan review' },
+      { to: '/consulting-services/loan-review', label: 'loan review' },
       ', ',
-      { to: '/services/alll-methodology', label: 'ALLL/ACL methodology integration' },
+      { to: '/consulting-services/alll', label: 'ALLL/ACL methodology integration' },
       ', and ',
-      { to: '/services/cecl-implementation', label: 'CECL day-one and ongoing modeling' },
+      { to: '/consulting-services/cecl', label: 'CECL day-one and ongoing modeling' },
       '.',
     ],
   },
 
   {
-    slug: 'portfolio-stress-testing',
+    slug: 'stress-testing',
     id: 'stress-testing',
     icon: Activity,
     banner: bannerStressTesting,
@@ -207,7 +208,7 @@ export const SERVICE_PAGES = [
     eyebrow: 'Portfolio Stress Testing',
     breadcrumb: 'Portfolio Stress Testing',
     h1: 'Loan Portfolio Stress Testing for Regulatory Compliance and Capital Planning',
-    metaTitle: 'Loan Portfolio Stress Testing for Community Banks | CRF Advisors',
+    metaTitle: 'Loan Portfolio Stress Testing for Financial Institutions | CRF Advisors',
     metaDescription:
       'Scenario-based stress testing of commercial, CRE, and consumer loan portfolios. Capital impact modeling, regulatory readiness, board reporting for community banks and credit unions.',
     intro: [
@@ -278,17 +279,17 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'Stress testing findings often inform ',
-      { to: '/services/cecl-implementation', label: 'CECL modeling' },
+      { to: '/consulting-services/cecl', label: 'CECL modeling' },
       ' and ',
-      { to: '/services/alll-methodology', label: 'ALLL/ACL methodology' },
+      { to: '/consulting-services/alll', label: 'ALLL/ACL methodology' },
       '. Acquisition contexts call for our ',
-      { to: '/services/due-diligence', label: 'credit due diligence services' },
+      { to: '/consulting-services/due-diligence', label: 'credit due diligence services' },
       '.',
     ],
   },
 
   {
-    slug: 'alll-methodology',
+    slug: 'alll',
     id: 'alll',
     icon: Calculator,
     banner: bannerAlll,
@@ -296,7 +297,7 @@ export const SERVICE_PAGES = [
     eyebrow: 'ALLL Methodology & Review',
     breadcrumb: 'ALLL Methodology',
     h1: 'ALLL/ACL Methodology Review and FFIEC Compliance Support',
-    metaTitle: 'ALLL Methodology Review and FFIEC Compliance | CRF Advisors',
+    metaTitle: 'ALLL Methodology Review & FFIEC Compliance | CRF Advisors',
     metaDescription:
       'Independent review and implementation support for ALLL/ACL methodology. FFIEC Interagency Policy compliance, impaired loan valuation, TDR and OREO accounting.',
     intro: [
@@ -364,19 +365,19 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'ALLL/ACL methodology integrates closely with ',
-      { to: '/services/cecl-implementation', label: 'CECL model implementation' },
+      { to: '/consulting-services/cecl', label: 'CECL model implementation' },
       ', ',
-      { to: '/services/loan-review', label: 'independent loan review' },
+      { to: '/consulting-services/loan-review', label: 'independent loan review' },
       ', and ',
-      { to: '/services/portfolio-stress-testing', label: 'portfolio stress testing' },
+      { to: '/consulting-services/stress-testing', label: 'portfolio stress testing' },
       '. Pre-closing M&A engagements involve coordinated ',
-      { to: '/services/due-diligence', label: 'credit due diligence' },
+      { to: '/consulting-services/due-diligence', label: 'credit due diligence' },
       '.',
     ],
   },
 
   {
-    slug: 'cecl-implementation',
+    slug: 'cecl',
     id: 'cecl',
     icon: Layers,
     banner: bannerCecl,
@@ -384,7 +385,7 @@ export const SERVICE_PAGES = [
     eyebrow: 'CECL Model & Implementation',
     breadcrumb: 'CECL Implementation',
     h1: 'CECL Model Development and Implementation for Financial Institutions',
-    metaTitle: 'CECL Model Implementation for Community Banks and Credit Unions | CRF Advisors',
+    metaTitle: 'CECL Model Implementation & Consulting | CRF Advisors',
     metaDescription:
       'End-to-end CECL model development, validation, and implementation. WARM, DCF, vintage analysis, and loss rate methodologies for community banks and credit unions.',
     intro: [
@@ -461,13 +462,13 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'CECL methodology integrates closely with ',
-      { to: '/services/alll-methodology', label: 'ALLL/ACL framework' },
+      { to: '/consulting-services/alll', label: 'ALLL/ACL framework' },
       ', ',
-      { to: '/services/portfolio-stress-testing', label: 'portfolio stress testing' },
+      { to: '/consulting-services/stress-testing', label: 'portfolio stress testing' },
       ', and ',
-      { to: '/services/loan-review', label: 'loan review findings' },
+      { to: '/consulting-services/loan-review', label: 'loan review findings' },
       '. Acquirers face day-one CECL calculations supported by ',
-      { to: '/services/due-diligence', label: 'credit due diligence' },
+      { to: '/consulting-services/due-diligence', label: 'credit due diligence' },
       '.',
     ],
   },

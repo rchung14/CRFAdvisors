@@ -40,7 +40,7 @@ export default function ServicePage() {
 
   return (
     <main className="page service-detail-page">
-      <Seo {...ROUTES_META[`/services/${slug}`]} />
+      <Seo {...ROUTES_META[`/consulting-services/${slug}`]} />
 
       <PageHero
         title={page.h1}

@@ -43,7 +43,7 @@ export const SERVICES = [
   },
   {
     id: 'stress-testing',
-    slug: 'portfolio-stress-testing',
+    slug: 'stress-testing',
     name: 'Portfolio Stress Testing',
     icon: Activity,
     summary:
@@ -62,7 +62,7 @@ export const SERVICES = [
   },
   {
     id: 'alll',
-    slug: 'alll-methodology',
+    slug: 'alll',
     name: 'ALLL Methodology & Review',
     icon: Calculator,
     summary:
@@ -81,7 +81,7 @@ export const SERVICES = [
   },
   {
     id: 'cecl',
-    slug: 'cecl-implementation',
+    slug: 'cecl',
     name: 'CECL Model & Implementation',
     icon: Layers,
     summary:

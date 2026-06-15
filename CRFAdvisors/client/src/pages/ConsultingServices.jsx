@@ -21,46 +21,34 @@ export default function ConsultingServices() {
         imageAlt="Professionals in a boardroom presentation, representing CRF Advisors' credit risk and loan review consulting services"
       />
 
-      {/* Service overview sections — each links to a dedicated deep-dive page */}
-      {SERVICES.map(({ id, slug, name, icon, h2, paragraphs, bullets }, i) => {
-        const Icon = icon
-        return (
-        <section
-          key={id}
-          id={id}
-          className={`section service-detail${i % 2 ? ' section--off-white' : ''}`}
-        >
-          <div className="container service-detail__grid">
-            <div className="service-detail__icon-col">
-              <span className="service-card__icon service-detail__icon" aria-hidden="true">
-                <Icon size={28} strokeWidth={1.5} />
-              </span>
-            </div>
-            <div className="service-detail__content">
-              <SectionEyebrow>{name}</SectionEyebrow>
-              <h2>
-                <Link to={`/services/${slug}`} className="service-detail__h2-link">
-                  {h2}
-                </Link>
-              </h2>
-              {paragraphs.map((text) => (
-                <p key={text.slice(0, 32)} className="service-detail__para">
-                  {text}
-                </p>
-              ))}
-              <ul className="service-detail__bullets">
-                {bullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <Link to={`/services/${slug}`} className="text-link service-detail__more">
-                Read the full {name} guide &rarr;
-              </Link>
-            </div>
+      {/* Service overview cards — each links to a dedicated deep-dive page */}
+      <section className="section">
+        <div className="container">
+          <SectionEyebrow>Our Services</SectionEyebrow>
+          <h2>Five Core Credit Risk Services</h2>
+          <p className="section-sub">
+            Each engagement is independent and scoped to your institution. Explore
+            any service for methodology, scope, and answers to common questions.
+          </p>
+          <div className="services-grid">
+            {SERVICES.map(({ id, slug, name, icon, summary }) => {
+              const Icon = icon
+              return (
+                <article key={id} className="card service-card">
+                  <span className="service-card__icon" aria-hidden="true">
+                    <Icon size={24} strokeWidth={1.5} />
+                  </span>
+                  <h3>{name}</h3>
+                  <p>{summary}</p>
+                  <Link className="text-link" to={`/consulting-services/${slug}`}>
+                    Learn more &rarr;
+                  </Link>
+                </article>
+              )
+            })}
           </div>
-        </section>
-        )
-      })}
+        </div>
+      </section>
 
       {/* Approach + Process, two columns */}
       <section className="section approach-process">
