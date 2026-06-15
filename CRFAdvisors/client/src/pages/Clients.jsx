@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
+import { ENGAGEMENTS } from '../data/engagements'
 import heroImg from '../assets/page-clients.webp'
 import '../styles/Clients.css'
 
@@ -52,6 +53,37 @@ export default function Clients() {
           ))}
 
           <p className="clients-references">References available upon request.</p>
+        </div>
+      </section>
+
+      {/*
+        PLACEHOLDER SECTION: CRF to replace with real anonymized engagement
+        summaries. No real client names — keep anonymized (size + state + service).
+        Content is driven by src/data/engagements.js — edit that one file.
+        TODO: add Review/CaseStudy JSON-LD in routesMeta.js once real content exists.
+      */}
+      <section className="section section--off-white">
+        <div className="container">
+          <SectionEyebrow>Representative Engagements</SectionEyebrow>
+          <h2>Anonymized Engagement Summaries</h2>
+          <p className="section-sub">
+            Placeholder examples of the credit risk engagements CRF Advisors
+            performs. Each is kept anonymized by institution size, state, and
+            service.
+          </p>
+          <p className="engagement-placeholder-note" role="note">
+            ⚠ Placeholder content — to be replaced by CRF with real anonymized
+            engagement summaries.
+          </p>
+          <ul className="engagement-grid">
+            {ENGAGEMENTS.map(({ tag, headline, summary }) => (
+              <li key={headline} className="card engagement-card">
+                <span className="engagement-card__tag">{tag}</span>
+                <h3 className="engagement-card__headline">{headline}</h3>
+                <p className="engagement-card__summary">{summary}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
