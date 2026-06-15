@@ -109,6 +109,22 @@ export default function Contact() {
             <SectionEyebrow>Send a Message</SectionEyebrow>
             <h2>Tell Us About Your Institution</h2>
 
+            <p className="contact-intro">
+              Tell us a little about your institution and what you’re looking to
+              accomplish. After you reach out, a senior credit professional
+              follows up, typically within one business day, to learn more about
+              your portfolio, timing, and objectives. There is no cost or
+              obligation for an initial conversation.
+            </p>
+            <p className="contact-intro">
+              Most engagements begin with a short scoping discussion to understand
+              your portfolio composition, recent examination history, and the
+              outcome you need, whether that’s an independent loan review, CECL or
+              ALLL support, credit due diligence for a pending transaction, or
+              portfolio stress testing. From there we propose a scope, timeline,
+              and fee tailored to your institution’s size and complexity.
+            </p>
+
             {status === 'sent' ? (
               <p className="contact-success" role="status">
                 Thank you, your message has been sent. We typically respond

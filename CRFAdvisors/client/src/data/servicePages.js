@@ -475,6 +475,10 @@ export const SERVICE_PAGES = [
 ]
 
 // Generic trust block rendered at the foot of every service page.
+// TODO: CRF to confirm specifics. The independence/staffing/experience claims
+// below are firm-positioning statements written for the marketing draft; verify
+// they accurately describe how CRF actually staffs and accepts engagements
+// before treating them as published fact.
 export const WHY_CRF = [
   { term: 'Independence by design', desc: 'Every engagement is structured to preserve the independence that gives our findings credibility with regulators, auditors, and boards. We decline engagements where independence cannot be maintained.' },
   { term: 'Senior-led, senior-staffed', desc: 'Engagements are staffed at the proper experience level relative to portfolio complexity. The credit professionals reviewing your portfolio have decades of banking, audit, and regulatory experience, not entry-level analysts trained on your engagement.' },
@@ -482,5 +486,41 @@ export const WHY_CRF = [
   { term: 'Practical over theoretical', desc: 'Findings come with realistic remediation paths. Recommendations are calibrated to what institutions can actually implement, not theoretical best practices that won’t survive contact with the operations team.' },
   { term: 'Direct engagement', desc: 'The senior credit professional who scopes your engagement is the same one who delivers the findings to your board.' },
 ]
+
+// Editorial outbound citations to primary regulatory sources, per service page.
+// These are authority signals; links open in a new tab with rel="noopener
+// noreferrer" and intentionally NO rel="nofollow" (editorial citations).
+//
+// NOTE: to avoid linking deep URLs that may 404, entries marked `verify: true`
+// currently point at the authoritative domain/section root. Replace with the
+// exact document URL once confirmed.
+// TODO: verify exact URLs for all entries marked `verify: true`.
+export const SERVICE_SOURCES = {
+  'loan-review': [
+    { label: 'FDIC — Risk Management Manual of Examination Policies', url: 'https://www.fdic.gov', verify: true },
+    { label: 'OCC — Comptroller’s Handbook: Loan Portfolio Management', url: 'https://www.occ.gov', verify: true },
+    { label: 'FFIEC — Federal Financial Institutions Examination Council', url: 'https://www.ffiec.gov', verify: false },
+  ],
+  'due-diligence': [
+    { label: 'FDIC — Bank mergers and applications', url: 'https://www.fdic.gov', verify: true },
+    { label: 'OCC — Business combinations and licensing', url: 'https://www.occ.gov', verify: true },
+    { label: 'FASB — ASC 805 Business Combinations and ASC 326', url: 'https://www.fasb.org', verify: true },
+  ],
+  'stress-testing': [
+    { label: 'Federal Reserve — Supervision & Regulation (stress testing, DFAST/CCAR)', url: 'https://www.federalreserve.gov/supervisionreg.htm', verify: true },
+    { label: 'Interagency Guidance on CRE Concentration Risk Management', url: 'https://www.ffiec.gov', verify: true },
+    { label: 'FDIC — Supervisory guidance and resources', url: 'https://www.fdic.gov', verify: false },
+  ],
+  'alll': [
+    { label: 'Interagency Policy Statement on Allowances for Credit Losses (2020)', url: 'https://www.ffiec.gov', verify: true },
+    { label: 'FASB — ASC 326 Financial Instruments — Credit Losses', url: 'https://www.fasb.org', verify: true },
+    { label: 'OCC — Allowance for Credit Losses resources', url: 'https://www.occ.gov', verify: true },
+  ],
+  'cecl': [
+    { label: 'FASB — Current Expected Credit Losses (ASC 326)', url: 'https://www.fasb.org', verify: true },
+    { label: 'Federal Reserve — CECL supervisory resources', url: 'https://www.federalreserve.gov/supervisionreg.htm', verify: true },
+    { label: 'FFIEC — Interagency CECL resources', url: 'https://www.ffiec.gov', verify: true },
+  ],
+}
 
 export const SERVICE_PAGE_BY_SLUG = Object.fromEntries(SERVICE_PAGES.map((p) => [p.slug, p]))

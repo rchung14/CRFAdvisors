@@ -4,7 +4,7 @@ import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
-import { SERVICE_PAGE_BY_SLUG, WHY_CRF } from '../data/servicePages'
+import { SERVICE_PAGE_BY_SLUG, WHY_CRF, SERVICE_SOURCES } from '../data/servicePages'
 import '../styles/ServicePage.css'
 
 function SectionList({ items, ordered }) {
@@ -37,6 +37,7 @@ export default function ServicePage() {
   if (!page) return <Navigate to="/consulting-services" replace />
 
   const { icon: Icon } = page
+  const sources = SERVICE_SOURCES[slug] || []
 
   return (
     <main className="page service-detail-page">
@@ -151,6 +152,30 @@ export default function ServicePage() {
           </p>
         </div>
       </section>
+
+      {/* Authoritative / regulatory sources (editorial outbound citations) */}
+      {sources.length > 0 && (
+        <section className="section section--off-white">
+          <div className="container">
+            <SectionEyebrow>References</SectionEyebrow>
+            <h2>Regulatory &amp; Authoritative Sources</h2>
+            <p className="service-page__para text-block">
+              Primary regulatory and standard-setting references relevant to{' '}
+              {page.eyebrow.toLowerCase()}. These link to the issuing
+              authorities for current, authoritative guidance.
+            </p>
+            <ul className="service-page__sources">
+              {sources.map(({ label, url }) => (
+                <li key={label}>
+                  <a href={url} target="_blank" rel="noopener noreferrer">
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <CTABanner
         heading="Ready to discuss your portfolio?"

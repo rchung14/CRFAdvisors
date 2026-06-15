@@ -96,11 +96,14 @@ export default function About() {
             </p>
             <p>
               Specialties include implementation of ALLL methodology to ensure
-              compliance with FFIEC Interagency policy, and the valuation and
-              accounting of impaired loans, TDRs, and OREO. We also provide
-              assistance with preparation and review of 10-K and 10-Q financial
-              statements and disclosures in compliance with GAAP and SEC
-              regulation.
+              compliance with{' '}
+              <a href="https://www.ffiec.gov" target="_blank" rel="noopener noreferrer">
+                FFIEC
+              </a>{' '}
+              Interagency policy, and the valuation and accounting of impaired
+              loans, TDRs, and OREO. We also provide assistance with preparation
+              and review of 10-K and 10-Q financial statements and disclosures in
+              compliance with GAAP and SEC regulation.
             </p>
           </div>
         </div>
