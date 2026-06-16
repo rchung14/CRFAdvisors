@@ -1,407 +1,479 @@
-# CRF Advisors, Inc. — Design System
-
-> Design direction for the Stitch-Loop rebuild of crf-advisors.vercel.app
-> Vibe: Institutional · Authoritative · Precise · Trustworthy
-> Theme: Keep existing navy/blue palette — elevate execution quality
-> Reference site: https://crf-advisors.vercel.app
+# CRF Advisors — Design System
+> Version 2.0 | 2026-06-15
+> Visual direction for all pages. Stitch loop reference. Generated from UX audit.
 
 ---
 
-## Brand Snapshot
+## Design Philosophy
 
-**Company:** CRF Advisors, Inc.
-**Industry:** Credit Risk Management / Financial Institution Consulting
-**Audience:** CFOs, CROs, Chief Credit Officers, Compliance Officers, Bank Examiners, Audit Committees at community banks, savings institutions, FCUs
-**Tone:** Expert, institutional, direct. No marketing fluff. This audience trusts precision over personality.
-**Design goal:** Same color DNA as the existing Vercel site — deep navy, blue gradient, white — but rebuilt with proper hierarchy, spacing, typography, and component polish. Think McKinsey microsite meets modern SaaS documentation.
+**Institutional precision. Not marketing warmth.**
+
+The audience — CFOs, CROs, chief credit officers, bank examiners — responds to signals of rigor
+and domain expertise, not friendly gradients and icon grids. Every visual decision should answer
+the question: does this look like it belongs in a regulatory briefing room, or a startup landing page?
+
+The site's visual identity lives at the intersection of a Moody's analytics report and a
+Lincoln Center program booklet. Structured. Spare. Authoritative. One moment of character
+(the hero serif), precision everywhere else.
 
 ---
 
 ## Color Palette
 
-Extracted from existing site + refined:
+```css
+/* Primary — Navy */
+--color-navy:        #1B2B5E;   /* Primary brand: nav bg, footer bg, hero overlay base */
+--color-navy-dark:   #131F45;   /* Hover states, deep bg */
+--color-navy-mid:    #243670;   /* Approach section bg, CTA banner */
+--color-navy-overlay: rgba(19, 31, 69, 0.74); /* Hero photo overlay — min 70% for legibility */
 
-| Token                | Hex        | Usage                                                        |
-|----------------------|------------|--------------------------------------------------------------|
-| `--navy`             | `#1B2A6B`  | Primary. Nav, footer, hero overlay, CTA bg, section accents  |
-| `--navy-dark`        | `#111E52`  | Hover states, deep footer bg                                 |
-| `--blue-mid`         | `#3B5BDB`  | Accent. Active nav underlines, link hovers, icon fills       |
-| `--blue-light`       | `#4C6EF5`  | Gradient partner. Approach section bg, CTA banner gradient   |
-| `--blue-gradient`    | `linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%)` | Hero overlay, CTA banners, section dividers |
-| `--white`            | `#FFFFFF`  | Page backgrounds, card surfaces, text on navy                |
-| `--off-white`        | `#F8F9FC`  | Alternating section backgrounds                              |
-| `--black`            | `#0D0D0D`  | Body text, headings on white                                 |
-| `--gray-mid`         | `#6B7280`  | Subtext, captions, metadata                                  |
-| `--gray-light`       | `#E5E7EB`  | Borders, dividers, table lines                               |
-| `--gray-bg`          | `#F1F3F5`  | Card backgrounds on light sections                           |
-| `--accent-steel`     | `#CBD5E1`  | Subtle dividers on dark backgrounds                          |
+/* Accent — Blue */
+--color-blue:        #2563EB;   /* Links, card accents, category badges, service numbers */
+--color-blue-hover:  #1D4ED8;   /* Hover state on blue elements */
+--color-blue-light:  #EFF6FF;   /* Badge bg, pill hover bg */
+--color-blue-mid:    #BFDBFE;   /* Badge border */
 
-**Color rules:**
-- Navy is dominant. The existing site's blue gradient is its identity — keep it.
-- White + off-white alternate section backgrounds to create rhythm without using color blocking.
-- `--blue-mid` (#3B5BDB) is the one interactive color: links, active states, icon accents, underlines.
-- Never use teal, green, orange, or warm tones — this is an institutional brand.
-- On dark (navy) backgrounds: white text only. Never gray.
-- Hero overlay: dark photo + `rgba(27, 42, 107, 0.72)` overlay — lets photo breathe while keeping text readable.
+/* Neutral */
+--color-white:       #FFFFFF;
+--color-gray-50:     #F8F9FA;   /* Alternate section bg (off-white sections) */
+--color-gray-100:    #F1F3F5;   /* Card bg, default pill bg */
+--color-gray-200:    #E9ECEF;   /* Borders, dividers, card borders */
+--color-gray-400:    #9CA3AF;   /* Meta text: location in pills, timestamps */
+--color-gray-600:    #4B5563;   /* Body text secondary */
+--color-gray-900:    #111827;   /* Body text primary, headings on light bg */
+
+```
 
 ---
 
 ## Typography
 
-### Typeface Roles
+**Rule:** Playfair Display for H1 only. Inter for everything else. No exceptions.
 
-| Role           | Family              | Source       |
-|----------------|---------------------|--------------|
-| Display / Hero | `Playfair Display`  | Google Fonts |
-| Body / UI      | `Inter`             | Google Fonts |
-| Labels / Caps  | `Inter` uppercase   | Google Fonts |
+Using Playfair on H2+ dilutes hierarchy and reads as a template site. One serif moment —
+the page H1 — creates gravity without letting decoration overpower content.
 
-**Rationale:** The existing site uses a clean sans-serif. Introducing Playfair Display for display headings signals authority and prestige — appropriate for a firm advising institutions on hundreds of millions in loan portfolios. Inter keeps body and UI clean, readable, and professional.
+```css
+/* Font stacks */
+--font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+--font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-### Type Scale
+/* Scale — fluid type with clamp() */
+--text-hero:    clamp(2.25rem, 5vw, 3.5rem);    /* H1 only: Playfair Display */
+--text-h2:      clamp(1.625rem, 3.5vw, 2.25rem); /* Inter 500, tight tracking */
+--text-h3:      clamp(1.125rem, 2vw, 1.375rem);  /* Inter 500 */
+--text-h4:      1rem;                             /* Inter 600 */
+--text-body:    1rem;                             /* Inter 400, line-height 1.7 */
+--text-body-lg: 1.125rem;                         /* Inter 400 — hero sub-copy */
+--text-small:   0.875rem;                         /* Inter 400 — card body, meta */
+--text-label:   0.6875rem;                        /* Inter 500, tracked — badges only */
 
-| Level       | Font        | Size    | Weight | Line Height | Usage                            |
-|-------------|-------------|---------|--------|-------------|----------------------------------|
-| `display`   | Playfair    | 52–64px | 700    | 1.1         | Hero headline                    |
-| `h1`        | Playfair    | 40px    | 700    | 1.2         | Page titles                      |
-| `h2`        | Playfair    | 30px    | 600    | 1.25        | Section headings                 |
-| `h3`        | Inter       | 20px    | 600    | 1.3         | Card titles, service names       |
-| `h4`        | Inter       | 16px    | 600    | 1.4         | Sub-section labels               |
-| `body-lg`   | Inter       | 18px    | 400    | 1.7         | Hero subtext, intro paragraphs   |
-| `body`      | Inter       | 16px    | 400    | 1.65        | General body text                |
-| `small`     | Inter       | 14px    | 400    | 1.5         | Captions, metadata, card details |
-| `label`     | Inter       | 11px    | 600    | 1.4         | ALL CAPS, 0.1em tracking. Eyebrows, tags, nav links |
+/* Letter spacing */
+--tracking-tight:   -0.02em;   /* H2, H3 */
+--tracking-tighter: -0.03em;   /* Hero H1 on large viewports */
+--tracking-normal:   0;
+--tracking-wide:     0.06em;   /* Category badges, service numbers */
+```
 
-**Rules:**
-- Nav links: Inter 13px, 600, ALL CAPS, letter-spacing 0.08em — matches existing site feel
-- Service section H2s: Playfair Display — signals expertise, gives each service gravitas
-- Body copy: left-aligned always. Never center body paragraphs.
-- Pull quote (Ted Ahn hero): Playfair Display italic or regular, 22–28px, centered — this is the one exception to left-align rule
+### Type usage rules
+
+- **H1:** Playfair Display, --text-hero, color: white (hero) / --color-navy (light bg), tracking: --tracking-tighter
+- **H2:** Inter 500, --text-h2, tracking: --tracking-tight, color: --color-gray-900
+- **H3:** Inter 500, --text-h3, tracking: -0.01em, color: --color-gray-900
+- **Body:** Inter 400, --text-body, line-height: 1.7, color: --color-gray-600
+- **Service numbers (01–05):** Inter 600, --text-label, tracking: --tracking-wide, color: --color-blue
+- **Category badges:** Inter 500, --text-label, tracking: --tracking-wide
+- **Section eyebrows:** REMOVED. No all-caps section labels. H2 anchors each section on its own.
+  If a visual separator is needed: a 32px wide, 2px tall rule in --color-blue above the H2.
 
 ---
 
 ## Spacing System
 
-Base: `8px`
+Base unit: 4px (0.25rem)
 
-| Token     | Value | Usage                               |
-|-----------|-------|-------------------------------------|
-| `--sp-1`  | 8px   | Inline gaps, icon padding           |
-| `--sp-2`  | 16px  | Internal component padding          |
-| `--sp-3`  | 24px  | Card padding, form field gaps       |
-| `--sp-4`  | 32px  | Between related elements            |
-| `--sp-6`  | 48px  | Section internal padding            |
-| `--sp-8`  | 64px  | Section vertical rhythm (desktop)   |
-| `--sp-12` | 96px  | Major section breaks                |
-| `--sp-16` | 128px | Hero padding                        |
+```css
+--space-1:    4px;    /* 0.25rem */
+--space-2:    8px;    /* 0.5rem  */
+--space-3:    12px;   /* 0.75rem */
+--space-4:    16px;   /* 1rem    */
+--space-5:    20px;   /* 1.25rem */
+--space-6:    24px;   /* 1.5rem  */
+--space-8:    32px;   /* 2rem    */
+--space-10:   40px;   /* 2.5rem  */
+--space-12:   48px;   /* 3rem    */
+--space-16:   64px;   /* 4rem    */
+--space-20:   80px;   /* 5rem    */
+--space-24:   96px;   /* 6rem    */
 
----
+/* Section vertical rhythm */
+--section-py-mobile:    56px;
+--section-py-desktop:   96px;
+--section-py-wide:      120px;
 
-## Layout
-
-### Grid
-- **Desktop:** 12-column, 1280px max-width container, 24px gutters
-- **Tablet:** 8-column, fluid, 20px gutters
-- **Mobile:** 4-column, 16px gutters, 16px horizontal padding
-
-### Breakpoints
-| Name    | Width       |
-|---------|-------------|
-| mobile  | < 640px     |
-| tablet  | 640–1024px  |
-| desktop | 1024–1440px |
-| wide    | > 1440px    |
-
-### Container
-- Content: `1280px` max-width, centered
-- Text blocks: `740px` max-width
-- Hero content: `860px` max-width, centered
-
----
-
-## Components
-
-### Navigation
-```
-Height: 68px desktop / 60px mobile
-Background: #1B2A6B (navy)
-Logo: White text, Inter 700 or Playfair Display
-Nav links: White, Inter 13px 600, ALL CAPS, letter-spacing 0.08em, 28px gap
-Active: 2px white underline bottom
-CTA button: White bg + navy text (#1B2A6B), Inter 13px 600, 36px height, 16px h-padding, border-radius 4px
-Sticky: yes — stays solid navy, no shadow change
-Mobile: hamburger (3-line icon → X), slide-down or full-height drawer, navy bg
-```
-
-### Hero (Home)
-```
-Layout: Full-width. Dark architectural/financial photo. Semi-transparent navy overlay (rgba 0.72).
-Content: Centered quote block in a subtle border/card — frosted glass or rgba(255,255,255,0.08) bg, 1px rgba(255,255,255,0.15) border
-Quote: Playfair Display 20px, white, line-height 1.7, max-width 760px
-Attribution: Inter 14px, rgba(255,255,255,0.75), margin-top 16px
-CTAs below quote: Primary white pill + ghost white-outline pill
-Min-height: 520px desktop / 380px mobile
-```
-
-### Page Hero (Interior Pages)
-```
-Background: linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%)
-Height: 180px desktop / 140px mobile
-H1: Playfair Display 40px, white
-Breadcrumb: Inter 13px, rgba(255,255,255,0.6) — Home / Page Name
-Padding: 0 40px, vertically centered
-```
-
-### Service Cards
-```
-Background: #FFFFFF
-Border: 1px solid #E5E7EB
-Border-radius: 6px
-Padding: 32px
-Hover: box-shadow 0 4px 20px rgba(27,42,107,0.10), translateY(-2px), 200ms ease
-Icon: 44x44px, background #1B2A6B, border-radius 8px, white Lucide icon inside
-H3: Inter 600, 18px, #0D0D0D
-Body: Inter 16px, #6B7280, line-height 1.65
-Link: #3B5BDB, Inter 14px 600, "Learn more →", underline on hover
-Service grid: 3-col desktop, 2-col tablet, 1-col mobile
-```
-
-### Team Member Cards (About Page)
-```
-Layout: 3-col desktop, 2-col tablet, 1-col mobile
-Card bg: #FFFFFF
-Border: 1px solid #E5E7EB
-Border-radius: 8px
-Overflow: hidden
-
-Image placeholder:
-  - Aspect ratio: 1:1 (square)
-  - Background: linear-gradient(135deg, #1B2A6B, #3B5BDB)
-  - Centered initials or person icon (white, 48px)
-  - Label: "[First Last] — Photo" in small white text
-  - Do NOT use avatar illustrations
-
-Content area padding: 24px
-Name: Inter 600, 18px, #0D0D0D
-Title: Inter 500, 14px, #3B5BDB (blue accent)
-Bio: Inter 400, 14px, #6B7280, line-height 1.6, clamped to 4 lines with "Read more" expand
-LinkedIn: icon-only link, bottom right, #CBD5E1 default → #3B5BDB hover
-```
-
-### Client List (Clients Page)
-```
-Layout: 3-col grid desktop, 2-col tablet, 1-col mobile
-Each entry: simple card or list item
-Institution name: Inter 600, 15px, #0D0D0D
-Location: Inter 400, 13px, #6B7280
-Card: white bg, 1px #E5E7EB border, 6px radius, 16px 20px padding
-No logos (don't have them) — clean text-only list reads more professional than empty logo boxes
-Optional: state grouping with sticky section labels (PA / NJ / DE / MD / Other)
-```
-
-### Process Steps (Timeline)
-```
-Layout: Horizontal 4-step on desktop, vertical stack on mobile
-Connector: 1px #E5E7EB line between steps (desktop only)
-Step number: 32x32px circle, bg #1B2A6B, white Inter 700 14px
-Step title: Inter 600, 16px, #0D0D0D
-Step body: Inter 400, 14px, #6B7280
-```
-
-### Approach Cards (3-col)
-```
-Background: #F8F9FC (off-white) OR inside a blue gradient section (navy bg, white text)
-Icon: 40px, stroke style (Lucide), #3B5BDB on light bg / white on navy bg
-H3: Inter 600, 18px
-Body: Inter 400, 15px, #6B7280 (light bg) / rgba(255,255,255,0.8) (navy bg)
-No border on navy bg sections — let bg do the work
-```
-
-### Buttons
-```
-Primary:
-  Background: #1B2A6B
-  Text: #FFFFFF, Inter 600, 14px
-  Padding: 12px 28px
-  Border-radius: 4px
-  Hover: #111E52
-  Transition: 200ms ease
-
-Ghost (on white bg):
-  Border: 1.5px solid #1B2A6B
-  Text: #1B2A6B
-  Background: transparent
-  Hover: bg #1B2A6B, text #FFFFFF
-
-Ghost (on navy bg):
-  Border: 1.5px solid rgba(255,255,255,0.6)
-  Text: #FFFFFF
-  Hover: bg rgba(255,255,255,0.15)
-
-White (on navy bg):
-  Background: #FFFFFF
-  Text: #1B2A6B, Inter 600
-  Hover: bg #F8F9FC
-```
-
-### Forms (Contact Page)
-```
-Label: Inter 13px 600, #0D0D0D, margin-bottom 6px
-Input/Select: height 44px, bg #FFFFFF, border 1px solid #E5E7EB, border-radius 4px, padding 0 14px, Inter 15px
-Textarea: min-height 120px, same styling
-Focus: border-color #3B5BDB, box-shadow 0 0 0 3px rgba(59,91,219,0.12)
-Error: border-color #DC2626, small error text below field
-Submit: Primary button, full width on mobile, right-aligned on desktop
-```
-
-### CTA Banner
-```
-Background: linear-gradient(135deg, #1B2A6B 0%, #3B5BDB 100%)
-H2: Playfair Display 34px, white
-Subtext: Inter 17px, rgba(255,255,255,0.75)
-Button: White bg + navy text
-Padding: 80px 0
-```
-
-### Footer
-```
-Background: #111E52 (navy-dark)
-Top section bg: #1B2A6B
-Divider: 1px rgba(255,255,255,0.1)
-Logo: white, Playfair Display or Inter 700
-Nav links: rgba(255,255,255,0.65), Inter 13px, hover → white
-Contact info: rgba(255,255,255,0.8), Inter 14px
-Copyright: rgba(255,255,255,0.35), Inter 12px
-Privacy/Terms: rgba(255,255,255,0.45), Inter 12px
-Two-column: firm info + links left | contact right
+/* Container */
+--container-max:  1200px;
+--container-px-mobile:  20px;
+--container-px-tablet:  32px;
+--container-px-desktop: 48px;
 ```
 
 ---
 
-## SEO Implementation Requirements
+## Grid System
 
-### Meta Tags (every page)
-```html
-<title>[Page Title] | CRF Advisors — Credit Risk & Loan Review Specialists</title>
-<meta name="description" content="[60-160 char description with primary keyword]" />
-<meta name="keywords" content="loan review, credit review, CECL, stress testing, ALLL, bank credit risk, FCU loan review, financial institution consulting" />
-<link rel="canonical" href="https://crf-advisors.vercel.app/[page]" />
+```css
+/* Homepage / interior pages */
+.grid-services  { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-pills     { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid-process   { grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.grid-team      { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.grid-cases     { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-<!-- Open Graph -->
-<meta property="og:title" content="..." />
-<meta property="og:description" content="..." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="..." />
+/* Tablet (768px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-services  { grid-template-columns: repeat(2, 1fr); }
+  .grid-pills     { grid-template-columns: repeat(2, 1fr); }
+  .grid-process   { grid-template-columns: repeat(2, 1fr); }
+  .grid-team      { grid-template-columns: repeat(2, 1fr); }
+  .grid-cases     { grid-template-columns: 1fr; }
+}
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary" />
-```
+/* Mobile (<768px) */
+@media (max-width: 767px) {
+  .grid-services,
+  .grid-pills,
+  .grid-process,
+  .grid-team,
+  .grid-cases     { grid-template-columns: 1fr; }
+}
 
-### Structured Data (JSON-LD)
-
-**Organization (all pages, in `<head>`):**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "CRF Advisors, Inc.",
-  "url": "https://crf-advisors.vercel.app",
-  "telephone": "+12678164272",
-  "email": "Tedahn@crfadvisors.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Philadelphia",
-    "addressRegion": "PA",
-    "addressCountry": "US"
-  },
-  "areaServed": ["PA", "NJ", "DE", "MD", "NY"],
-  "description": "Independent loan review, credit risk management, CECL implementation, and portfolio stress testing for banks and financial institutions.",
-  "knowsAbout": ["Loan Review", "CECL", "ALLL", "Portfolio Stress Testing", "Credit Risk Management", "Due Diligence"]
+/* Wide desktop (>1280px) */
+@media (min-width: 1280px) {
+  .grid-pills     { grid-template-columns: repeat(4, 1fr); }
 }
 ```
 
-**Person schema — each team member (About page):**
-```json
-{
-  "@type": "Person",
-  "name": "Ted Ahn",
-  "jobTitle": "President",
-  "worksFor": { "@type": "Organization", "name": "CRF Advisors, Inc." }
+---
+
+## Component Library
+
+### 1. Navigation
+
+```
+[CRF Advisors, Inc.]          [Consulting Services] [Clients] [About Us] [Contact Us]  [Get Started]
+```
+
+- Background: --color-navy, sticky
+- Logo: Inter 600, 18px, white. "CRF Advisors, Inc." — no changes
+- Nav links: Inter 500, 13px, rgba(255,255,255,0.82), sentence case (NOT ALL CAPS in content)
+- Active state: 2px rgba(255,255,255,0.50) bottom border
+- CTA button: white bg, --color-navy text, 8px radius, Inter 600, 13px, px 18px py 8px
+- Mobile (<768px): hamburger (3 lines), slide-in drawer from right, full-width links, 48px tap targets
+
+---
+
+### 2. Homepage Hero
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ [Architectural photo — navy overlay rgba(19,31,69,0.74)]         │
+│                                                                  │
+│          Independent Loan Review and Credit Risk                 │  ← H1: Playfair Display
+│           Management for Financial Institutions                  │    clamp(2.25,5vw,3.5rem)
+│                                                                  │    white, centered
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │ "Based on our experience servicing financial institutions  │  │  ← Quote card
+│  │  in the Tri-State area... credit risk management is more  │  │    rgba(255,255,255,0.13) bg
+│  │  than just an assertion that a loan is properly           │  │    1px rgba(255,255,255,0.22) border
+│  │  classified..."                                           │  │    16px radius
+│  │                                                           │  │
+│  │  Ted Ahn, President, CRF Advisors                         │  │    attribution: Inter 400, 14px
+│  └────────────────────────────────────────────────────────────┘  │
+│                                                                  │
+│      33+ Clients    ·    5 Service Lines    ·    Tri-State       │  ← Inline stats bar
+│                                                                  │
+│       [  Our Services  ]    [  View Clients  ]                   │  ← Dual CTAs (match original)
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+**Photo overlay:** `rgba(19, 31, 69, 0.74)` minimum. Text must be fully legible. Use higher opacity
+if the photo is light-toned.
+
+**Quote card:**
+- Background: rgba(255,255,255,0.13)
+- Border: 1px solid rgba(255,255,255,0.22)
+- Border-radius: 16px
+- Padding: 28px 32px
+- Max-width: 760px, centered
+- Quote text: Inter 400 (or light italic), 16px, rgba(255,255,255,0.92), line-height 1.7
+- Opening/closing quotation marks: Playfair Display, 48px, rgba(255,255,255,0.25), decorative
+- Attribution: Inter 500, 14px, rgba(255,255,255,0.65), margin-top 16px
+
+**Inline stats bar (below quote card):**
+- Single line of text, no boxes
+- Format: `33+ Clients · 5 Service Lines · Tri-State & Beyond`
+- Inter 500, 14px, rgba(255,255,255,0.70)
+- Centered dot separators
+- Mobile: stack vertically, one per line
+
+**CTA buttons (dual — match original intent):**
+- Primary: solid white bg, --color-navy text, Inter 600, 14px, padding 12px 28px, radius 8px
+- Secondary: transparent bg, 1px solid rgba(255,255,255,0.40), white text, same sizing
+- Gap: 12px
+- Mobile: stack vertically, full-width
+
+---
+
+### 3. Service Cards (Numbered — no icons)
+
+```
+┌────────────────────────────────────────────────┐
+│▌                                               │  ← 3px solid --color-blue left border
+│  01                                            │  ← Inter 600, 11px, --color-blue, tracking: 0.06em
+│                                                │
+│  Loan Review                                   │  ← Inter 500, 20px, --color-gray-900
+│                                                │
+│  Independent assessment of loan portfolio      │  ← Inter 400, 14px, --color-gray-600
+│  quality, underwriting standards, and risk     │    line-height: 1.6, max 3 lines
+│  rating accuracy.                              │
+│                                                │
+│  Learn more →                                  │  ← Inter 500, 14px, --color-blue
+└────────────────────────────────────────────────┘
+```
+
+- Background: white
+- Border: 1px solid --color-gray-200
+- Left border accent: 3px solid --color-blue (overrides the left side of the outer border)
+- Border-radius: 8px
+- Padding: 28px 24px 24px 24px (extra top for number)
+- Hover: box-shadow: 0 4px 20px rgba(0,0,0,0.08); translateY(-2px) transition 180ms ease
+- 5th card (CECL): on desktop 3-col grid, place in center of bottom row using margin: 0 auto
+
+**Mobile (< 768px):**
+- Full-width single column
+- Same padding
+- Tap anywhere on card navigates to service page
+
+---
+
+### 4. Client Pill Grid (Trust Bar)
+
+```
+┌─────────────────────────────┐  ┌─────────────────────────────┐  ┌─────────────────────────────┐
+│  Customers Bank             │  │  Parke Bank                 │  │  Artisans Bank              │
+│  Philadelphia, PA           │  │  Mount Laurel, NJ           │  │  Wilmington, DE             │
+└─────────────────────────────┘  └─────────────────────────────┘  └─────────────────────────────┘
+```
+
+- Pill: white bg, 1px solid --color-gray-200, border-radius: 8px
+- Padding: 14px 18px
+- Institution name: Inter 500, 14px, --color-gray-900
+- Location: Inter 400, 12px, --color-gray-400
+- Hover: border-color --color-blue, background --color-blue-light, transition 150ms
+- Show 12 of 33 on homepage; all 33 on /clients
+- "View all 33 clients →" below grid: Inter 500, 14px, --color-blue
+- Mobile: 1 column, slightly reduced padding
+- Wide desktop (≥1280px): 4 columns
+
+---
+
+### 5. Page Hero (Interior Pages)
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ [Navy overlay on photo, rgba(19,31,69,0.74)]                     │
+│                                                                  │
+│  Home / Consulting Services / Independent Loan Review            │  ← breadcrumb
+│  Independent Loan Review for Banks and Financial Institutions    │  ← H1: Playfair, white, left
+│  [optional 1-line descriptor]                                    │
+│                                                                  │
+├──────────────────────────────────────────────────────────────────┤
+└──────────────────────────────────────────────────────────────────┘
+```
+
+- Height: 280px desktop, 220px mobile
+- H1: Playfair Display, white, left-aligned (NOT centered — homepage only centers)
+- Breadcrumb: Inter 400, 13px, rgba(255,255,255,0.60), above H1, margin-bottom: 12px
+- Optional descriptor: Inter 400, 18px, rgba(255,255,255,0.82), below H1
+
+---
+
+### 6. Process Steps
+
+Desktop (horizontal):
+```
+ ①──────────────────②──────────────────③──────────────────④
+ Portfolio          Risk Assessment    Findings &          Regulatory
+ Understanding      & Rating           Reporting           Alignment
+```
+
+- Step circle: 40px, --color-navy bg, white Inter 700 14px number
+- Connector line: 1px dashed --color-gray-200, between circles
+- Title: Inter 600, 15px, --color-gray-900, mt 16px
+- Body: Inter 400, 13px, --color-gray-600, mt 6px
+
+Mobile (vertical):
+```
+ ①
+ │  Portfolio Understanding
+ │  We begin with your portfolio...
+ ②
+ │  Risk Assessment & Rating
+ │  ...
+```
+
+- Left border: 2px solid --color-gray-200
+- Circle offset left of border
+- Stacks naturally, full width
+
+---
+
+### 7. Engagement / Case Cards (/clients page)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│▌                                                            │
+│  [LOAN REVIEW]                                              │  ← badge
+│                                                             │
+│  Independent Loan Review — $850M Community Bank, PA        │  ← Inter 600, 17px
+│                                                             │
+│  Portfolio of 4,200 loans reviewed across CRE, C&I,        │  ← Inter 400, 14px
+│  and consumer segments. Identified $12M in credit          │    gray-600
+│  classification discrepancies ahead of FDIC examination.   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+- Left border: 3px solid --color-blue (same as service cards)
+- Badge: --color-blue-light bg, --color-blue text, Inter 500, 11px, 6px radius, px 8 py 3
+- Border: 1px solid --color-gray-200, radius 8px
+- Grid: 2-col desktop, 1-col mobile
+- Padding: 24px
+
+---
+
+### 8. CTA Banner
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ [Navy gradient: --color-navy to --color-navy-mid]                │
+│                                                                  │
+│            Ready to strengthen your credit oversight?            │  ← Playfair Display, white
+│     Talk with our team about loan review, CECL, or stress        │  ← Inter 400, 17px, 80% white
+│                 testing for your institution.                     │
+│                                                                  │
+│                     [  Contact Us  ]                             │  ← white button, navy text
+│                                                                  │
+├──────────────────────────────────────────────────────────────────┤
+└──────────────────────────────────────────────────────────────────┘
+```
+
+- Background: `linear-gradient(135deg, --color-navy 0%, --color-navy-mid 100%)`
+- Section py: 80px desktop, 56px mobile
+- Text: centered
+
+---
+
+### 9. Footer
+
+- Background: --color-navy-dark
+- 3-column layout on desktop (stacks on mobile):
+  - Col 1: Logo + descriptor (40% width)
+  - Col 2: Navigation links
+  - Col 3: Contact info (phone, email, address)
+- Divider: 1px solid rgba(255,255,255,0.10)
+- Copyright: Inter 400, 12px, rgba(255,255,255,0.40)
+- Links: rgba(255,255,255,0.70) → white on hover, no underline
+- Mobile: 1 column, stacked order: logo → contact → nav
+
+---
+
+### 10. Contact Page — Sidebar
+
+Pull "responds within 1 business day" OUT of body text — make it a standalone badge:
+```
+┌────────────────────────────────────┐
+│  Ted Ahn, President                │
+│                                    │
+│  ☎  (267) 816-4272                │
+│  ✉  Tedahn@crfadvisors.com        │
+│  ⊙  Philadelphia, PA              │
+│                                    │
+│  ┌──────────────────────────────┐  │
+│  │ ✓ Responds within 1 business │  │  ← green-tinted trust badge
+│  │   day                        │  │
+│  └──────────────────────────────┘  │
+└────────────────────────────────────┘
+```
+
+Trust badge: --color-success text, light green bg (rgba(5,150,105,0.08)), 1px solid rgba(5,150,105,0.25)
+
+---
+
+## Motion & Interaction
+
+```css
+/* Global transition defaults */
+--transition-fast:   150ms ease;   /* color, border, background */
+--transition-base:   200ms ease;   /* shadow, transform */
+--transition-slow:   300ms ease;   /* section reveals */
+
+/* Card hover */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 ```
 
-### Content SEO Rules
-- H1: one per page, contains primary keyword
-- H2s: contain secondary keywords naturally — do not keyword-stuff
-- Alt text on all images/placeholders: descriptive, includes keyword where natural
-  - Example: `alt="Ted Ahn, President of CRF Advisors, credit risk management firm in Philadelphia PA"`
-- Internal links: every page links to Consulting Services and Contact
-- Page load: no blocking scripts, fonts preloaded via `<link rel="preload">`
-- `robots.txt`: allow all pages, disallow `/api/`
-- `sitemap.xml`: auto-generated with all 5 pages
+No parallax. No scroll-triggered JS animations above the fold. Keep it fast and accessible.
 
 ---
 
-## Iconography
+## Mobile-Specific Rules
 
-- **Library:** Lucide Icons (outline, 24px default, 1.5px stroke)
-- **On light backgrounds:** `#1B2A6B` (navy)
-- **On dark/navy backgrounds:** `#FFFFFF`
-- **Service icons (suggested):**
-  - Loan Review → `file-search` or `clipboard-check`
-  - Due Diligence → `search` or `zoom-in`
-  - Stress Testing → `activity` or `trending-down`
-  - ALLL → `calculator` or `percent`
-  - CECL → `database` or `layers`
+- Minimum tap target: 44×44px
+- Font: never below 14px (16px for body)
+- Buttons: full-width on mobile for primary CTAs in hero and CTA banner
+- Nav: hamburger at <768px, drawer z-index above content
+- Hero stats: stack 3×1 vertically, reduce number size to 22px
+- Process steps: vertical timeline with left-border
+- Service cards: full-width, no grid, 16px gap
 
 ---
 
-## Imagery Guidelines
+## Wide Desktop Rules (≥1280px)
 
-- **Hero:** Architectural / financial district photography. Dark tones preferred. Avoid bright or warm-toned photos.
-- **About page:** Professional headshot placeholders. Square crop, 1:1. Gradient bg with initials until real photos provided.
-- **No:** Cartoon illustrations, stock handshake photos, generic business meeting clipart
-- **Section images:** Financial documents, data/charts (abstract), cityscape — all dark-toned
-- All image placeholders: navy-to-blue gradient bg + white label text showing what the image should be
-
----
-
-## Motion
-
-- Default transition: `200ms ease` on color, opacity, transform
-- Card hover: `translateY(-2px)` + shadow in, `200ms ease`
-- Page transitions: fade-in on load (opacity 0→1, 300ms)
-- Scroll animations: subtle `translateY(16px) → 0` + opacity, triggered at viewport entry, `400ms ease-out`
-- `prefers-reduced-motion`: disable all transitions and scroll animations
-- No: parallax, auto-play video, heavy animation — this audience is not here for motion design
+- All containers: max-width 1200px, margin: 0 auto
+- Client pills: 4-col grid
+- Hero: H1 max-width 800px centered
+- Stat boxes: max-width 480px row, centered
+- Section padding: --section-py-wide (120px)
+- Typography: clamp() values hit their maximum ceiling
 
 ---
 
-## Stitch Home Screen Component Inventory
+## Anti-Patterns (Do Not Use)
 
-Build order for the Loop:
-
-1. `NavBar` — sticky, navy, logo + ALL CAPS links + CTA
-2. `HeroQuote` — full-width photo + navy overlay + centered quote card + 2 CTAs
-3. `ServicesGrid` — 5 service cards (3+2 layout), icon + title + body + link
-4. `ApproachSection` — 3-col on blue-gradient bg, white text
-5. `ProcessTimeline` — 4-step horizontal, navy numbered circles
-6. `ClientTrustBar` — institution count stat + scrolling name strip or grid
-7. `CTABanner` — gradient bg, Playfair headline, white button
-8. `Footer` — dark navy, 2-col, links + contact
-
----
-
-## Anti-Patterns (Do Not Do)
-
-- ❌ Centered body text in paragraphs (fine for hero quote only)
-- ❌ Teal, green, orange, or warm accent colors — not this brand
-- ❌ Rounded corners > 8px — too playful, not institutional
-- ❌ Drop shadows heavier than `0 4px 20px rgba(0,0,0,0.10)`
-- ❌ More than 2 typefaces
-- ❌ Empty logo boxes for client list — use clean text cards instead
-- ❌ Decorative illustrations or icons that aren't Lucide
-- ❌ Hero text without overlay — photo alone won't pass contrast ratios
-- ❌ Team avatar illustrations — use initials on gradient until real photos arrive
-- ❌ Auto-playing anything
-- ❌ `X-Powered-By` header exposure (set `poweredByHeader: false` in next.config.js)
+| Pattern | Why banned |
+|---------|------------|
+| All-caps section eyebrows ("WHAT WE DO") | Template tell; removed in v2 |
+| Icon squares for service cards | All 5 look identical; replaced by numbers |
+| Quote card in homepage hero | Founder philosophy ≠ visitor conversion; moved to About |
+| Playfair Display on H2+ | Dilutes hierarchy; Inter only below H1 |
+| Multiple CTAs in hero | Split attention; one action in hero only |
+| `ul` list for trust bar | Visually dead; replaced by pill grid |
+| box-shadow heavier than `0 6px 24px rgba(0,0,0,0.12)` | Looks cheap |
+| border-radius above 12px on cards | Off-brand for institutional |
+| Rounded corners on single-side bordered elements | CSS error pattern |
+| Visible placeholder text on live pages | Kills trust immediately |

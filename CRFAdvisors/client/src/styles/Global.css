@@ -105,22 +105,22 @@ ol {
   list-style: none;
 }
 
-/* Playfair Display on H1 only; H2 and section headings use Inter 500. */
-h1 {
+h1,
+h2 {
   font-family: var(--font-display);
   color: var(--ink);
+}
+
+h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h2 {
-  font-family: var(--font-body);
-  color: var(--ink);
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
-  letter-spacing: -0.02em;
 }
 
 h3 {
