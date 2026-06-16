@@ -2,7 +2,6 @@ import { useParams, Navigate, Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
-import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { SERVICE_PAGE_BY_SLUG, WHY_CRF, SERVICE_SOURCES } from '../data/servicePages'
 import '../styles/ServicePage.css'
@@ -60,7 +59,6 @@ export default function ServicePage() {
             </span>
           </div>
           <div className="text-block">
-            <SectionEyebrow>{page.eyebrow}</SectionEyebrow>
             {page.intro.map((text) => (
               <p key={text.slice(0, 32)} className="service-page__lead">
                 {text}
@@ -98,7 +96,6 @@ export default function ServicePage() {
       {/* FAQ */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>Frequently Asked Questions</SectionEyebrow>
           <h2>{page.eyebrow} FAQ</h2>
           <dl className="service-page__faq">
             {page.faqs.map(({ q, a }) => (
@@ -114,7 +111,6 @@ export default function ServicePage() {
       {/* Our approach */}
       <section className="section section--off-white">
         <div className="container">
-          <SectionEyebrow>Our Approach</SectionEyebrow>
           <h2>How We Work</h2>
           <ul className="service-page__approach">
             {page.approach.map(({ term, desc }) => (
@@ -129,7 +125,6 @@ export default function ServicePage() {
       {/* Why CRF (shared trust block) */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>Why CRF Advisors</SectionEyebrow>
           <h2>Why Institutions Choose CRF Advisors</h2>
           <ul className="service-page__approach">
             {WHY_CRF.map(({ term, desc }) => (
@@ -157,7 +152,6 @@ export default function ServicePage() {
       {sources.length > 0 && (
         <section className="section section--off-white">
           <div className="container">
-            <SectionEyebrow>References</SectionEyebrow>
             <h2>Regulatory &amp; Authoritative Sources</h2>
             <p className="service-page__para text-block">
               Primary regulatory and standard-setting references relevant to{' '}

@@ -62,6 +62,22 @@
   margin-top: var(--sp-2);
 }
 
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--sp-4);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__stats-dot {
+  color: rgba(255, 255, 255, 0.4);
+}
+
 .hero__ctas {
   display: flex;
   gap: var(--sp-2);
@@ -86,22 +102,22 @@
 }
 
 .service-card {
-  padding: var(--sp-4);
+  padding: 28px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: var(--sp-2);
   align-items: flex-start;
+  border-left: 3px solid var(--blue-mid);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.service-card__icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background-color: var(--navy);
-  color: var(--white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.service-card__num {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--blue-mid);
 }
 
 .service-card h3 {
@@ -213,26 +229,53 @@
   max-width: 860px;
 }
 
-.trust__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px var(--sp-3);
+.trust__pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   margin: var(--sp-4) 0;
 }
 
-.trust__list li {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--gray-mid);
-  padding: 8px 16px;
+.trust__pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 18px;
+  background-color: var(--white);
   border: 1px solid var(--gray-light);
-  border-radius: 6px;
+  border-radius: 8px;
+  transition: border-color var(--ease), background-color var(--ease);
+}
+
+.trust__pill:hover {
+  border-color: var(--blue-mid);
   background-color: var(--off-white);
 }
 
+.trust__pill-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.trust__pill-city {
+  font-size: 12px;
+  color: var(--gray-mid);
+}
+
 /* ---------- Responsive ---------- */
+@media (min-width: 1280px) {
+  .trust__pills {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (max-width: 1024px) {
   .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust__pills {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -270,8 +313,18 @@
 
   .services-grid,
   .approach__grid,
-  .process {
+  .process,
+  .trust__pills {
     grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero__stats-dot {
+    display: none;
   }
 
   .approach {

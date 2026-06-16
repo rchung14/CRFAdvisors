@@ -105,22 +105,22 @@ ol {
   list-style: none;
 }
 
-h1,
-h2 {
+/* Playfair Display on H1 only; H2 and section headings use Inter 500. */
+h1 {
   font-family: var(--font-display);
   color: var(--ink);
-}
-
-h1 {
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 h2 {
+  font-family: var(--font-body);
+  color: var(--ink);
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 h3 {
@@ -164,22 +164,6 @@ h4 {
 
 .section--off-white {
   background-color: var(--off-white);
-}
-
-/* ---------- Eyebrow label ---------- */
-.eyebrow {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--blue-mid);
-  margin-bottom: var(--sp-2);
-}
-
-.eyebrow--light {
-  color: rgba(255, 255, 255, 0.75);
 }
 
 /* ---------- Buttons ---------- */

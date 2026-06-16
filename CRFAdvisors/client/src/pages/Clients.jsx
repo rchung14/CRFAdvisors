@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
-import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
 import { ENGAGEMENTS } from '../data/engagements'
@@ -24,7 +23,6 @@ export default function Clients() {
 
       <section className="section">
         <div className="container">
-          <SectionEyebrow>Client Roster</SectionEyebrow>
           <h2>{CLIENT_COUNT} Institutions Across the Tri-State Area and Beyond</h2>
           <p className="section-sub">
             Banks, savings institutions, credit unions, and financial services
@@ -64,7 +62,6 @@ export default function Clients() {
       */}
       <section className="section section--off-white">
         <div className="container">
-          <SectionEyebrow>Representative Engagements</SectionEyebrow>
           <h2>Anonymized Engagement Summaries</h2>
           <p className="section-sub">
             Placeholder examples of the credit risk engagements CRF Advisors

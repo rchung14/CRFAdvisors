@@ -153,6 +153,27 @@
   color: var(--blue-mid);
 }
 
+/* Standalone highlighted response-time badge under the contact info */
+.contact-info__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--sp-3);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  background-color: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-left: 3px solid var(--blue-mid);
+  border-radius: 6px;
+}
+
+.contact-info__badge svg {
+  color: var(--blue-mid);
+  flex-shrink: 0;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .contact-grid {

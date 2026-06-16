@@ -2,14 +2,15 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import Button from '../components/Button'
-import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { SERVICES, APPROACH, PROCESS_STEPS } from '../data/services'
-import { FEATURED_CLIENTS, CLIENT_COUNT } from '../data/clients'
+import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
 import heroPhoto from '../assets/test.avif'
 import '../styles/Home.css'
 
 export default function Home() {
+  // First 12 institutions (across states) for the homepage trust-bar pills.
+  const featuredClients = CLIENT_GROUPS.flatMap((g) => g.clients).slice(0, 12)
   return (
     <main className="page">
       <Seo {...ROUTES_META['/']} />
@@ -41,6 +42,13 @@ export default function Home() {
               Ted Ahn, President, CRF Advisors
             </figcaption>
           </figure>
+          <p className="hero__stats">
+            <span>33+ Clients</span>
+            <span className="hero__stats-dot" aria-hidden="true">·</span>
+            <span>5 Service Lines</span>
+            <span className="hero__stats-dot" aria-hidden="true">·</span>
+            <span>Tri-State &amp; Beyond</span>
+          </p>
           <div className="hero__ctas">
             <Button to="/consulting-services" variant="white">
               Our Services
@@ -55,27 +63,21 @@ export default function Home() {
       {/* Services overview */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>What We Do</SectionEyebrow>
           <h2>Credit Risk &amp; Loan Review Services</h2>
           <p className="section-sub">
             Your credit risk decisions shape your future. Ours help shape them.
           </p>
           <div className="services-grid">
-            {SERVICES.map(({ id, slug, name, icon, summary }) => {
-              const Icon = icon
-              return (
+            {SERVICES.map(({ id, slug, name, summary }, i) => (
               <article key={id} className="card service-card">
-                <span className="service-card__icon" aria-hidden="true">
-                  <Icon size={24} strokeWidth={1.5} />
-                </span>
+                <span className="service-card__num">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{name}</h3>
                 <p>{summary}</p>
                 <Link className="text-link" to={`/consulting-services/${slug}`}>
                   Learn more &rarr;
                 </Link>
               </article>
-              )
-            })}
+            ))}
           </div>
           <p className="services-note">
             Every engagement is independent and objective, whether you need a
@@ -89,7 +91,6 @@ export default function Home() {
       {/* Approach: 3-col on blue gradient */}
       <section className="approach">
         <div className="container">
-          <SectionEyebrow light>Our Approach</SectionEyebrow>
           <h2 className="approach__heading">
             Objective Insight, Consistent Methodology
           </h2>
@@ -110,7 +111,6 @@ export default function Home() {
       {/* Process snapshot */}
       <section className="section section--off-white">
         <div className="container">
-          <SectionEyebrow>How We Work</SectionEyebrow>
           <h2>Our Loan Review Process</h2>
           <ol className="process">
             {PROCESS_STEPS.map(({ title, body }, i) => (
@@ -133,13 +133,16 @@ export default function Home() {
             Trusted by {CLIENT_COUNT}+ banks, credit unions, and financial
             institutions across the Tri-State area
           </h2>
-          <ul className="trust__list">
-            {FEATURED_CLIENTS.map((name) => (
-              <li key={name}>{name}</li>
+          <ul className="trust__pills">
+            {featuredClients.map(({ name, city }) => (
+              <li key={name} className="trust__pill">
+                <span className="trust__pill-name">{name}</span>
+                <span className="trust__pill-city">{city}</span>
+              </li>
             ))}
           </ul>
           <Link className="text-link" to="/clients">
-            View all clients &rarr;
+            View all {CLIENT_COUNT} clients &rarr;
           </Link>
         </div>
       </section>

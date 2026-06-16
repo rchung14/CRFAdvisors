@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
-import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { SERVICES, APPROACH, PROCESS_STEPS } from '../data/services'
 import hubBanner from '../assets/svc-hub.webp'
@@ -24,28 +23,22 @@ export default function ConsultingServices() {
       {/* Service overview cards — each links to a dedicated deep-dive page */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>Our Services</SectionEyebrow>
           <h2>Five Core Credit Risk Services</h2>
           <p className="section-sub">
             Each engagement is independent and scoped to your institution. Explore
             any service for methodology, scope, and answers to common questions.
           </p>
           <div className="services-grid">
-            {SERVICES.map(({ id, slug, name, icon, summary }) => {
-              const Icon = icon
-              return (
-                <article key={id} className="card service-card">
-                  <span className="service-card__icon" aria-hidden="true">
-                    <Icon size={24} strokeWidth={1.5} />
-                  </span>
-                  <h3>{name}</h3>
-                  <p>{summary}</p>
-                  <Link className="text-link" to={`/consulting-services/${slug}`}>
-                    Learn more &rarr;
-                  </Link>
-                </article>
-              )
-            })}
+            {SERVICES.map(({ id, slug, name, summary }, i) => (
+              <article key={id} className="card service-card">
+                <span className="service-card__num">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{name}</h3>
+                <p>{summary}</p>
+                <Link className="text-link" to={`/consulting-services/${slug}`}>
+                  Learn more &rarr;
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -54,7 +47,6 @@ export default function ConsultingServices() {
       <section className="section approach-process">
         <div className="container approach-process__grid">
           <div>
-            <SectionEyebrow>Our Approach</SectionEyebrow>
             <h2>How We Think About Credit Risk</h2>
             <ul className="approach-process__list">
               {APPROACH.map(({ title, body }) => (
@@ -66,7 +58,6 @@ export default function ConsultingServices() {
             </ul>
           </div>
           <div>
-            <SectionEyebrow>Our Process</SectionEyebrow>
             <h2>From Portfolio to Report</h2>
             <ol className="approach-process__steps">
               {PROCESS_STEPS.map(({ title, body }, i) => (

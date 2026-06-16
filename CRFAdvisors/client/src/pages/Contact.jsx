@@ -3,7 +3,6 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
-import SectionEyebrow from '../components/SectionEyebrow'
 import { API_URL, CONTACT } from '../config'
 import heroImg from '../assets/page-contact.webp'
 import '../styles/Contact.css'
@@ -106,7 +105,6 @@ export default function Contact() {
         <div className="container contact-grid">
           {/* Form */}
           <div className="contact-form-col">
-            <SectionEyebrow>Send a Message</SectionEyebrow>
             <h2>Tell Us About Your Institution</h2>
 
             <p className="contact-intro">
@@ -281,11 +279,11 @@ export default function Contact() {
                 <MapPin size={18} aria-hidden="true" />
                 <span>{CONTACT.location}</span>
               </li>
-              <li>
-                <Clock size={18} aria-hidden="true" />
-                <span>We typically respond within 1 business day.</span>
-              </li>
             </ul>
+            <p className="contact-info__badge">
+              <Clock size={16} aria-hidden="true" />
+              <span>We typically respond within 1 business day.</span>
+            </p>
           </aside>
         </div>
       </section>

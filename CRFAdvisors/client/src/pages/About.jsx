@@ -4,7 +4,6 @@ import { Award, Users, ShieldCheck } from 'lucide-react'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
-import SectionEyebrow from '../components/SectionEyebrow'
 import CTABanner from '../components/CTABanner'
 import { TEAM } from '../data/team'
 import heroImg from '../assets/page-about.webp'
@@ -82,7 +81,6 @@ export default function About() {
       {/* Firm overview */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>The Firm</SectionEyebrow>
           <h2>Independent Credit Risk Management Since 20XX</h2>
           <div className="text-block firm-overview">
             <p>
@@ -112,7 +110,6 @@ export default function About() {
       {/* Team */}
       <section className="section section--off-white">
         <div className="container">
-          <SectionEyebrow>Our People</SectionEyebrow>
           <h2>Our Team</h2>
           <p className="section-sub">
             Experienced credit professionals with deep roots in banking, audit, and
@@ -132,7 +129,6 @@ export default function About() {
       {/* Why CRF */}
       <section className="section">
         <div className="container">
-          <SectionEyebrow>Why CRF</SectionEyebrow>
           <h2>Why Institutions Choose CRF Advisors</h2>
           <div className="why-grid">
             {DIFFERENTIATORS.map(({ icon, title, body }) => {
