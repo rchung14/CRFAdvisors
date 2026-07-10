@@ -39,21 +39,68 @@ function headTags({ path: routePath, title, description, schemas }) {
 }
 
 const { render, ROUTES_META } = await import(path.join(root, 'dist-ssr/entry-server.js'))
-const template = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf-8')
+let template = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf-8')
 
-// Untouched template kept as the SPA fallback for unknown URLs (see
-// vercel.json rewrites) — an empty root div avoids hydration mismatches.
+// Per-route modulepreload hints: pages are lazy (route-level code splitting),
+// so without a hint the page chunk is only discovered after the entry script
+// executes. Preloading it (and its imports) removes that request-chain hop.
+const manifest = JSON.parse(
+  fs.readFileSync(path.join(root, 'dist/.vite/manifest.json'), 'utf-8')
+)
+
+const PAGE_SRC = {
+  '/': 'src/pages/Home.jsx',
+  '/consulting-services': 'src/pages/ConsultingServices.jsx',
+  '/clients': 'src/pages/Clients.jsx',
+  '/about': 'src/pages/About.jsx',
+  '/contact': 'src/pages/Contact.jsx',
+  '/privacy': 'src/pages/Privacy.jsx',
+  '/terms': 'src/pages/Terms.jsx',
+}
+
+function chunkFiles(key, seen = new Set()) {
+  const chunk = manifest[key]
+  if (!chunk || seen.has(chunk.file)) return seen
+  seen.add(chunk.file)
+  for (const dep of chunk.imports || []) chunkFiles(dep, seen)
+  return seen
+}
+
+// Files already loaded by the entry <script>/<link modulepreload> tags in the
+// template — no need to hint them again.
+const entryFiles = chunkFiles('index.html')
+
+function preloadTags(routePath) {
+  const key = routePath.startsWith('/consulting-services/')
+    ? 'src/pages/ServicePage.jsx'
+    : PAGE_SRC[routePath]
+  if (!key || !manifest[key]) throw new Error(`No manifest chunk for ${routePath}`)
+  return [...chunkFiles(key)]
+    .filter((f) => !entryFiles.has(f))
+    .map((f) => `<link rel="modulepreload" crossorigin href="/${f}" />`)
+}
+
+// Inline the (single, cssCodeSplit: false) stylesheet so the first paint
+// doesn't block on a CSS request. The ~5 KiB gzipped cost per HTML page buys
+// the render-blocking request away entirely.
+const cssLink = template.match(/<link rel="stylesheet"[^>]*href="\/(assets\/[^"]+\.css)"[^>]*>/)
+if (!cssLink) throw new Error('Stylesheet link not found in dist/index.html')
+const css = fs.readFileSync(path.join(root, 'dist', cssLink[1]), 'utf-8')
+template = template.replace(cssLink[0], `<style>${css}</style>`)
+
+// Template kept as the SPA fallback for unknown URLs (see vercel.json
+// rewrites) — an empty root div avoids hydration mismatches.
 fs.writeFileSync(path.join(root, 'dist/spa-fallback.html'), template)
 
 for (const meta of Object.values(ROUTES_META)) {
-  const appHtml = render(meta.path)
+  const appHtml = await render(meta.path)
   const html = template
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(meta.title)}</title>`)
     .replace(
       /(<meta\s+name="description"\s+content=")[^"]*(")/,
       `$1${escapeHtml(meta.description)}$2`
     )
-    .replace('</head>', `${headTags(meta)}</head>`)
+    .replace('</head>', `${headTags(meta)}${preloadTags(meta.path).join('\n    ')}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 
   const outDir = meta.path === '/' ? path.join(root, 'dist') : path.join(root, `dist${meta.path}`)
@@ -63,3 +110,4 @@ for (const meta of Object.values(ROUTES_META)) {
 }
 
 fs.rmSync(path.join(root, 'dist-ssr'), { recursive: true, force: true })
+fs.rmSync(path.join(root, 'dist/.vite'), { recursive: true, force: true })

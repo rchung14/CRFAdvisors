@@ -5,6 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react()],
   build: {
+    // One CSS file for the whole app: scripts/prerender.mjs inlines it into
+    // every prerendered page (no render-blocking request), and lazy route
+    // chunks then never wait on their own stylesheets (no FOUC).
+    cssCodeSplit: false,
+    // Manifest lets scripts/prerender.mjs emit per-route modulepreload hints
+    // so each page's lazy chunk downloads in parallel with the entry script.
+    manifest: !isSsrBuild,
     rollupOptions: {
       output: isSsrBuild
         ? {}

@@ -1,6 +1,6 @@
 import { SITE_URL, ORG_SCHEMA, breadcrumbSchema, breadcrumbTrail, faqSchema } from '../config'
 import { SERVICES } from '../data/services'
-import { SERVICE_PAGES } from '../data/servicePages'
+import { SERVICE_PAGE_META_LIST } from '../data/servicePagesMeta'
 import { TEAM } from '../data/team'
 import { CLIENT_COUNT } from '../data/clients'
 
@@ -41,7 +41,7 @@ const SERVICE_SCHEMAS = SERVICES.map(({ name, summary, slug }) => ({
 // One ROUTES_META entry per dedicated service page, each carrying its own
 // Service + FAQPage + 3-level BreadcrumbList structured data.
 const SERVICE_PAGE_META = Object.fromEntries(
-  SERVICE_PAGES.map((p) => [
+  SERVICE_PAGE_META_LIST.map((p) => [
     `/consulting-services/${p.slug}`,
     {
       path: `/consulting-services/${p.slug}`,

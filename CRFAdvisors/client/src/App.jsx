@@ -1,17 +1,24 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
-import ConsultingServices from './pages/ConsultingServices'
-import Clients from './pages/Clients'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Privacy from './pages/Privacy'
-import Terms from './pages/Terms'
-import ServicePage from './pages/ServicePage'
-import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import ErrorBoundary from './components/ErrorBoundary'
+import { PAGE_IMPORTERS } from './pageImporters'
+
+// Pages are code-split per route so a visitor only downloads the page they're
+// on. entry-server.jsx awaits the importers before prerendering, so the
+// static HTML is always complete; main.jsx preloads the current route's
+// chunk before hydrating.
+const Home = lazy(PAGE_IMPORTERS.Home)
+const ConsultingServices = lazy(PAGE_IMPORTERS.ConsultingServices)
+const ServicePage = lazy(PAGE_IMPORTERS.ServicePage)
+const Clients = lazy(PAGE_IMPORTERS.Clients)
+const About = lazy(PAGE_IMPORTERS.About)
+const Contact = lazy(PAGE_IMPORTERS.Contact)
+const Privacy = lazy(PAGE_IMPORTERS.Privacy)
+const Terms = lazy(PAGE_IMPORTERS.Terms)
+const NotFound = lazy(PAGE_IMPORTERS.NotFound)
 
 // Router-agnostic app shell: main.jsx wraps it in BrowserRouter for the
 // client; entry-server.jsx wraps it in StaticRouter for build-time prerender.
@@ -21,6 +28,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <ErrorBoundary>
+        <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/consulting-services" element={<ConsultingServices />} />
@@ -41,6 +49,7 @@ function App() {
               redirect on every unknown URL reads as a soft 404 to Google */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </ErrorBoundary>
       <Footer />
     </>

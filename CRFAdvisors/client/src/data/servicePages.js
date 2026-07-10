@@ -1,3 +1,4 @@
+import { SERVICE_PAGE_META_BY_SLUG } from './servicePagesMeta'
 import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers } from 'lucide-react'
 import bannerLoanReview from '../assets/svc-loan-review.webp'
 import bannerDueDiligence from '../assets/svc-due-diligence.webp'
@@ -17,19 +18,13 @@ import bannerCecl from '../assets/svc-cecl.webp'
 // `related` is an array of segments: a string renders as text, an object
 // { to, label } renders as an internal <Link> (keyword anchor text).
 
-export const SERVICE_PAGES = [
+const SERVICE_PAGE_CONTENT = [
   {
     slug: 'loan-review',
     id: 'loan-review',
     icon: FileSearch,
     banner: bannerLoanReview,
     bannerAlt: 'Two credit professionals reviewing loan portfolio documents and financial statements',
-    eyebrow: 'Loan Review',
-    breadcrumb: 'Independent Loan Review',
-    h1: 'Independent Loan Review for Banks and Financial Institutions',
-    metaTitle: 'Independent Loan Review for Banks & Credit Unions | CRF Advisors',
-    metaDescription:
-      'Objective, third-party loan review for community banks, credit unions, and savings institutions. Risk rating validation, problem credit identification, examiner readiness.',
     intro: [
       'Independent loan review is an objective, third-party assessment of a financial institution’s loan portfolio quality, designed to validate risk ratings, identify deteriorating credits early, and confirm compliance with the institution’s credit policies and applicable regulatory guidance. Unlike internal credit review, an independent loan review program is performed by professionals with no operational stake in the lending decisions being evaluated, satisfying the independence requirement reinforced throughout federal banking guidance.',
     ],
@@ -82,13 +77,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'How often should we have an independent loan review?', a: 'Annual reviews are standard. Institutions with elevated risk profiles, recent examination findings, or material portfolio growth may benefit from semi-annual coverage.' },
-      { q: 'What does "independent" actually require?', a: 'Independence means the reviewer has no loan approval authority, no compensation tied to lending volume, and no relationship that could compromise objectivity. Engaging an external firm automatically satisfies the independence requirement.' },
-      { q: 'Will examiners accept our internal loan review function?', a: 'Internal loan review can satisfy regulatory expectations if it is functionally independent of loan administration, adequately staffed at the appropriate seniority, and properly documented. Most community banks lack the scale to do this effectively in-house.' },
-      { q: 'How is sample size determined?', a: 'Regulatory guidance does not prescribe a fixed percentage. Coverage is based on portfolio composition, concentration risk, prior findings, and growth, with emphasis on risk-based rather than purely statistical sampling.' },
-      { q: 'What happens if you disagree with our internal risk ratings?', a: 'We document the rationale for the recommended rating change and submit it through the institution’s normal rating-change process. Management retains authority over the final rating.' },
-    ],
     approach: [
       { term: 'Independence is non-negotiable', desc: 'We do not accept engagements where independence is compromised by scope or relationship.' },
       { term: 'Findings are graded by severity', desc: 'Not by criticism for its own sake. The goal is actionable insight, not exception-counting.' },
@@ -114,12 +102,6 @@ export const SERVICE_PAGES = [
     icon: Search,
     banner: bannerDueDiligence,
     bannerAlt: 'Signing a transaction agreement, representing credit due diligence for mergers, acquisitions, and portfolio purchases',
-    eyebrow: 'Due Diligence',
-    breadcrumb: 'Credit Due Diligence',
-    h1: 'Credit Due Diligence for Mergers, Acquisitions, and Portfolio Transactions',
-    metaTitle: 'Credit Due Diligence for Bank M&A & Acquisitions | CRF Advisors',
-    metaDescription:
-      'Independent credit due diligence for whole-bank acquisitions, branch acquisitions, and loan portfolio purchases. Risk identification, day-one credit marks, reserve adequacy.',
     intro: [
       'Credit due diligence is the systematic pre-closing examination of a target institution’s loan portfolio to validate credit quality, identify concealed risk, confirm reserve adequacy, and inform acquisition pricing. For acquirers, comprehensive credit diligence is the difference between paying for a healthy book of business and inheriting a portfolio of problem credits that surface in the first post-closing examination cycle.',
     ],
@@ -175,13 +157,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'When should credit diligence start?', a: 'As soon as a confidentiality agreement is in place and ideally before the binding purchase agreement is signed. Early engagement preserves negotiating leverage.' },
-      { q: 'How does diligence differ from independent loan review?', a: 'Diligence is forward-looking and transaction-focused, producing input for negotiation and purchase accounting. Loan review is recurring and oversight-focused, supporting ongoing credit risk management.' },
-      { q: 'What sample size is typical?', a: 'For whole-bank transactions, coverage of 60–80% of commercial loan dollars is common, supplemented by full review of all classified and large credits.' },
-      { q: 'Do you support CECL day-one ACL calculations?', a: 'Yes. Our findings feed directly into the acquirer’s CECL day-one calculation requirements.' },
-      { q: 'Can findings derail a deal?', a: 'Our role is to inform, not to advocate. We deliver findings calibrated to the transaction context so the acquirer’s leadership can make informed decisions about price, structure, and walk-away triggers.' },
-    ],
     approach: [
       { term: 'Speed without compromise', desc: 'M&A timelines are unforgiving, but accuracy matters more than expedience.' },
       { term: 'Direct communication', desc: 'With the deal team, counsel, and the acquirer’s board.' },
@@ -205,12 +180,6 @@ export const SERVICE_PAGES = [
     icon: Activity,
     banner: bannerStressTesting,
     bannerAlt: 'Financial data and analytics dashboard, representing scenario-based loan portfolio stress testing',
-    eyebrow: 'Portfolio Stress Testing',
-    breadcrumb: 'Portfolio Stress Testing',
-    h1: 'Loan Portfolio Stress Testing for Regulatory Compliance and Capital Planning',
-    metaTitle: 'Loan Portfolio Stress Testing for Financial Institutions | CRF Advisors',
-    metaDescription:
-      'Scenario-based stress testing of commercial, CRE, and consumer loan portfolios. Capital impact modeling, regulatory readiness, board reporting for community banks and credit unions.',
     intro: [
       'Loan portfolio stress testing is the quantitative modeling of credit losses under adverse economic scenarios, used to validate capital adequacy, inform strategic planning, and demonstrate sound risk management to regulators. While DFAST stress testing is mandatory only for institutions above $250 billion in assets, federal banking regulators expect community banks and credit unions to perform commensurate portfolio stress testing as part of sound risk management, particularly for institutions with material concentrations.',
     ],
@@ -265,12 +234,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'Is stress testing required for community banks?', a: 'Mandatory only for institutions over $250 billion in assets. Strongly expected as sound practice for smaller institutions, particularly those with elevated CRE concentrations or rapid loan growth.' },
-      { q: 'How often should stress tests be run?', a: 'At minimum annually. More frequently for institutions with elevated risk profiles, material portfolio changes, or recent examination findings.' },
-      { q: 'Can stress test results inform CECL?', a: 'Stress test loss rates can inform the reasonable and supportable forecast period under CECL, though they typically reflect more severe scenarios than CECL’s expected-loss framework. We help institutions reconcile the two frameworks where appropriate.' },
-      { q: 'What scenarios do you use?', a: 'Federal Reserve supervisory scenarios are the starting point, supplemented by institution-specific scenarios that reflect the bank’s portfolio sensitivities: local economic conditions, industry concentrations, or specific tail risks.' },
-    ],
     approach: [
       { term: 'Models built to be understood', desc: 'Not black boxes.' },
       { term: 'Documentation that supports examination', desc: 'Not just compliance.' },
@@ -294,12 +257,6 @@ export const SERVICE_PAGES = [
     icon: Calculator,
     banner: bannerAlll,
     bannerAlt: 'Calculator and accounting documents, representing ALLL/ACL allowance methodology and reserve calculation',
-    eyebrow: 'ALLL Methodology & Review',
-    breadcrumb: 'ALLL Methodology',
-    h1: 'ALLL/ACL Methodology Review and FFIEC Compliance Support',
-    metaTitle: 'ALLL Methodology Review & FFIEC Compliance | CRF Advisors',
-    metaDescription:
-      'Independent review and implementation support for ALLL/ACL methodology. FFIEC Interagency Policy compliance, impaired loan valuation, TDR and OREO accounting.',
     intro: [
       'The Allowance for Loan and Lease Losses (ALLL) methodology, and its successor under CECL, the Allowance for Credit Losses (ACL), is the formal framework by which a financial institution estimates and reserves for expected credit losses in its loan portfolio. CRF Advisors provides independent review, validation, and implementation support for ALLL and ACL methodologies, ensuring compliance with the FFIEC Interagency Policy Statement on the Allowance for Credit Losses and applicable GAAP.',
     ],
@@ -350,13 +307,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'How often should the ALLL/ACL methodology be reviewed?', a: 'Annual independent validation is standard practice. Methodology changes require contemporaneous review and documentation.' },
-      { q: 'Do you replace our internal ALLL/ACL process?', a: 'No. We validate, support, and recommend improvements. The institution retains full ownership of the calculation, methodology, and documentation.' },
-      { q: 'Are you familiar with both ALLL and CECL frameworks?', a: 'Yes. Many institutions still operate under incurred-loss ALLL for sub-$1B portfolios; others transitioned to CECL but continue refining. We work with both.' },
-      { q: 'Can you support TDR accounting under the new CECL framework?', a: 'Yes. ASU 2022-02 eliminated TDR accounting for CECL adopters but introduced new disclosure requirements for loan modifications. We help institutions implement the new framework correctly.' },
-      { q: 'Do you coordinate directly with our external auditors?', a: 'Yes, and we typically encourage it. Our findings often align with auditor expectations and can streamline the year-end audit process.' },
-    ],
     approach: [
       { term: 'Documentation built for examination', desc: 'Not just for filing.' },
       { term: 'Qualitative factor frameworks that pass scrutiny', desc: 'Without overreaching.' },
@@ -384,12 +334,6 @@ export const SERVICE_PAGES = [
     icon: ClipboardCheck,
     banner: bannerAlll,
     bannerAlt: 'Accounting documents and calculator, representing independent review of the ACL calculation and CECL methodology',
-    eyebrow: 'CECL Methodology & ACL Review',
-    breadcrumb: 'CECL Methodology & ACL Review',
-    h1: 'Independent CECL Methodology and ACL Review',
-    metaTitle: 'CECL Methodology & ACL Review for Banks | CRF Advisors',
-    metaDescription:
-      'Independent review of the Allowance for Credit Losses (ACL) calculation and CECL methodology. Pool segmentation, GL reconciliation, PD x LGD and DCF recalculation, Q-factor review.',
     intro: [
       'CRF Advisors performs an independent review of the Allowance for Credit Losses (ACL) calculation and the Current Expected Credit Loss (CECL) methodology implemented by management. Our review procedures focus on the completeness of the ACL computation and its supporting documentation, and on conformity of the CECL methodology with the Interagency Policy Statement on the Allowance for Credit Losses and applicable accounting standards.',
     ],
@@ -439,13 +383,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'How is an ACL review different from CECL implementation?', a: 'Implementation builds or configures the model; an ACL review independently tests the model and calculation management already runs. Institutions typically engage implementation support once, then periodic independent reviews on an ongoing basis.' },
-      { q: 'We use a vendor CECL platform. What does your review cover?', a: 'The review covers the institution’s use of the platform: pool segmentation, assumptions, inputs, reconciliation to the GL, qualitative factors, and documentation. Examiners expect institutions to defend vendor model assumptions, not simply rely on the vendor.' },
-      { q: 'How often should the ACL be independently reviewed?', a: 'Annual independent review is standard practice, aligned to the examination and external audit cycle. Methodology changes warrant contemporaneous review.' },
-      { q: 'Does the review satisfy model validation expectations?', a: 'The review addresses the core elements of model risk management guidance for the ACL: conceptual soundness, computation accuracy, and outcomes analysis, scoped to institution size and complexity.' },
-      { q: 'Do you review ASU 2022-02 loan modification disclosures?', a: 'Yes. The review includes the post-TDR loan modification and vintage disclosure requirements introduced by ASU 2022-02 for CECL adopters.' },
-    ],
     approach: [
       { term: 'Independence from the methodology under review', desc: 'We review calculations we did not build; institutions that engaged us for implementation receive review from separately assigned professionals.' },
       { term: 'Recalculation, not just inspection', desc: 'Sampled loss model outputs are independently recalculated, not merely traced to documentation.' },
@@ -469,12 +406,6 @@ export const SERVICE_PAGES = [
     icon: Layers,
     banner: bannerCecl,
     bannerAlt: 'Financial analytics dashboard with charts, representing CECL model development and forecasting',
-    eyebrow: 'CECL Implementation & Modeling',
-    breadcrumb: 'CECL Implementation & Modeling',
-    h1: 'CECL Implementation and Modeling for Financial Institutions',
-    metaTitle: 'CECL Implementation & Modeling for Banks & FCUs | CRF Advisors',
-    metaDescription:
-      'End-to-end CECL implementation and modeling. Vintage, PD x LGD, DCF, WARM, and loss rate methodologies for community banks and credit unions.',
     intro: [
       'Current Expected Credit Loss (CECL), codified in ASC 326, replaced the incurred-loss model with a forward-looking expected-loss framework for accounting for credit losses. CRF Advisors provides end-to-end CECL model development, validation, and implementation support, calibrated to institution size and portfolio complexity, with documentation built to withstand both audit and examiner scrutiny.',
     ],
@@ -534,13 +465,6 @@ export const SERVICE_PAGES = [
         ],
       },
     ],
-    faqs: [
-      { q: 'We use a vendor for CECL. Do we still need independent validation?', a: 'Yes. Examiners increasingly expect institutions to understand and defend vendor model assumptions, not simply rely on the vendor. Independent validation also satisfies model risk management expectations.' },
-      { q: 'Is WARM acceptable for community banks?', a: 'Yes. WARM is widely accepted for institutions with appropriate portfolio characteristics and a properly designed Q-factor framework. Many community banks find WARM the most defensible methodology given data limitations.' },
-      { q: 'How does CECL interact with portfolio stress testing?', a: 'CECL expected-loss forecasts and stress test scenarios are different tools with different time horizons and severity assumptions. We help institutions reconcile the two frameworks where appropriate.' },
-      { q: 'Do you build models or only review them?', a: 'Both, as separate services. This engagement covers end-to-end implementation and modeling; our CECL Methodology & ACL Review service independently validates models built internally or by vendors. Each engagement is scoped to the institution’s situation.' },
-      { q: 'What happens at examination?', a: 'We support institutions directly through examination cycles, responding to examiner questions on methodology, assumptions, and documentation. The goal is examination success, not just methodology defense.' },
-    ],
     approach: [
       { term: 'Methodology calibrated to the institution', desc: 'Not the vendor’s template.' },
       { term: 'Documentation built for examination', desc: 'Not just filing.' },
@@ -562,6 +486,13 @@ export const SERVICE_PAGES = [
     ],
   },
 ]
+
+
+// Full page objects = meta (servicePagesMeta.js) + long-form content (above).
+export const SERVICE_PAGES = SERVICE_PAGE_CONTENT.map((p) => ({
+  ...SERVICE_PAGE_META_BY_SLUG[p.slug],
+  ...p,
+}))
 
 // Generic trust block rendered at the foot of every service page.
 // TODO: CRF to confirm specifics. The independence/staffing/experience claims
