@@ -25,13 +25,14 @@
   /* Color */
   --navy: #1A4480;
   --navy-dark: #11305E;
-  --blue-mid: #2774CC;
+  --blue-mid: #216CC4; /* ≥4.5:1 on white, off-white, and gray-bg (WCAG AA) */
   --blue-light: #4D94E8;
   --blue-gradient: linear-gradient(135deg, #1A4480 0%, #2E7FD9 100%);
   --white: #FFFFFF;
   --off-white: #F8F9FC;
   --ink: #0D0D0D;
   --gray-mid: #6B7280;
+  --gray-dark: #4B5563; /* body text on tinted backgrounds where gray-mid falls under 4.5:1 */
   --gray-light: #E5E7EB;
   --gray-bg: #F1F3F5;
   --accent-steel: #CBD5E1;
@@ -93,6 +94,13 @@ img {
 a {
   color: var(--blue-mid);
   text-decoration: none;
+}
+
+/* Links inside running text are underlined so they don't rely on color alone
+   (WCAG 1.4.1); component-style links (buttons, card links) opt out. */
+.page :is(p, li, figcaption) a:not(.btn):not(.text-link) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 button {
@@ -290,11 +298,11 @@ h4 {
 
 .breadcrumb {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .breadcrumb a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   transition: color var(--ease);
 }
 
@@ -324,7 +332,7 @@ h4 {
 
 .cta-banner__sub {
   font-size: 17px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.88);
   margin-top: var(--sp-2);
 }
 
@@ -345,7 +353,7 @@ h4 {
 
 .img-placeholder__label {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
   padding: 0 12px;
 }

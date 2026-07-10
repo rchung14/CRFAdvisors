@@ -18,7 +18,7 @@
 .client-group__count {
   font-size: 12px;
   font-weight: 600;
-  color: var(--gray-mid);
+  color: var(--gray-dark);
   background-color: var(--gray-bg);
   border-radius: 4px;
   padding: 2px 8px;
