@@ -1,0 +1,27 @@
+# CRF Advisors, Inc.
+
+> Independent credit risk management firm based in Philadelphia, PA, serving banks, credit unions, savings institutions, non-profit organizations, and financial services companies across Pennsylvania, New Jersey, Delaware, Maryland, and beyond. Services include independent loan review, credit due diligence, portfolio stress testing, ALLL methodology review, and CECL implementation and review.
+
+CRF Advisors performs independent, third-party credit review engagements: validating risk ratings, identifying problem credits early, testing allowance (ALLL/ACL) calculations, and supporting regulatory examination readiness for institutions ranging from $40 million to $5 billion in assets.
+
+## Services
+
+- [Consulting Services Overview](https://crf-advisors.vercel.app/consulting-services): All six credit risk and loan review service lines
+- [Independent Loan Review](https://crf-advisors.vercel.app/consulting-services/loan-review): Objective third-party loan portfolio review, risk rating validation, and examiner readiness
+- [Credit Due Diligence](https://crf-advisors.vercel.app/consulting-services/due-diligence): Credit due diligence for bank M&A, branch acquisitions, and loan portfolio purchases
+- [Portfolio Stress Testing](https://crf-advisors.vercel.app/consulting-services/stress-testing): Scenario-based stress testing with credit loss and capital impact modeling
+- [ALLL Methodology & Review](https://crf-advisors.vercel.app/consulting-services/alll): ALLL/ACL methodology review and FFIEC Interagency Policy compliance support
+- [CECL Methodology & ACL Review](https://crf-advisors.vercel.app/consulting-services/cecl-acl-review): Independent review of the ACL calculation and CECL methodology
+- [CECL Implementation & Modeling](https://crf-advisors.vercel.app/consulting-services/cecl): End-to-end CECL implementation using vintage, PD x LGD, and DCF approaches
+
+## Company
+
+- [Home](https://crf-advisors.vercel.app/): Independent loan review and credit risk management for financial institutions
+- [About Us](https://crf-advisors.vercel.app/about): Firm overview and team of credit professionals led by Ted Ahn
+- [Clients](https://crf-advisors.vercel.app/clients): Current and previous clients — 33+ banks, credit unions, and financial institutions
+- [Contact Us](https://crf-advisors.vercel.app/contact): Phone (267) 816-4272, email Tedahn@crfadvisors.com, Philadelphia PA
+
+## Optional
+
+- [Privacy Policy](https://crf-advisors.vercel.app/privacy): How information submitted through the site is handled
+- [Terms of Service](https://crf-advisors.vercel.app/terms): Terms governing use of the website
