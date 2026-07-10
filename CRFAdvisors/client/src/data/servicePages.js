@@ -1,11 +1,11 @@
-import { FileSearch, Search, Activity, Calculator, Layers } from 'lucide-react'
+import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers } from 'lucide-react'
 import bannerLoanReview from '../assets/svc-loan-review.webp'
 import bannerDueDiligence from '../assets/svc-due-diligence.webp'
 import bannerStressTesting from '../assets/svc-stress-testing.webp'
 import bannerAlll from '../assets/svc-alll.webp'
 import bannerCecl from '../assets/svc-cecl.webp'
 
-// Long-form content for the five standalone service pages
+// Long-form content for the six standalone service pages
 // (/consulting-services/:slug).
 // Rendered by ServicePage.jsx; metadata + JSON-LD derived in routesMeta.js.
 //
@@ -365,7 +365,9 @@ export const SERVICE_PAGES = [
     ],
     related: [
       'ALLL/ACL methodology integrates closely with ',
-      { to: '/consulting-services/cecl', label: 'CECL model implementation' },
+      { to: '/consulting-services/cecl', label: 'CECL implementation and modeling' },
+      ', ',
+      { to: '/consulting-services/cecl-acl-review', label: 'independent ACL review' },
       ', ',
       { to: '/consulting-services/loan-review', label: 'independent loan review' },
       ', and ',
@@ -377,17 +379,102 @@ export const SERVICE_PAGES = [
   },
 
   {
+    slug: 'cecl-acl-review',
+    id: 'cecl-acl-review',
+    icon: ClipboardCheck,
+    banner: bannerAlll,
+    bannerAlt: 'Accounting documents and calculator, representing independent review of the ACL calculation and CECL methodology',
+    eyebrow: 'CECL Methodology & ACL Review',
+    breadcrumb: 'CECL Methodology & ACL Review',
+    h1: 'Independent CECL Methodology and ACL Review',
+    metaTitle: 'CECL Methodology & ACL Review for Banks | CRF Advisors',
+    metaDescription:
+      'Independent review of the Allowance for Credit Losses (ACL) calculation and CECL methodology. Pool segmentation, GL reconciliation, PD x LGD and DCF recalculation, Q-factor review.',
+    intro: [
+      'CRF Advisors performs an independent review of the Allowance for Credit Losses (ACL) calculation and the Current Expected Credit Loss (CECL) methodology implemented by management. Our review procedures focus on the completeness of the ACL computation and its supporting documentation, and on conformity of the CECL methodology with the Interagency Policy Statement on the Allowance for Credit Losses and applicable accounting standards.',
+    ],
+    sections: [
+      {
+        heading: 'Background: ASC 326 and the Move to Expected Losses',
+        paragraphs: [
+          'In June 2016, the Financial Accounting Standards Board (FASB) issued Accounting Standards Update (ASU) 2016-13 (Topic 326), Financial Instruments — Credit Losses. ASU 2016-13 replaces the incurred-loss impairment methodology in prior GAAP with a CECL methodology and requires consideration of a broader range of information to determine credit loss estimates. Financial assets measured at amortized cost are presented at the net amount expected to be collected through an allowance for credit losses.',
+          'In March 2022, the FASB further amended Topic 326 with ASU 2022-02, Financial Instruments — Credit Losses (Topic 326): Troubled Debt Restructurings and Vintage Disclosures, eliminating TDR accounting for CECL adopters and introducing new loan modification and vintage disclosure requirements. An independent ACL review confirms that the institution’s methodology and disclosures have kept pace with these amendments.',
+        ],
+      },
+      {
+        heading: 'Why an Independent ACL Review Matters',
+        paragraphs: [
+          'The ACL is one of the largest and most judgment-dependent estimates in a financial institution’s financial statements, and it is a standing focus area for external auditors and federal examiners. An independent review by professionals with no stake in the original methodology gives the board, the audit committee, and examiners confidence that the calculation is complete, accurate, and supportable.',
+        ],
+        itemsLead: 'Independent review findings support:',
+        items: [
+          'Board and audit committee oversight of the allowance process',
+          'Model risk management expectations for independent validation',
+          'External audit fieldwork and year-end reporting',
+          'Examination readiness and response to prior findings',
+        ],
+      },
+      {
+        heading: 'Summary of Review Procedures',
+        paragraphs: ['Each ACL review engagement typically includes the following procedures:'],
+        ordered: true,
+        items: [
+          { term: 'Policy and Methodology Compliance Review', desc: 'Review of the ACL calculation and CECL methodology for compliance with the Interagency Policy Statement on the Allowance for Credit Losses and FASB ASU 2016-13 (Topic 326).' },
+          { term: 'ACL Computation Accuracy Testing', desc: 'Independent testing of the accuracy of the ACL computation, including formulas, inputs, and roll-forward of prior-period balances.' },
+          { term: 'CECL Reconciliation and GL Verification', desc: 'Testing of the CECL reconciliation and verification of loan pool balances to the general ledger.' },
+          { term: 'Pool Segmentation Review', desc: 'Review of pool segmentation and the criteria supporting each pool, confirming segments capture meaningfully distinct risk characteristics.' },
+          { term: 'Life-of-Loan Determination Review', desc: 'Review of the life determination of loan pools, including prepayment and curtailment assumptions.' },
+          { term: 'Loss Model Recalculation', desc: 'Recalculation of a sample of PD x LGD or discounted cash flow (DCF) outputs used in the loss model.' },
+          { term: 'Qualitative Assumption Review', desc: 'Review of qualitative factor assumptions and supporting documentation for directional consistency and supportability.' },
+        ],
+      },
+      {
+        heading: 'What You Receive',
+        items: [
+          'Independent report on the completeness and accuracy of the ACL computation',
+          'Documented conclusions on CECL methodology conformity with interagency policy and ASC 326',
+          'Recalculation workpapers for sampled loss model outputs',
+          'Findings and practical recommendations on segmentation, life determination, and Q-factors',
+          'Materials suitable for board, audit committee, auditor, and examiner presentation',
+        ],
+      },
+    ],
+    faqs: [
+      { q: 'How is an ACL review different from CECL implementation?', a: 'Implementation builds or configures the model; an ACL review independently tests the model and calculation management already runs. Institutions typically engage implementation support once, then periodic independent reviews on an ongoing basis.' },
+      { q: 'We use a vendor CECL platform. What does your review cover?', a: 'The review covers the institution’s use of the platform: pool segmentation, assumptions, inputs, reconciliation to the GL, qualitative factors, and documentation. Examiners expect institutions to defend vendor model assumptions, not simply rely on the vendor.' },
+      { q: 'How often should the ACL be independently reviewed?', a: 'Annual independent review is standard practice, aligned to the examination and external audit cycle. Methodology changes warrant contemporaneous review.' },
+      { q: 'Does the review satisfy model validation expectations?', a: 'The review addresses the core elements of model risk management guidance for the ACL: conceptual soundness, computation accuracy, and outcomes analysis, scoped to institution size and complexity.' },
+      { q: 'Do you review ASU 2022-02 loan modification disclosures?', a: 'Yes. The review includes the post-TDR loan modification and vintage disclosure requirements introduced by ASU 2022-02 for CECL adopters.' },
+    ],
+    approach: [
+      { term: 'Independence from the methodology under review', desc: 'We review calculations we did not build; institutions that engaged us for implementation receive review from separately assigned professionals.' },
+      { term: 'Recalculation, not just inspection', desc: 'Sampled loss model outputs are independently recalculated, not merely traced to documentation.' },
+      { term: 'Findings graded by severity', desc: 'With practical remediation paths management can act on before the next examination.' },
+      { term: 'Documentation built for examination', desc: 'Workpapers and conclusions organized for auditor and examiner reliance.' },
+    ],
+    related: [
+      'ACL review pairs naturally with ',
+      { to: '/consulting-services/cecl', label: 'CECL implementation and modeling' },
+      ', ',
+      { to: '/consulting-services/alll', label: 'ALLL methodology review' },
+      ', and ',
+      { to: '/consulting-services/loan-review', label: 'independent loan review' },
+      ', whose risk rating findings feed the allowance calculation.',
+    ],
+  },
+
+  {
     slug: 'cecl',
     id: 'cecl',
     icon: Layers,
     banner: bannerCecl,
     bannerAlt: 'Financial analytics dashboard with charts, representing CECL model development and forecasting',
-    eyebrow: 'CECL Model & Implementation',
-    breadcrumb: 'CECL Implementation',
-    h1: 'CECL Model Development and Implementation for Financial Institutions',
-    metaTitle: 'CECL Model Implementation & Consulting | CRF Advisors',
+    eyebrow: 'CECL Implementation & Modeling',
+    breadcrumb: 'CECL Implementation & Modeling',
+    h1: 'CECL Implementation and Modeling for Financial Institutions',
+    metaTitle: 'CECL Implementation & Modeling for Banks & FCUs | CRF Advisors',
     metaDescription:
-      'End-to-end CECL model development, validation, and implementation. WARM, DCF, vintage analysis, and loss rate methodologies for community banks and credit unions.',
+      'End-to-end CECL implementation and modeling. Vintage, PD x LGD, DCF, WARM, and loss rate methodologies for community banks and credit unions.',
     intro: [
       'Current Expected Credit Loss (CECL), codified in ASC 326, replaced the incurred-loss model with a forward-looking expected-loss framework for accounting for credit losses. CRF Advisors provides end-to-end CECL model development, validation, and implementation support, calibrated to institution size and portfolio complexity, with documentation built to withstand both audit and examiner scrutiny.',
     ],
@@ -413,11 +500,11 @@ export const SERVICE_PAGES = [
           'The right methodology depends on portfolio composition, data availability, operational capacity, and the institution’s strategic priorities. Vendor solutions can satisfy the technical requirement but may obscure assumptions that examiners now expect institutions to defend.',
         ],
         items: [
-          { term: 'Weighted Average Remaining Maturity (WARM)', desc: 'Appropriate for many community banks with limited historical data depth.' },
+          { term: 'Vintage loss rate analysis', desc: 'For portfolios with sufficient historical cohort data.' },
+          { term: 'Probability of Default x Loss Given Default (PD x LGD)', desc: 'For institutions wanting loss estimates built from default likelihood and loss severity components.' },
           { term: 'Discounted Cash Flow (DCF)', desc: 'For institutions wanting more granular forward-looking forecasting.' },
-          { term: 'Vintage analysis', desc: 'For portfolios with sufficient historical cohort data.' },
-          { term: 'Static pool analysis', desc: 'For institutions with stable, well-characterized pools.' },
-          { term: 'Loss rate methodology with adjustments', desc: 'Appropriate for stable, well-characterized portfolios.' },
+          { term: 'Weighted Average Remaining Maturity (WARM)', desc: 'Appropriate for many community banks with limited historical data depth.' },
+          { term: 'Static pool and loss rate methodologies with adjustments', desc: 'Appropriate for stable, well-characterized portfolios.' },
         ],
       },
       {
@@ -451,7 +538,7 @@ export const SERVICE_PAGES = [
       { q: 'We use a vendor for CECL. Do we still need independent validation?', a: 'Yes. Examiners increasingly expect institutions to understand and defend vendor model assumptions, not simply rely on the vendor. Independent validation also satisfies model risk management expectations.' },
       { q: 'Is WARM acceptable for community banks?', a: 'Yes. WARM is widely accepted for institutions with appropriate portfolio characteristics and a properly designed Q-factor framework. Many community banks find WARM the most defensible methodology given data limitations.' },
       { q: 'How does CECL interact with portfolio stress testing?', a: 'CECL expected-loss forecasts and stress test scenarios are different tools with different time horizons and severity assumptions. We help institutions reconcile the two frameworks where appropriate.' },
-      { q: 'Do you build models or only review them?', a: 'Both. We build models for institutions that need end-to-end implementation, and we validate models built internally or by vendors. Each engagement is scoped to the institution’s situation.' },
+      { q: 'Do you build models or only review them?', a: 'Both, as separate services. This engagement covers end-to-end implementation and modeling; our CECL Methodology & ACL Review service independently validates models built internally or by vendors. Each engagement is scoped to the institution’s situation.' },
       { q: 'What happens at examination?', a: 'We support institutions directly through examination cycles, responding to examiner questions on methodology, assumptions, and documentation. The goal is examination success, not just methodology defense.' },
     ],
     approach: [
@@ -461,7 +548,9 @@ export const SERVICE_PAGES = [
       { term: 'Practical implementation', desc: 'That operational staff can sustain.' },
     ],
     related: [
-      'CECL methodology integrates closely with ',
+      'After implementation, our ',
+      { to: '/consulting-services/cecl-acl-review', label: 'CECL methodology and ACL review' },
+      ' provides ongoing independent validation. CECL methodology also integrates closely with the ',
       { to: '/consulting-services/alll', label: 'ALLL/ACL framework' },
       ', ',
       { to: '/consulting-services/stress-testing', label: 'portfolio stress testing' },
@@ -520,6 +609,11 @@ export const SERVICE_SOURCES = {
     { label: 'FASB — Current Expected Credit Losses (ASC 326)', url: 'https://www.fasb.org', verify: true },
     { label: 'Federal Reserve — CECL supervisory resources', url: 'https://www.federalreserve.gov/supervisionreg.htm', verify: true },
     { label: 'FFIEC — Interagency CECL resources', url: 'https://www.ffiec.gov', verify: true },
+  ],
+  'cecl-acl-review': [
+    { label: 'Interagency Policy Statement on Allowances for Credit Losses (2020)', url: 'https://www.ffiec.gov', verify: true },
+    { label: 'FASB — ASU 2016-13 Financial Instruments — Credit Losses (Topic 326)', url: 'https://www.fasb.org', verify: true },
+    { label: 'FASB — ASU 2022-02 TDRs and Vintage Disclosures', url: 'https://www.fasb.org', verify: true },
   ],
 }
 

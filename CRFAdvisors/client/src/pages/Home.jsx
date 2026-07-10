@@ -39,13 +39,13 @@ export default function Home() {
               Allowance for Loan Losses.&rdquo;
             </blockquote>
             <figcaption className="hero__attribution">
-              Ted Ahn, President, CRF Advisors
+              Ted Ahn, Team Leader, CRF Advisors
             </figcaption>
           </figure>
           <p className="hero__stats">
             <span>33+ Clients</span>
             <span className="hero__stats-dot" aria-hidden="true">·</span>
-            <span>5 Service Lines</span>
+            <span>6 Service Lines</span>
             <span className="hero__stats-dot" aria-hidden="true">·</span>
             <span>Tri-State &amp; Beyond</span>
           </p>

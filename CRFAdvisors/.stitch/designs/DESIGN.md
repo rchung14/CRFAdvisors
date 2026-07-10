@@ -189,10 +189,10 @@ Base unit: 4px (0.25rem)
 │  │  than just an assertion that a loan is properly           │  │    1px rgba(255,255,255,0.22) border
 │  │  classified..."                                           │  │    16px radius
 │  │                                                           │  │
-│  │  Ted Ahn, President, CRF Advisors                         │  │    attribution: Inter 400, 14px
+│  │  Ted Ahn, Team Leader, CRF Advisors                       │  │    attribution: Inter 400, 14px
 │  └────────────────────────────────────────────────────────────┘  │
 │                                                                  │
-│      33+ Clients    ·    5 Service Lines    ·    Tri-State       │  ← Inline stats bar
+│      33+ Clients    ·    6 Service Lines    ·    Tri-State       │  ← Inline stats bar
 │                                                                  │
 │       [  Our Services  ]    [  View Clients  ]                   │  ← Dual CTAs (match original)
 │                                                                  │
@@ -214,7 +214,7 @@ if the photo is light-toned.
 
 **Inline stats bar (below quote card):**
 - Single line of text, no boxes
-- Format: `33+ Clients · 5 Service Lines · Tri-State & Beyond`
+- Format: `33+ Clients · 6 Service Lines · Tri-State & Beyond`
 - Inter 500, 14px, rgba(255,255,255,0.70)
 - Centered dot separators
 - Mobile: stack vertically, one per line
@@ -250,7 +250,7 @@ if the photo is light-toned.
 - Border-radius: 8px
 - Padding: 28px 24px 24px 24px (extra top for number)
 - Hover: box-shadow: 0 4px 20px rgba(0,0,0,0.08); translateY(-2px) transition 180ms ease
-- 5th card (CECL): on desktop 3-col grid, place in center of bottom row using margin: 0 auto
+- 6 cards (01–06) fill the desktop 3-col grid as two even rows — no centering hack needed
 
 **Mobile (< 768px):**
 - Full-width single column
@@ -351,6 +351,32 @@ Mobile (vertical):
 - Border: 1px solid --color-gray-200, radius 8px
 - Grid: 2-col desktop, 1-col mobile
 - Padding: 24px
+
+---
+
+### 7b. Team Profile Rows (/about page — v2.1, 2026-07-10)
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│ ┌──────────┐   Ted Ahn                          ← Inter 500, 22px │
+│ │  photo   │   Team Leader                      ← Inter 600, 14px,│
+│ │ 232×290  │                                      --color-blue    │
+│ │ (4:5)    │   Full bio text flows here at max-width 72ch,        │
+│ └──────────┘   line-height 1.7, always fully visible...           │
+├───────────────── 1px solid --color-gray-200 ─────────────────────┤
+│ next member...                                                    │
+```
+
+- One full-width row per member; NO card, NO Read more toggle
+- Rationale: long bios must stay intact (firm requirement); a wide text column
+  absorbs length gracefully where a narrow card cannot
+- Photo: fixed 232px column (192px tablet, 176px stacked on mobile), aspect 4:5,
+  object-fit cover, radius 8px, top-aligned
+- Name: Inter 500 22px --color-gray-900 · Title: Inter 600 14px --color-blue
+- Bio: Inter 400 15px, line-height 1.7, --color-gray-600, max-width 72ch
+- Divider between rows: 1px solid --color-gray-200; rows padded 32px vertical
+- Mobile (<640px): photo stacks above text at 176px wide
+- Team leader is simply the first row — no special featured treatment
 
 ---
 

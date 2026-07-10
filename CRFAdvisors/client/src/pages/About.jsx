@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Award, Users, ShieldCheck } from 'lucide-react'
 import Seo from '../components/Seo'
@@ -27,40 +26,32 @@ const DIFFERENTIATORS = [
   },
 ]
 
-function TeamCard({ name, title, initials, bio, photo, featured = false }) {
-  const [expanded, setExpanded] = useState(false)
+// Full-width horizontal profile row: photo left, text right. Long bios flow
+// in a wide readable column instead of expanding a narrow card, so the full
+// description is always visible without a Read more toggle.
+function TeamMember({ name, title, initials, bio, photo }) {
   return (
-    <article className={`card team-card${featured ? ' team-card--featured' : ''}`}>
+    <article className="team-row">
       {photo ? (
         <img
-          className="team-card__photo team-card__img"
+          className="team-row__photo"
           src={photo}
           alt={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA`}
           loading="lazy"
         />
       ) : (
         <div
-          className="img-placeholder team-card__photo"
+          className="img-placeholder team-row__photo"
           role="img"
           aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA, photo placeholder`}
         >
-          <span className="team-card__initials">{initials}</span>
-          <span className="img-placeholder__label">{name} Photo</span>
+          <span className="team-row__initials">{initials}</span>
         </div>
       )}
-      <div className="team-card__body">
-        <h3 className="team-card__name">{name}</h3>
-        <p className="team-card__title">{title}</p>
-        <p className={`team-card__bio${expanded ? '' : ' team-card__bio--clamped'}`}>{bio}</p>
-        <div className="team-card__footer">
-          <button
-            type="button"
-            className="team-card__more"
-            onClick={() => setExpanded((v) => !v)}
-          >
-            {expanded ? 'Read less' : 'Read more'}
-          </button>
-        </div>
+      <div className="team-row__body">
+        <h3 className="team-row__name">{name}</h3>
+        <p className="team-row__title">{title}</p>
+        <p className="team-row__bio">{bio}</p>
       </div>
     </article>
   )
@@ -115,12 +106,9 @@ export default function About() {
             Experienced credit professionals with deep roots in banking, audit, and
             regulatory compliance.
           </p>
-          <div className="team-featured">
-            <TeamCard {...TEAM[0]} featured />
-          </div>
-          <div className="team-grid">
-            {TEAM.slice(1).map((member) => (
-              <TeamCard key={member.name} {...member} />
+          <div className="team-list">
+            {TEAM.map((member) => (
+              <TeamMember key={member.name} {...member} />
             ))}
           </div>
         </div>

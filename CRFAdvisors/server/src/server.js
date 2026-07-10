@@ -9,6 +9,10 @@ const app = express();
 
 app.disable('x-powered-by');
 
+// Render terminates TLS at a single proxy hop; trust it so req.ip is the
+// real client address (rate limiting is per-visitor, not per-proxy).
+app.set('trust proxy', 1);
+
 // Security headers on every response
 app.use((req, res, next) => {
   res.set({

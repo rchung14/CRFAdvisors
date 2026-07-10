@@ -4,116 +4,56 @@
   margin-top: var(--sp-3);
 }
 
-/* ---------- Team grid ---------- */
-/* President featured on his own centered row, larger than the rest */
-.team-featured {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--sp-6);
-}
-
-.team-featured .team-card {
-  width: 100%;
-  max-width: 350px;
-}
-
-.team-card--featured .team-card__initials {
-  font-size: 68px;
-}
-
-.team-card--featured .team-card__name {
-  font-size: 20px;
-}
-
-.team-card--featured .team-card__title {
-  font-size: 15px;
-}
-
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--sp-3);
+/* ---------- Team list ---------- */
+/* Horizontal profile rows: fixed photo column, bio flows full-width beside
+   it. Long descriptions stay readable instead of stretching a narrow card. */
+.team-list {
   margin-top: var(--sp-4);
 }
 
-.team-grid .team-card {
-  width: 282px;
+.team-row {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+  padding: var(--sp-4) 0;
 }
 
-.team-card {
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.team-row + .team-row {
+  border-top: 1px solid var(--gray-light);
 }
 
-.team-card__photo {
-  aspect-ratio: 1 / 1;
-}
-
-.team-card__img {
+.team-row__photo {
   width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  border-radius: 8px;
 }
 
-.team-card__initials {
+.team-row__initials {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 700;
   color: var(--white);
 }
 
-.team-card__body {
-  padding: var(--sp-3);
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.team-row__name {
+  font-size: 22px;
 }
 
-.team-card__name {
-  font-size: 18px;
-}
-
-.team-card__title {
+.team-row__title {
   font-size: 14px;
-  font-weight: 500;
-  color: var(--blue-mid);
-  margin-top: 2px;
-}
-
-.team-card__bio {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--gray-mid);
-  margin-top: var(--sp-2);
-}
-
-.team-card__bio--clamped {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.team-card__footer {
-  display: flex;
-  align-items: center;
-  margin-top: auto;
-  padding-top: var(--sp-2);
-}
-
-.team-card__more {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 13px;
   font-weight: 600;
   color: var(--blue-mid);
+  margin-top: 4px;
 }
 
-.team-card__more:hover {
-  text-decoration: underline;
+.team-row__bio {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-mid);
+  margin-top: var(--sp-2);
+  max-width: 72ch;
 }
 
 /* ---------- Why CRF ---------- */
@@ -141,9 +81,9 @@
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .team-grid .team-card {
-    width: calc(50% - var(--sp-3) / 2);
-    min-width: 260px;
+  .team-row {
+    grid-template-columns: 192px 1fr;
+    gap: var(--sp-4);
   }
 
   .why-grid {
@@ -153,9 +93,13 @@
 }
 
 @media (max-width: 640px) {
-  .team-grid .team-card {
-    width: 100%;
-    min-width: 0;
+  .team-row {
+    grid-template-columns: 1fr;
+    gap: var(--sp-2);
+  }
+
+  .team-row__photo {
+    width: 176px;
   }
 
   .why-grid {

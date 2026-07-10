@@ -1,6 +1,6 @@
-import { FileSearch, Search, Activity, Calculator, Layers } from 'lucide-react'
+import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers } from 'lucide-react'
 
-// The five core services. `summary` feeds the homepage cards; the long-form
+// The six core services. `summary` feeds the homepage cards; the long-form
 // fields feed the /consulting-services detail sections (SEO H2s from site.md).
 export const SERVICES = [
   {
@@ -80,20 +80,39 @@ export const SERVICES = [
     ],
   },
   {
+    id: 'cecl-acl-review',
+    slug: 'cecl-acl-review',
+    name: 'CECL Methodology & ACL Review',
+    icon: ClipboardCheck,
+    summary:
+      'Independent review of the Allowance for Credit Losses (ACL) calculation and CECL methodology for conformity with interagency policy and ASC 326.',
+    h2: 'Independent CECL Methodology and Allowance for Credit Losses (ACL) Review',
+    paragraphs: [
+      'CRF Advisors performs an independent review of the Allowance for Credit Losses (ACL) calculation and Current Expected Credit Loss (CECL) methodology implemented by management. Review procedures focus on the completeness of the ACL computation and supporting documentation, and conformity of the CECL methodology with interagency policy and accounting standards.',
+      'Engagements test the accuracy of the ACL computation, verify loan pool balances to the general ledger, and evaluate pool segmentation, life determination, and qualitative assumptions.',
+    ],
+    bullets: [
+      'ACL computation accuracy testing and GL reconciliation',
+      'Pool segmentation, criteria, and life determination review',
+      'Recalculation of sampled PD x LGD and DCF loss model outputs',
+      'Qualitative assumption and documentation review',
+    ],
+  },
+  {
     id: 'cecl',
     slug: 'cecl',
-    name: 'CECL Model & Implementation',
+    name: 'CECL Implementation & Modeling',
     icon: Layers,
     summary:
-      'End-to-end CECL model development, validation, and implementation tailored to institution size and portfolio complexity.',
-    h2: 'CECL Model Development and Implementation for Financial Institutions',
+      'End-to-end CECL model development and implementation using vintage, PD x LGD, and discounted cash flow approaches, tailored to institution size.',
+    h2: 'CECL Implementation and Modeling for Financial Institutions',
     paragraphs: [
-      'We provide end-to-end support for Current Expected Credit Loss (CECL) model development, validation, and implementation. Our CECL model implementation and consulting is tailored to institution size and portfolio complexity, making the standard practical for community banks and credit unions as well as larger institutions.',
+      'We assist financial institutions and credit unions with implementation of the Current Expected Credit Loss (CECL) model. Our CECL implementation and modeling is tailored to institution size and portfolio complexity, making the standard practical for community banks and credit unions as well as larger institutions.',
       'Engagements include data gap analysis, model selection, parallel run support, and documentation prepared to stand up to regulatory review.',
     ],
     bullets: [
-      'Data gap analysis and model selection',
-      'Model development and validation',
+      'Loan-level data collection and gap analysis',
+      'Vintage, PD x LGD, and DCF loss modeling',
       'Parallel run support and calibration',
       'Documentation for regulatory review',
     ],

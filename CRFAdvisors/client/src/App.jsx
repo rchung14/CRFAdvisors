@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 import ServicePage from './pages/ServicePage'
+import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -36,7 +37,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Real 404 page (noindex) instead of redirecting to home — a JS
+              redirect on every unknown URL reads as a soft 404 to Google */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </ErrorBoundary>
       <Footer />

@@ -30,7 +30,7 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 
 ---
 
-## Route Map (14 routes, 13 prerendered)
+## Route Map (15 routes, 13 prerendered + SPA fallback)
 
 ---
 
@@ -45,11 +45,11 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
    - Background: architectural photo with navy overlay
    - H1 (Playfair Display, centered, white)
    - Ted Ahn quote card (glassmorphism panel, centered below H1)
-   - Inline stats bar: `33+ Clients · 5 Service Lines · Tri-State & Beyond`
+   - Inline stats bar: `33+ Clients · 6 Service Lines · Tri-State & Beyond`
    - Dual CTAs: "Our Services" (solid white) + "View Clients" (outline white)
 
 2. **Services grid** — "Credit Risk & Loan Review Services"
-   - 5 numbered cards (01–05), no icon squares
+   - 6 numbered cards (01–06), no icon squares
    - Card anatomy: number badge · service title · 2-line description · "Learn more →"
    - Grid: 3-col desktop, 2-col tablet, 1-col mobile
    - Cards link to individual service pages
@@ -73,7 +73,7 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
    - Single CTA: "Contact Us" → /contact
 
 **Primary CTA:** Schedule a Consultation → /contact
-**Internal links:** All 5 service pages, /clients
+**Internal links:** All 6 service pages, /clients
 
 ---
 
@@ -85,12 +85,12 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 
 **Page sections:**
 1. Page hero (H1 + descriptor)
-2. 5 numbered service cards (same component as homepage, full description visible)
+2. 6 numbered service cards (same component as homepage, full description visible)
 3. Approach — 3 principles (white bg, no navy)
 4. Process timeline — 4 steps
 5. CTA banner — "Talk to our team about scoping the right engagement."
 
-**Internal links:** All 5 service pages
+**Internal links:** All 6 service pages
 
 ---
 
@@ -148,11 +148,23 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 
 ---
 
-### `/consulting-services/cecl` — CECL
-**Primary keyword:** CECL model implementation
-**Secondary:** CECL compliance, CECL community banks, current expected credit loss
-**H1:** CECL Model Development and Implementation for Community Banks
-**Meta description:** End-to-end CECL model development, validation, and implementation for community banks and credit unions, tailored to institution size and portfolio complexity.
+### `/consulting-services/cecl` — CECL Implementation & Modeling
+**Primary keyword:** CECL implementation and modeling
+**Secondary:** CECL compliance, CECL community banks, current expected credit loss, vintage / PD x LGD / DCF
+**H1:** CECL Implementation and Modeling for Financial Institutions
+**Meta description:** End-to-end CECL implementation and modeling. Vintage, PD x LGD, DCF, WARM, and loss rate methodologies for community banks and credit unions.
+**Note (2026-07-10):** Split from a single CECL page into two per reference site
+(crf.devjawn.com) to boost SEO. This page keeps the original indexed URL.
+
+---
+
+### `/consulting-services/cecl-acl-review` — CECL Methodology & ACL Review
+**Primary keyword:** ACL review, CECL methodology review
+**Secondary:** allowance for credit losses review, CECL model validation, ASU 2016-13, ASU 2022-02
+**H1:** Independent CECL Methodology and ACL Review
+**Meta description:** Independent review of the Allowance for Credit Losses (ACL) calculation and CECL methodology. Pool segmentation, GL reconciliation, PD x LGD and DCF recalculation, Q-factor review.
+**Added 2026-07-10** — second half of the CECL split; content sourced from the
+reference site's "CECL Methodology & (ACL) Review" service.
 
 ---
 
@@ -185,8 +197,10 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 **Page sections:**
 1. Page hero
 2. Firm overview — "Independent Credit Risk Management Since [YEAR]" — REPLACE 20XX
-3. Featured: Ted Ahn (photo + full bio card — centered, prominent)
-4. Team grid — remaining 4 team members, 2–3 cols
+3. Team list (v2.1, 2026-07-10) — horizontal profile rows for all 5 members: fixed
+   photo column (232px, 4:5, radius 8px) left, name/title/full bio right (max 72ch),
+   1px dividers between rows. Full bios always visible — the old Read more toggle made
+   long bios expand narrow cards awkwardly. Ted Ahn (Team Leader) is the first row.
 5. Why CRF — "Why Institutions Choose CRF Advisors" — 6 differentiators
    - REPLACE "XX+ Years" with real figure
 6. CTA banner

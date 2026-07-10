@@ -29,7 +29,7 @@ function setCanonical(url) {
  * both read from src/seo/routesMeta.js. This component keeps the head in sync
  * as users navigate the SPA.
  */
-export default function Seo({ title, description, path = '/', schemas = [] }) {
+export default function Seo({ title, description, path = '/', schemas = [], noindex = false }) {
   const schemaJson = JSON.stringify(schemas)
 
   useEffect(() => {
@@ -45,8 +45,13 @@ export default function Seo({ title, description, path = '/', schemas = [] }) {
     setMeta('property', 'og:locale', 'en_US')
     setMeta('property', 'og:image', `${SITE_URL}/logo1.png`)
     setMeta('name', 'twitter:card', 'summary')
-    setMeta('name', 'robots', 'index, follow, max-image-preview:large')
-    setCanonical(url)
+    setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large')
+    if (noindex) {
+      // A noindex page must not claim a canonical URL
+      document.head.querySelector('link[rel="canonical"]')?.remove()
+    } else {
+      setCanonical(url)
+    }
 
     document.head
       .querySelectorAll('script[data-seo-jsonld]')
@@ -59,7 +64,7 @@ export default function Seo({ title, description, path = '/', schemas = [] }) {
       script.textContent = JSON.stringify(schema)
       document.head.appendChild(script)
     })
-  }, [title, description, path, schemaJson])
+  }, [title, description, path, schemaJson, noindex])
 
   return null
 }

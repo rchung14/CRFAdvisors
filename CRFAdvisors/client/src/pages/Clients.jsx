@@ -14,7 +14,7 @@ export default function Clients() {
       <Seo {...ROUTES_META['/clients']} />
 
       <PageHero
-        title="Financial Institutions We've Served"
+        title="Current and Previous Clients"
         breadcrumb="Clients"
         subtext="XX+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
         image={heroImg}

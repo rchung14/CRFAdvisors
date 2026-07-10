@@ -1,0 +1,22 @@
+.not-found {
+  text-align: center;
+}
+
+.not-found__code {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gray-mid);
+}
+
+.not-found__sub {
+  color: var(--gray-mid);
+  margin-top: var(--sp-2);
+}
+
+.not-found__ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: var(--sp-4);
+}

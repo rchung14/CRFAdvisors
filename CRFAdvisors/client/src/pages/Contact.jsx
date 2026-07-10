@@ -12,6 +12,7 @@ const SERVICE_OPTIONS = [
   'Due Diligence',
   'Portfolio Stress Testing',
   'ALLL Methodology',
+  'CECL Methodology & ACL Review',
   'CECL Implementation',
   'General Inquiry',
 ]
@@ -265,7 +266,7 @@ export default function Contact() {
           {/* Direct contact info */}
           <aside className="contact-info card">
             <h3>Direct Contact</h3>
-            <p className="contact-info__name">Ted Ahn, President</p>
+            <p className="contact-info__name">Ted Ahn, Team Leader</p>
             <ul className="contact-info__list">
               <li>
                 <Phone size={18} aria-hidden="true" />
