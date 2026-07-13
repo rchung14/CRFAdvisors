@@ -6,24 +6,24 @@ CRF Advisors performs independent, third-party credit review engagements: valida
 
 ## Services
 
-- [Consulting Services Overview](https://crf-advisors.vercel.app/consulting-services): All seven credit risk and loan review service lines
-- [Independent Loan Review](https://crf-advisors.vercel.app/consulting-services/loan-review): Objective third-party loan portfolio review, risk rating validation, and examiner readiness
-- [Credit Due Diligence](https://crf-advisors.vercel.app/consulting-services/due-diligence): Credit due diligence for bank M&A, branch acquisitions, and loan portfolio purchases
-- [Portfolio Stress Testing](https://crf-advisors.vercel.app/consulting-services/stress-testing): Scenario-based stress testing with credit loss and capital impact modeling
-- [ALLL Methodology & Review](https://crf-advisors.vercel.app/consulting-services/alll): ALLL/ACL methodology review and FFIEC Interagency Policy compliance support
-- [CECL Methodology & ACL Review](https://crf-advisors.vercel.app/consulting-services/cecl-acl-review): Independent review of the ACL calculation and CECL methodology
-- [CECL Implementation & Modeling](https://crf-advisors.vercel.app/consulting-services/cecl): End-to-end CECL implementation using vintage, PD x LGD, and DCF approaches
-- [Training](https://crf-advisors.vercel.app/consulting-services/training): Credit risk management training covering ALLL methodology, CECL, TDR loans, and credit analysis
+- [Consulting Services Overview](https://crfadvisors.com/consulting-services): All seven credit risk and loan review service lines
+- [Independent Loan Review](https://crfadvisors.com/consulting-services/loan-review): Objective third-party loan portfolio review, risk rating validation, and examiner readiness
+- [Credit Due Diligence](https://crfadvisors.com/consulting-services/due-diligence): Credit due diligence for bank M&A, branch acquisitions, and loan portfolio purchases
+- [Portfolio Stress Testing](https://crfadvisors.com/consulting-services/stress-testing): Scenario-based stress testing with credit loss and capital impact modeling
+- [ALLL Methodology & Review](https://crfadvisors.com/consulting-services/alll): ALLL/ACL methodology review and FFIEC Interagency Policy compliance support
+- [CECL Methodology & ACL Review](https://crfadvisors.com/consulting-services/cecl-acl-review): Independent review of the ACL calculation and CECL methodology
+- [CECL Implementation & Modeling](https://crfadvisors.com/consulting-services/cecl): End-to-end CECL implementation using vintage, PD x LGD, and DCF approaches
+- [Training](https://crfadvisors.com/consulting-services/training): Credit risk management training covering ALLL methodology, CECL, TDR loans, and credit analysis
 
 ## Company
 
-- [Home](https://crf-advisors.vercel.app/): Independent loan review and credit risk management for financial institutions
-- [About Us](https://crf-advisors.vercel.app/about): Firm overview and team of credit professionals led by Ted Ahn
-- [Clients](https://crf-advisors.vercel.app/clients): Current and previous clients — 44+ banks, credit unions, non-profit organizations, and financial services companies
-- [Contact Us](https://crf-advisors.vercel.app/contact): Phone (267) 816-4272, email Tedahn@crfadvisors.com, Fort Washington PA
+- [Home](https://crfadvisors.com/): Independent loan review and credit risk management for financial institutions
+- [About Us](https://crfadvisors.com/about): Firm overview and team of credit professionals led by Ted Ahn
+- [Clients](https://crfadvisors.com/clients): Current and previous clients — 44+ banks, credit unions, non-profit organizations, and financial services companies
+- [Contact Us](https://crfadvisors.com/contact): Phone (267) 816-4272, email Tedahn@crfadvisors.com, Fort Washington PA
 
 ## Optional
 
-- [Privacy Policy](https://crf-advisors.vercel.app/privacy): How information submitted through the site is handled
-- [Terms of Service](https://crf-advisors.vercel.app/terms): Terms governing use of the website
-- [Accessibility Statement](https://crf-advisors.vercel.app/accessibility): Our commitment to WCAG 2.1 AA accessibility
+- [Privacy Policy](https://crfadvisors.com/privacy): How information submitted through the site is handled
+- [Terms of Service](https://crfadvisors.com/terms): Terms governing use of the website
+- [Accessibility Statement](https://crfadvisors.com/accessibility): Our commitment to WCAG 2.1 AA accessibility

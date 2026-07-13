@@ -1,5 +1,13 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/consulting", "destination": "/consulting-services", "permanent": true },
+    { "source": "/services/loan-review", "destination": "/consulting-services/loan-review", "permanent": true },
+    { "source": "/services/due-diligence", "destination": "/consulting-services/due-diligence", "permanent": true },
+    { "source": "/services/portfolio-stress-testing", "destination": "/consulting-services/stress-testing", "permanent": true },
+    { "source": "/services/alll-methodology", "destination": "/consulting-services/alll", "permanent": true },
+    { "source": "/services/cecl-implementation", "destination": "/consulting-services/cecl", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/spa-fallback.html" }
   ],

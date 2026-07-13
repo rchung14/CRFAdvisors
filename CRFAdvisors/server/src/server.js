@@ -29,7 +29,10 @@ app.use((req, res, next) => {
   next();
 });
 
-const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'https://crf-advisors.vercel.app')
+const allowedOrigins = (
+  process.env.ALLOWED_ORIGINS ||
+  'https://crfadvisors.com,https://www.crfadvisors.com,https://crf-advisors.vercel.app'
+)
   .split(',')
   .map((origin) => origin.trim());
 

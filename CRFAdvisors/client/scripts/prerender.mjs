@@ -10,7 +10,6 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const SITE_URL = 'https://crf-advisors.vercel.app'
 
 const escapeHtml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -38,7 +37,9 @@ function headTags({ path: routePath, title, description, schemas }) {
   return `    ${tags.join('\n    ')}\n  `
 }
 
-const { render, ROUTES_META } = await import(path.join(root, 'dist-ssr/entry-server.js'))
+// SITE_URL comes from src/config.js via the SSR bundle — single source of
+// truth for the canonical domain across runtime and prerender.
+const { render, ROUTES_META, SITE_URL } = await import(path.join(root, 'dist-ssr/entry-server.js'))
 let template = fs.readFileSync(path.join(root, 'dist/index.html'), 'utf-8')
 
 // Per-route modulepreload hints: pages are lazy (route-level code splitting),

@@ -1,6 +1,6 @@
 // Site-wide constants. Contact details come from environment variables
 // (.env.local) with public fallbacks so production builds never render blanks.
-export const SITE_URL = 'https://crf-advisors.vercel.app'
+export const SITE_URL = 'https://crfadvisors.com'
 
 export const API_URL = import.meta.env.VITE_API_URL || 'https://crfadvisors.onrender.com'
 

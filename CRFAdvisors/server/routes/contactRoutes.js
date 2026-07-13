@@ -106,6 +106,39 @@ router.post('/api/contact', async (req, res) => {
       return res.status(500).json({ success: false, message: 'Unable to send your message right now.' });
     }
 
+    // Best-effort confirmation to the submitter. Fire-and-forget: a failure
+    // here must not mask the successfully delivered inquiry above.
+    resend.emails
+      .send({
+        from: process.env.EMAIL_USER,
+        to: email,
+        replyTo: process.env.CONTACT_RECIPIENT,
+        subject: "We've received your message — CRF Advisors",
+        text: [
+          `Dear ${name},`,
+          '',
+          `Thank you for contacting CRF Advisors. This email confirms that we have received your message${service ? ` regarding ${service}` : ''}.`,
+          '',
+          'A senior member of our team is currently reviewing your inquiry and will reach out to you shortly — typically within one business day — to learn more about your institution, your objectives, and how we can best be of assistance.',
+          '',
+          'If your matter is time-sensitive, you are welcome to reach us directly at (267) 816-4272 during normal business hours.',
+          '',
+          'We appreciate your interest in CRF Advisors and look forward to speaking with you.',
+          '',
+          'Sincerely,',
+          '',
+          'The CRF Advisors Team',
+          'CRF Advisors, Inc.',
+          'Fort Washington, PA',
+          '(267) 816-4272',
+          'https://crfadvisors.com',
+          '',
+          '—',
+          'This is an automated confirmation. If you reply to this email, your message will be delivered to our team.',
+        ].join('\n'),
+      })
+      .catch(() => {});
+
     return res.status(200).json({ success: true, message: 'Message received.' });
   } catch {
     return res.status(500).json({ success: false, message: 'Unable to send your message right now.' });

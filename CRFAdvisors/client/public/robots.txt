@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://crf-advisors.vercel.app/sitemap.xml
+Sitemap: https://crfadvisors.com/sitemap.xml

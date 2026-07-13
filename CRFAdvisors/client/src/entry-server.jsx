@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { PAGE_IMPORTERS } from './pageImporters.js'
 
 export { ROUTES_META } from './seo/routesMeta.js'
+export { SITE_URL } from './config.js'
 
 /**
  * Renders the app for a given URL. Used by scripts/prerender.mjs at build time.

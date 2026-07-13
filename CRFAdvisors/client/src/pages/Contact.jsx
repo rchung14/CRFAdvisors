@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
@@ -58,6 +59,15 @@ export default function Contact() {
   const [form, setForm] = useState(INITIAL_FORM)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState(null) // 'sending' | 'sent' | 'error'
+  const navigate = useNavigate()
+
+  // After a successful send, give the visitor a moment to read the
+  // confirmation, then return them to the homepage.
+  useEffect(() => {
+    if (status !== 'sent') return
+    const timer = setTimeout(() => navigate('/'), 4000)
+    return () => clearTimeout(timer)
+  }, [status, navigate])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -128,7 +138,7 @@ export default function Contact() {
             {status === 'sent' ? (
               <p className="contact-success" role="status">
                 Thank you, your message has been sent. We typically respond
-                within 1 business day.
+                within 1 business day. Taking you back to the homepage&hellip;
               </p>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>

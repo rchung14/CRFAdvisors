@@ -1,93 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://crf-advisors.vercel.app/</loc>
+    <loc>https://crfadvisors.com/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services</loc>
+    <loc>https://crfadvisors.com/consulting-services</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/loan-review</loc>
+    <loc>https://crfadvisors.com/consulting-services/loan-review</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/due-diligence</loc>
+    <loc>https://crfadvisors.com/consulting-services/due-diligence</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/stress-testing</loc>
+    <loc>https://crfadvisors.com/consulting-services/stress-testing</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/alll</loc>
+    <loc>https://crfadvisors.com/consulting-services/alll</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/cecl</loc>
+    <loc>https://crfadvisors.com/consulting-services/cecl</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/cecl-acl-review</loc>
+    <loc>https://crfadvisors.com/consulting-services/cecl-acl-review</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/consulting-services/training</loc>
+    <loc>https://crfadvisors.com/consulting-services/training</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/clients</loc>
+    <loc>https://crfadvisors.com/clients</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/about</loc>
+    <loc>https://crfadvisors.com/about</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://crf-advisors.vercel.app/contact</loc>
+    <loc>https://crfadvisors.com/contact</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://crf-advisors.vercel.app/privacy</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://crf-advisors.vercel.app/terms</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://crf-advisors.vercel.app/accessibility</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
