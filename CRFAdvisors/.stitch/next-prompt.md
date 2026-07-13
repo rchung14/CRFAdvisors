@@ -1,23 +1,20 @@
 ---
-page: training-banner
+page: engagement-summaries
 ---
-DONE 2026-07-12: The Training service page shipped at /consulting-services/training
-(implemented directly in React from DESIGN.md — Stitch MCP still not connected).
-It currently REUSES the services-hub banner photo (src/assets/svc-hub.webp).
+DONE 2026-07-13: Dedicated training banner shipped — src/assets/svc-training.webp
+(1600x1067 WebP from user-supplied Pexels photo), wired into the training entry
+in src/data/servicePages.js.
 
-NEXT TASK: produce a dedicated banner image for the Training page — a classroom
-or workshop scene consistent with the site's photographic style (institutional,
-muted, suitable for the rgba(19,31,69,0.82) navy overlay). Deliver as WebP,
-~1600px wide, saved to client/src/assets/svc-training.webp, then update the
-`banner` import for the training entry in src/data/servicePages.js and its
-bannerAlt text. If generating via Stitch/Higgsfield, keep people generic (no
-identifiable faces needed) and composition dark enough for white H1 text.
+NEXT TASK: the /clients "Anonymized Engagement Summaries" section is currently
+commented out in src/pages/Clients.jsx pending real content. When CRF supplies
+real anonymized engagement summaries (service + institution size + state +
+outcome, no client names), update src/data/engagements.js with them, re-enable
+the section and its ENGAGEMENTS import in Clients.jsx, remove the placeholder
+warning note, and add Review/CaseStudy JSON-LD consideration in routesMeta.js.
 
 **DESIGN SYSTEM (REQUIRED):**
-Institutional precision, not marketing warmth — Moody's report meets Lincoln
-Center program. Navy #1B2B5E primary (hero overlay rgba(19,31,69,0.74) min),
-accent blue #2563EB, neutrals #F8F9FA / #E9ECEF / #4B5563 / #111827. Playfair
-Display for H1 ONLY; Inter for everything else. No border-radius above 12px,
-shadows no heavier than 0 6px 24px rgba(0,0,0,0.12). Photography: muted,
-architectural/professional, must sit under a heavy navy overlay with fully
-legible white text.
+Institutional precision, not marketing warmth. Navy #1B2B5E primary, accent
+blue #2563EB, neutrals #F8F9FA / #E9ECEF / #4B5563 / #111827. Playfair Display
+for H1 ONLY; Inter for everything else. Engagement cards: 3px blue left border,
+1px gray-200 border, radius 8px, category badge (blue-light bg, blue text,
+11px tracked), 2-col desktop / 1-col mobile.

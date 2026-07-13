@@ -43,8 +43,8 @@ export default function Seo({ title, description, path = '/', schemas = [], noin
     setMeta('property', 'og:url', url)
     setMeta('property', 'og:site_name', 'CRF Advisors, Inc.')
     setMeta('property', 'og:locale', 'en_US')
-    setMeta('property', 'og:image', `${SITE_URL}/logo1.png`)
-    setMeta('name', 'twitter:card', 'summary')
+    setMeta('property', 'og:image', `${SITE_URL}/og-card.png`)
+    setMeta('name', 'twitter:card', 'summary_large_image')
     setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large')
     if (noindex) {
       // A noindex page must not claim a canonical URL

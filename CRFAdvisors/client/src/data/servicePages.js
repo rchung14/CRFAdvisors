@@ -5,7 +5,7 @@ import bannerDueDiligence from '../assets/svc-due-diligence.webp'
 import bannerStressTesting from '../assets/svc-stress-testing.webp'
 import bannerAlll from '../assets/svc-alll.webp'
 import bannerCecl from '../assets/svc-cecl.webp'
-import bannerTraining from '../assets/svc-hub.webp'
+import bannerTraining from '../assets/svc-training.webp'
 
 // Long-form content for the six standalone service pages
 // (/consulting-services/:slug).
@@ -515,7 +515,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'training',
     icon: GraduationCap,
     banner: bannerTraining,
-    bannerAlt: 'Professionals in a boardroom training session on credit risk management for financial institutions',
+    bannerAlt: 'Training room prepared for a credit risk management session, with financial charts on screen and materials at each seat',
     intro: [
       'CRF Advisors provides credit risk management training for the credit, loan review, finance, and audit staff of banks, credit unions, non-profit organizations, and financial services companies. Curriculum spans the full allowance and credit analysis framework — ALLL methodology under ASC 450 and ASC 310, impaired loan valuation, CECL preparation and modeling, Troubled Debt Restructured (TDR) loans, and day-to-day credit analysis and monitoring — taught by the same senior credit professionals who perform our loan review and allowance engagements.',
     ],
