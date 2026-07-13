@@ -21,6 +21,12 @@ const SERVICE_OPTIONS = [
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// CONTACT_RECIPIENT may hold multiple comma-separated addresses.
+const CONTACT_RECIPIENTS = (process.env.CONTACT_RECIPIENT || '')
+  .split(',')
+  .map((addr) => addr.trim())
+  .filter(Boolean);
+
 // Mirrors the client-side validation exactly. Returns null when valid.
 function validate(body) {
   if (typeof body !== 'object' || body === null) return 'invalid';
@@ -87,7 +93,7 @@ router.post('/api/contact', async (req, res) => {
   try {
     const { error: resendError } = await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: process.env.CONTACT_RECIPIENT,
+      to: CONTACT_RECIPIENTS,
       subject: 'New Contact Form Submission - CRF Advisors',
       text: [
         `Name: ${name}`,
@@ -112,7 +118,7 @@ router.post('/api/contact', async (req, res) => {
       .send({
         from: process.env.EMAIL_USER,
         to: email,
-        replyTo: process.env.CONTACT_RECIPIENT,
+        replyTo: CONTACT_RECIPIENTS,
         subject: "We've received your message - CRF Advisors",
         text: [
           `Dear ${name},`,
