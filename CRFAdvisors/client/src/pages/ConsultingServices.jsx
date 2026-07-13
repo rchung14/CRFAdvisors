@@ -23,7 +23,7 @@ export default function ConsultingServices() {
       {/* Service overview cards — each links to a dedicated deep-dive page */}
       <section className="section">
         <div className="container">
-          <h2>Five Core Credit Risk Services</h2>
+          <h2>Seven Core Credit Risk Services</h2>
           <p className="section-sub">
             Each engagement is independent and scoped to your institution. Explore
             any service for methodology, scope, and answers to common questions.

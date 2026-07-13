@@ -1,6 +1,6 @@
 # CRF Advisors, Inc.
 
-> Independent credit risk management firm based in Philadelphia, PA, serving banks, credit unions, savings institutions, non-profit organizations, and financial services companies across Pennsylvania, New Jersey, Delaware, Maryland, and beyond. Services include independent loan review, credit due diligence, portfolio stress testing, ALLL methodology review, and CECL implementation and review.
+> Independent credit risk management firm based in Fort Washington, PA, serving banks, credit unions, savings institutions, non-profit organizations, and financial services companies across Pennsylvania, New Jersey, Delaware, Maryland, and beyond. Services include independent loan review, credit due diligence, portfolio stress testing, ALLL methodology review, and CECL implementation and review.
 
 CRF Advisors performs independent, third-party credit review engagements: validating risk ratings, identifying problem credits early, testing allowance (ALLL/ACL) calculations, and supporting regulatory examination readiness for institutions ranging from $40 million to $5 billion in assets.
 
@@ -20,7 +20,7 @@ CRF Advisors performs independent, third-party credit review engagements: valida
 - [Home](https://crf-advisors.vercel.app/): Independent loan review and credit risk management for financial institutions
 - [About Us](https://crf-advisors.vercel.app/about): Firm overview and team of credit professionals led by Ted Ahn
 - [Clients](https://crf-advisors.vercel.app/clients): Current and previous clients — 44+ banks, credit unions, non-profit organizations, and financial services companies
-- [Contact Us](https://crf-advisors.vercel.app/contact): Phone (267) 816-4272, email Tedahn@crfadvisors.com, Philadelphia PA
+- [Contact Us](https://crf-advisors.vercel.app/contact): Phone (267) 816-4272, email Tedahn@crfadvisors.com, Fort Washington PA
 
 ## Optional
 

@@ -4,7 +4,7 @@ import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import CTABanner from '../components/CTABanner'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
-import { ENGAGEMENTS } from '../data/engagements'
+// import { ENGAGEMENTS } from '../data/engagements' // re-enable with the engagement summaries section below
 import heroImg from '../assets/page-clients.webp'
 import '../styles/Clients.css'
 
@@ -16,7 +16,7 @@ export default function Clients() {
       <PageHero
         title="Current and Previous Clients"
         breadcrumb="Clients"
-        subtext="XX+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
+        subtext="25+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
         image={heroImg}
         imageAlt="Advisory meeting between a CRF Advisors consultant and a client institution"
       />
@@ -60,6 +60,9 @@ export default function Clients() {
         Content is driven by src/data/engagements.js — edit that one file.
         TODO: add Review/CaseStudy JSON-LD in routesMeta.js once real content exists.
       */}
+      {/* Hidden 2026-07-13 pending real anonymized content — uncomment this
+          section (and the ENGAGEMENTS import above) to restore it.
+
       <section className="section section--off-white">
         <div className="container">
           <h2>Anonymized Engagement Summaries</h2>
@@ -83,6 +86,7 @@ export default function Clients() {
           </ul>
         </div>
       </section>
+      */}
 
       <CTABanner
         heading="Join our client roster."

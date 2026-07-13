@@ -11,8 +11,8 @@ import '../styles/About.css'
 const DIFFERENTIATORS = [
   {
     icon: Award,
-    title: 'XX+ Years of Tri-State Experience',
-    body: 'XX+ years serving community banks, savings institutions, and credit unions across Pennsylvania, New Jersey, Delaware, and Maryland.',
+    title: '25+ Years of Tri-State Experience',
+    body: '25+ years serving community banks, savings institutions, and credit unions across Pennsylvania, New Jersey, Delaware, and Maryland.',
   },
   {
     icon: Users,
@@ -26,33 +26,17 @@ const DIFFERENTIATORS = [
   },
 ]
 
-// Full-width horizontal profile row: photo left, text right. Long bios flow
-// in a wide readable column instead of expanding a narrow card, so the full
-// description is always visible without a Read more toggle.
-function TeamMember({ name, title, initials, bio, photo }) {
+// Photo-less editorial row: name and title anchor a fixed left column, the
+// full bio flows in a wide readable measure on the right. Long bios read
+// naturally with no photos, placeholders, or Read more toggles.
+function TeamMember({ name, title, bio }) {
   return (
     <article className="team-row">
-      {photo ? (
-        <img
-          className="team-row__photo"
-          src={photo}
-          alt={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA`}
-          loading="lazy"
-        />
-      ) : (
-        <div
-          className="img-placeholder team-row__photo"
-          role="img"
-          aria-label={`${name}, ${title} at CRF Advisors, credit risk management firm in Philadelphia PA, photo placeholder`}
-        >
-          <span className="team-row__initials">{initials}</span>
-        </div>
-      )}
-      <div className="team-row__body">
+      <div className="team-row__ident">
         <h3 className="team-row__name">{name}</h3>
         <p className="team-row__title">{title}</p>
-        <p className="team-row__bio">{bio}</p>
       </div>
+      <p className="team-row__bio">{bio}</p>
     </article>
   )
 }
@@ -72,11 +56,11 @@ export default function About() {
       {/* Firm overview */}
       <section className="section">
         <div className="container">
-          <h2>Independent Credit Risk Management Since 20XX</h2>
+          <h2>Independent Credit Risk Management Since 2010</h2>
           <div className="text-block firm-overview">
             <p>
               CRF Advisors is a Tri-State credit risk firm, based in
-              Philadelphia, serving financial institutions, non-profit
+              Fort Washington, serving financial institutions, non-profit
               organizations, and financial services companies. We focus on assisting clients with the identification of
               potential credit issues through{' '}
               <Link to="/consulting-services/loan-review">independent loan review</Link>,

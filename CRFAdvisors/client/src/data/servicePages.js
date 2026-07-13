@@ -603,7 +603,7 @@ export const SERVICE_PAGES = SERVICE_PAGE_CONTENT.map((p) => ({
 export const WHY_CRF = [
   { term: 'Independence by design', desc: 'Every engagement is structured to preserve the independence that gives our findings credibility with regulators, auditors, and boards. We decline engagements where independence cannot be maintained.' },
   { term: 'Senior-led, senior-staffed', desc: 'Engagements are staffed at the proper experience level relative to portfolio complexity. The credit professionals reviewing your portfolio have decades of banking, audit, and regulatory experience, not entry-level analysts trained on your engagement.' },
-  { term: 'Tri-State roots, national perspective', desc: 'Based in Philadelphia and serving institutions across Pennsylvania, New Jersey, Delaware, Maryland, and beyond, CRF Advisors brings cross-regional perspective informed by years of work with community banks, savings institutions, credit unions, and financial services companies.' },
+  { term: 'Tri-State roots, national perspective', desc: 'Based in Fort Washington and serving institutions across Pennsylvania, New Jersey, Delaware, Maryland, and beyond, CRF Advisors brings cross-regional perspective informed by years of work with community banks, savings institutions, credit unions, and financial services companies.' },
   { term: 'Practical over theoretical', desc: 'Findings come with realistic remediation paths. Recommendations are calibrated to what institutions can actually implement, not theoretical best practices that won’t survive contact with the operations team.' },
   { term: 'Direct engagement', desc: 'The senior credit professional who scopes your engagement is the same one who delivers the findings to your board.' },
 ]

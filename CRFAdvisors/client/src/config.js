@@ -8,7 +8,7 @@ export const CONTACT = {
   email: import.meta.env.VITE_CONTACT_EMAIL || 'Tedahn@crfadvisors.com',
   phone: import.meta.env.VITE_CONTACT_PHONE || '(267) 816-4272',
   phoneHref: `tel:${import.meta.env.VITE_CONTACT_PHONE_TEL || '+12678164272'}`,
-  location: 'Philadelphia, PA',
+  location: 'Fort Washington, PA',
 }
 
 /** BreadcrumbList schema for interior pages. */
@@ -59,7 +59,7 @@ export const ORG_SCHEMA = {
   email: CONTACT.email,
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Philadelphia',
+    addressLocality: 'Fort Washington',
     addressRegion: 'PA',
     addressCountry: 'US',
   },

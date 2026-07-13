@@ -5,15 +5,15 @@
 }
 
 /* ---------- Team list ---------- */
-/* Horizontal profile rows: fixed photo column, bio flows full-width beside
-   it. Long descriptions stay readable instead of stretching a narrow card. */
+/* Photo-less editorial rows: name/title in a fixed left column with a short
+   blue rule accent, full bio in a readable measure on the right. */
 .team-list {
   margin-top: var(--sp-4);
 }
 
 .team-row {
   display: grid;
-  grid-template-columns: 232px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: var(--sp-6);
   align-items: start;
   padding: var(--sp-4) 0;
@@ -23,18 +23,13 @@
   border-top: 1px solid var(--gray-light);
 }
 
-.team-row__photo {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.team-row__initials {
-  font-family: var(--font-display);
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--white);
+.team-row__ident::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: var(--blue-mid);
+  margin-bottom: var(--sp-2);
 }
 
 .team-row__name {
@@ -52,7 +47,6 @@
   font-size: 15px;
   line-height: 1.7;
   color: var(--gray-mid);
-  margin-top: var(--sp-2);
   max-width: 72ch;
 }
 
@@ -82,7 +76,7 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .team-row {
-    grid-template-columns: 192px 1fr;
+    grid-template-columns: 220px 1fr;
     gap: var(--sp-4);
   }
 
@@ -96,10 +90,6 @@
   .team-row {
     grid-template-columns: 1fr;
     gap: var(--sp-2);
-  }
-
-  .team-row__photo {
-    width: 176px;
   }
 
   .why-grid {
