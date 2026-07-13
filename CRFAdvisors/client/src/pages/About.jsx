@@ -21,8 +21,8 @@ const DIFFERENTIATORS = [
   },
   {
     icon: ShieldCheck,
-    title: 'Client Relationships Built on Trust',
-    body: 'We work with clients where management demonstrates a high degree of integrity and our independence can be fully maintained — the foundation every credible opinion rests on.',
+    title: 'Integrity-First Engagements',
+    body: 'We engage only with clients where management demonstrates a high degree of integrity and where our full independence can be maintained.',
   },
 ]
 

@@ -15,7 +15,7 @@ export default function ConsultingServices() {
       <PageHero
         title="Credit Risk & Loan Review Consulting Services"
         breadcrumb="Consulting Services"
-        subtext="Independent, objective credit risk management consulting for banks, credit unions, and financial institutions."
+        subtext="Independent, objective credit risk management consulting for banks, credit unions, non-profit organizations, and financial services companies."
         image={hubBanner}
         imageAlt="Professionals in a boardroom presentation, representing CRF Advisors' credit risk and loan review consulting services"
       />

@@ -14,15 +14,16 @@ const WEBSITE_SCHEMA = {
   name: 'CRF Advisors, Inc.',
   url: SITE_URL,
   description:
-    'Independent loan review, credit review, and loan portfolio review for banks, credit unions, and financial institutions.',
+    'Independent loan review, credit review, and loan portfolio review for banks, credit unions, non-profit organizations, and financial services companies.',
 }
 
-const PERSON_SCHEMAS = TEAM.map(({ name, title }) => ({
+const PERSON_SCHEMAS = TEAM.map(({ name, title, bio }) => ({
   '@context': 'https://schema.org',
   '@type': 'Person',
   name,
   jobTitle: title,
   worksFor: { '@type': 'Organization', name: 'CRF Advisors, Inc.' },
+  description: bio,
 }))
 
 // Hub-level Service schemas point at each dedicated service page.
@@ -76,7 +77,7 @@ export const ROUTES_META = {
     path: '/',
     title: 'CRF Advisors | Independent Loan Review & Credit Risk Management',
     description:
-      'Independent loan review, credit review, and portfolio stress testing for banks, credit unions, and financial institutions in the Tri-State area.',
+      'Independent loan review, credit review, and portfolio stress testing for banks, credit unions, non-profit organizations, and financial services companies in the Tri-State area.',
     schemas: [ORG_SCHEMA, WEBSITE_SCHEMA],
   },
   '/consulting-services': {
@@ -93,7 +94,7 @@ export const ROUTES_META = {
   '/clients': {
     path: '/clients',
     title: 'Our Clients | Loan Review for Banks & Credit Unions | CRF Advisors',
-    description: `CRF Advisors has provided independent loan review and credit review to ${CLIENT_COUNT}+ banks, credit unions, and financial institutions. References available upon request.`,
+    description: `CRF Advisors has provided independent loan review and credit review to ${CLIENT_COUNT}+ banks, credit unions, non-profit organizations, and financial services companies. References available upon request.`,
     schemas: [ORG_SCHEMA, breadcrumbSchema('Clients', '/clients')],
   },
   '/about': {

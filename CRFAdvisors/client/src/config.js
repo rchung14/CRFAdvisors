@@ -65,7 +65,7 @@ export const ORG_SCHEMA = {
   },
   areaServed: ['PA', 'NJ', 'DE', 'MD', 'NY'],
   description:
-    'Independent loan review, credit review, loan portfolio review, CECL implementation, and portfolio stress testing for banks and financial institutions.',
+    'Independent loan review, credit review, loan portfolio review, CECL implementation, and portfolio stress testing for banks, credit unions, non-profit organizations, and financial services companies.',
   slogan: 'Your credit risk decisions shape your future. Ours help shape them.',
   knowsAbout: [
     'Independent Loan Review',

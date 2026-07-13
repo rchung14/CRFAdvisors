@@ -18,7 +18,7 @@ export const TEAM = [
     title: 'Credit Risk Manager',
     initials: 'JC',
     photo: joshPhoto,
-    bio: 'Joshua Cash is the credit risk manager that performs detail credit review and stress test analysis for CRF Advisors. Joshua has 12 years in banking. Joshua’s experience includes working as a credit analyst at two regional banks and management of 12 tellers at Wells Fargo including the management of deposits and loans at the local branch. Josh has been with CRF Advisors for 5 years and risk management activities related to credit risk assessment, credit risk grading and to the performance of structured portfolio loan and relationship reviews.',
+    bio: 'Joshua Cash is a senior credit analyst that performs detail credit review and stress test analysis for CRF Advisors. Joshua has 12 years in banking. Joshua’s experience includes working as a credit analyst at two regional banks and management of 12 tellers at Wells Fargo including the management of deposits and loans at the local branch. Josh has been with CRF Advisors for 5 years and risk management activities related to credit risk assessment, credit risk grading and to the performance of structured portfolio loan and relationship reviews.',
   },
   {
     name: 'Evan Cywinski',

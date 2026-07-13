@@ -9,6 +9,10 @@ export default defineConfig(({ isSsrBuild }) => ({
     // every prerendered page (no render-blocking request), and lazy route
     // chunks then never wait on their own stylesheets (no FOUC).
     cssCodeSplit: false,
+    // Never inline images as base64 data URIs — small assets (e.g. the team
+    // photo placeholder) must be emitted as cacheable files, not bloat the
+    // prerendered HTML of every page that renders them.
+    assetsInlineLimit: 0,
     // Manifest lets scripts/prerender.mjs emit per-route modulepreload hints
     // so each page's lazy chunk downloads in parallel with the entry script.
     manifest: !isSsrBuild,
