@@ -28,7 +28,7 @@ export default function ConsultingServices() {
             Each engagement is independent and scoped to your institution. Explore
             any service for methodology, scope, and answers to common questions.
           </p>
-          <div className="services-grid">
+          <div className="services-grid services-grid--4-3">
             {SERVICES.map(({ id, slug, name, summary }, i) => (
               <article key={id} className="card service-card">
                 <span className="service-card__num">{String(i + 1).padStart(2, '0')}</span>
