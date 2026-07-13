@@ -56,6 +56,7 @@ const PAGE_SRC = {
   '/contact': 'src/pages/Contact.jsx',
   '/privacy': 'src/pages/Privacy.jsx',
   '/terms': 'src/pages/Terms.jsx',
+  '/accessibility': 'src/pages/Accessibility.jsx',
 }
 
 function chunkFiles(key, seen = new Set()) {

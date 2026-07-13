@@ -1,6 +1,6 @@
-import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers } from 'lucide-react'
+import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers, GraduationCap } from 'lucide-react'
 
-// The six core services. `summary` feeds the homepage cards; the long-form
+// The seven core services. `summary` feeds the homepage cards; the long-form
 // fields feed the /consulting-services detail sections (SEO H2s from site.md).
 export const SERVICES = [
   {
@@ -115,6 +115,25 @@ export const SERVICES = [
       'Vintage, PD x LGD, and DCF loss modeling',
       'Parallel run support and calibration',
       'Documentation for regulatory review',
+    ],
+  },
+  {
+    id: 'training',
+    slug: 'training',
+    name: 'Training',
+    icon: GraduationCap,
+    summary:
+      'Credit risk management training for bank staff covering ALLL methodology, CECL preparation, TDR identification, impaired loan valuation, and credit analysis.',
+    h2: 'Credit Risk Management Training for Financial Institution Staff',
+    paragraphs: [
+      'CRF Advisors trains credit department, loan review, and finance staff on the frameworks examiners and auditors expect institutions to master: ALLL methodology under ASC 450 and ASC 310, CECL preparation and modeling, identification and impairment valuation of Troubled Debt Restructured (TDR) loans, and day-to-day credit analysis and monitoring.',
+      'Sessions are built around your institution’s own policies, portfolio, and loss history, so staff leave with procedures they can apply immediately rather than generic coursework.',
+    ],
+    bullets: [
+      'ALLL methodology: ASC 450, ASC 310-10, ASC 310-20, ASC 310-30',
+      'CECL preparation, data requirements, and modeling',
+      'TDR identification and impaired loan valuation',
+      'Credit analysis: DSCR, LTV, and financial statement analysis',
     ],
   },
 ]

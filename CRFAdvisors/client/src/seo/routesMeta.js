@@ -100,7 +100,7 @@ export const ROUTES_META = {
     path: '/about',
     title: 'About CRF Advisors | Credit Review & Loan Portfolio Experts',
     description:
-      'Meet the CRF Advisors team. XX+ years of independent loan review, credit review, CECL, and loan portfolio risk expertise serving financial institutions.',
+      'Meet the CRF Advisors team. Independent loan review, credit review, and CECL expertise serving banks, credit unions, non-profit organizations, and financial services companies.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('About Us', '/about'), ...PERSON_SCHEMAS],
   },
   '/contact': {
@@ -123,6 +123,13 @@ export const ROUTES_META = {
     description:
       'Terms governing the use of the CRF Advisors website, including disclaimers and intellectual property.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('Terms of Service', '/terms')],
+  },
+  '/accessibility': {
+    path: '/accessibility',
+    title: 'Accessibility Statement | CRF Advisors',
+    description:
+      'CRF Advisors is committed to an accessible website for all visitors, targeting WCAG 2.1 AA conformance. Learn about our measures and how to report barriers.',
+    schemas: [ORG_SCHEMA, breadcrumbSchema('Accessibility Statement', '/accessibility')],
   },
   ...SERVICE_PAGE_META,
 }

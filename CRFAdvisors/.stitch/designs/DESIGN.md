@@ -192,7 +192,7 @@ Base unit: 4px (0.25rem)
 │  │  Ted Ahn, Team Leader, CRF Advisors                       │  │    attribution: Inter 400, 14px
 │  └────────────────────────────────────────────────────────────┘  │
 │                                                                  │
-│      33+ Clients    ·    6 Service Lines    ·    Tri-State       │  ← Inline stats bar
+│      44+ Clients    ·    7 Service Lines    ·    Tri-State       │  ← Inline stats bar
 │                                                                  │
 │       [  Our Services  ]    [  View Clients  ]                   │  ← Dual CTAs (match original)
 │                                                                  │
@@ -214,7 +214,7 @@ if the photo is light-toned.
 
 **Inline stats bar (below quote card):**
 - Single line of text, no boxes
-- Format: `33+ Clients · 6 Service Lines · Tri-State & Beyond`
+- Format: `44+ Clients · 7 Service Lines · Tri-State & Beyond`
 - Inter 500, 14px, rgba(255,255,255,0.70)
 - Centered dot separators
 - Mobile: stack vertically, one per line
@@ -250,7 +250,7 @@ if the photo is light-toned.
 - Border-radius: 8px
 - Padding: 28px 24px 24px 24px (extra top for number)
 - Hover: box-shadow: 0 4px 20px rgba(0,0,0,0.08); translateY(-2px) transition 180ms ease
-- 6 cards (01–06) fill the desktop 3-col grid as two even rows — no centering hack needed
+- 7 cards (01–07): desktop 3-col grid, lone last-row card centered via :last-child:nth-child(3n+1) { grid-column: 2 }
 
 **Mobile (< 768px):**
 - Full-width single column

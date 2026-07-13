@@ -11,6 +11,7 @@ export const PAGE_IMPORTERS = {
   Contact: () => import('./pages/Contact'),
   Privacy: () => import('./pages/Privacy'),
   Terms: () => import('./pages/Terms'),
+  Accessibility: () => import('./pages/Accessibility'),
   NotFound: () => import('./pages/NotFound'),
 }
 
@@ -25,5 +26,6 @@ export function importerForPath(pathname) {
   if (path === '/contact') return PAGE_IMPORTERS.Contact
   if (path === '/privacy') return PAGE_IMPORTERS.Privacy
   if (path === '/terms') return PAGE_IMPORTERS.Terms
+  if (path === '/accessibility') return PAGE_IMPORTERS.Accessibility
   return PAGE_IMPORTERS.NotFound
 }

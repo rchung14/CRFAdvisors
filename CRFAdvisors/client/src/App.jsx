@@ -18,6 +18,7 @@ const About = lazy(PAGE_IMPORTERS.About)
 const Contact = lazy(PAGE_IMPORTERS.Contact)
 const Privacy = lazy(PAGE_IMPORTERS.Privacy)
 const Terms = lazy(PAGE_IMPORTERS.Terms)
+const Accessibility = lazy(PAGE_IMPORTERS.Accessibility)
 const NotFound = lazy(PAGE_IMPORTERS.NotFound)
 
 // Router-agnostic app shell: main.jsx wraps it in BrowserRouter for the
@@ -45,6 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           {/* Real 404 page (noindex) instead of redirecting to home — a JS
               redirect on every unknown URL reads as a soft 404 to Google */}
           <Route path="*" element={<NotFound />} />

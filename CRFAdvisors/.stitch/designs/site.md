@@ -30,7 +30,7 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 
 ---
 
-## Route Map (15 routes, 13 prerendered + SPA fallback)
+## Route Map (17 routes, 15 prerendered + SPA fallback)
 
 ---
 
@@ -45,11 +45,11 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
    - Background: architectural photo with navy overlay
    - H1 (Playfair Display, centered, white)
    - Ted Ahn quote card (glassmorphism panel, centered below H1)
-   - Inline stats bar: `33+ Clients · 6 Service Lines · Tri-State & Beyond`
+   - Inline stats bar: `44+ Clients · 7 Service Lines · Tri-State & Beyond`
    - Dual CTAs: "Our Services" (solid white) + "View Clients" (outline white)
 
 2. **Services grid** — "Credit Risk & Loan Review Services"
-   - 6 numbered cards (01–06), no icon squares
+   - 7 numbered cards (01–07), no icon squares
    - Card anatomy: number badge · service title · 2-line description · "Learn more →"
    - Grid: 3-col desktop, 2-col tablet, 1-col mobile
    - Cards link to individual service pages
@@ -63,17 +63,17 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
    - Steps: Portfolio Understanding → Risk Assessment & Rating → Findings & Reporting → Regulatory Alignment
    - Stacks vertically on mobile with left-border connector line
 
-5. **Trust bar** — "Trusted by 33+ banks, credit unions, and financial institutions"
+5. **Trust bar** — "Trusted by 44+ banks, credit unions, and financial institutions"
    - Pill grid: institution name + city, state
    - 3-col desktop (12 institutions shown), 2-col tablet, 1-col mobile
-   - "View all 33 clients →" link below grid
+   - "View all 44 clients →" link below grid
 
 6. **CTA banner** — "Ready to strengthen your credit oversight?"
    - Navy gradient bg
    - Single CTA: "Contact Us" → /contact
 
 **Primary CTA:** Schedule a Consultation → /contact
-**Internal links:** All 6 service pages, /clients
+**Internal links:** All 7 service pages, /clients
 
 ---
 
@@ -85,12 +85,12 @@ All CSS: mobile-first. Desktop overrides via `min-width` media queries.
 
 **Page sections:**
 1. Page hero (H1 + descriptor)
-2. 6 numbered service cards (same component as homepage, full description visible)
+2. 7 numbered service cards (same component as homepage, full description visible)
 3. Approach — 3 principles (white bg, no navy)
 4. Process timeline — 4 steps
 5. CTA banner — "Talk to our team about scoping the right engagement."
 
-**Internal links:** All 6 service pages
+**Internal links:** All 7 service pages
 
 ---
 
@@ -168,10 +168,22 @@ reference site's "CECL Methodology & (ACL) Review" service.
 
 ---
 
+### `/consulting-services/training` — Training (added 2026-07-12)
+**Primary keyword:** credit risk management training
+**Secondary:** ALLL training, CECL training, TDR identification, bank credit analysis training
+**H1:** Credit Risk Management Training for Financial Institution Staff
+**Meta description:** CRF Advisors provides credit risk management training for banks and financial institutions covering ALLL methodology, CECL preparation, TDR identification, impaired loan valuation, and credit analysis.
+Covers ASC 450 / 310-10 / 310-20 / 310-30, impaired loan valuation methods, CECL data
+requirements, TDR loans, and DSCR/LTV credit analysis. Outbound citations to FFIEC ALLL
+policy PDF, FASB ASU index, OCC Loan Portfolio Management handbook, and FRB SR 11-7.
+Also: `/accessibility` — Accessibility Statement (WCAG 2.1 AA), footer-linked, added 2026-07-12.
+
+---
+
 ### `/clients` — Clients
 **Purpose:** Social proof. Named institutions + anonymized engagement outcomes.
 **Primary keyword:** loan review clients, bank loan review firm
-**H1:** Financial Institutions We've Served
+**H1 (hero):** Current and Previous Clients
 
 **Page sections:**
 1. Page hero (H1 + founding stat descriptor — replace XX+ when confirmed)

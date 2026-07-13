@@ -14,6 +14,7 @@ const SERVICE_OPTIONS = [
   'ALLL Methodology',
   'CECL Methodology & ACL Review',
   'CECL Implementation',
+  'Training',
   'General Inquiry',
 ]
 

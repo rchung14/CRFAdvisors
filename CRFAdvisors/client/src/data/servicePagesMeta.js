@@ -98,6 +98,22 @@ export const SERVICE_PAGE_META_LIST = [
       { q: 'What happens at examination?', a: 'We support institutions directly through examination cycles, responding to examiner questions on methodology, assumptions, and documentation. The goal is examination success, not just methodology defense.' },
     ],
   },
+  {
+    slug: 'training',
+    eyebrow: 'Training',
+    breadcrumb: 'Credit Risk Training',
+    h1: 'Credit Risk Management Training for Financial Institution Staff',
+    metaTitle: 'Credit Risk Management Training | ALLL, CECL & TDR | CRF Advisors',
+    metaDescription:
+      'CRF Advisors provides credit risk management training for banks and financial institutions covering ALLL methodology, CECL preparation, TDR identification, impaired loan valuation, and credit analysis.',
+    faqs: [
+      { q: 'What topics does CRF Advisors training cover?', a: 'Core modules cover ALLL methodology (ASC 450 general reserves, ASC 310-10 loan impairment, ASC 310-20 loan fees and costs, ASC 310-30 credit-impaired loans), impaired loan valuation, CECL preparation and modeling, identification and impairment valuation of Troubled Debt Restructured (TDR) loans, and credit analysis and monitoring including DSCR and LTV calculation.' },
+      { q: 'Who is this training designed for?', a: 'Credit department staff, loan officers, loan review personnel, finance and accounting teams, and audit committee or board members at banks, credit unions, and financial services companies. Content is calibrated to the audience — technical modeling for analysts, oversight frameworks for boards.' },
+      { q: 'Does CRF Advisors help with CECL data requirements?', a: 'Yes. CECL training covers preparation, loan-level data requirements, and modeling, including what historical performance data your systems must capture and how it feeds vintage, PD x LGD, and discounted cash flow approaches.' },
+      { q: 'What ASC standards are covered in training?', a: 'ALLL modules cover ASC 450 (FAS 5 General Reserve), ASC 310-10 (FAS 114 Loan Impairment), ASC 310-20 (FAS 91 Loans), and ASC 310-30 (SOP 03-3 Credit Impaired Loans), plus ASC 326 (CECL) for expected-loss training.' },
+      { q: 'Is training delivered on-site or remotely?', a: 'Either. Sessions are scheduled around your team and can run on-site at your institution or remotely, using your own credit policies and portfolio examples wherever possible.' },
+    ],
+  },
 ]
 
 export const SERVICE_PAGE_META_BY_SLUG = Object.fromEntries(

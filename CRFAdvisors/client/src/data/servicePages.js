@@ -1,10 +1,11 @@
 import { SERVICE_PAGE_META_BY_SLUG } from './servicePagesMeta'
-import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers } from 'lucide-react'
+import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers, GraduationCap } from 'lucide-react'
 import bannerLoanReview from '../assets/svc-loan-review.webp'
 import bannerDueDiligence from '../assets/svc-due-diligence.webp'
 import bannerStressTesting from '../assets/svc-stress-testing.webp'
 import bannerAlll from '../assets/svc-alll.webp'
 import bannerCecl from '../assets/svc-cecl.webp'
+import bannerTraining from '../assets/svc-hub.webp'
 
 // Long-form content for the six standalone service pages
 // (/consulting-services/:slug).
@@ -57,6 +58,21 @@ const SERVICE_PAGE_CONTENT = [
         ],
       },
       {
+        heading: 'What Our Credit File Review Examines',
+        paragraphs: [
+          'Within each reviewed credit, analysis goes beyond confirming the file is complete. Reviewers perform:',
+        ],
+        items: [
+          'Ratio and trend analysis of borrower financial performance',
+          'Cash flow analysis to assess borrower repayment capacity',
+          'Payment history review across the lending relationship',
+          'Current collateral value review against outstanding exposure',
+          'Review of correspondence and credit file documentation',
+          'Inquiry of lending personnel on relationship status and strategy',
+          'Identification of Troubled Debt Restructured (TDR) loans and review of their impairment valuation',
+        ],
+      },
+      {
         heading: 'What You Receive',
         items: [
           'Executive summary suitable for board presentation',
@@ -92,6 +108,8 @@ const SERVICE_PAGE_CONTENT = [
       { to: '/consulting-services/stress-testing', label: 'loan portfolio stress testing' },
       '. Acquisition contexts call for our ',
       { to: '/consulting-services/due-diligence', label: 'credit due diligence services' },
+      '. Training available for this topic: ',
+      { to: '/consulting-services/training', label: 'credit risk management training' },
       '.',
     ],
   },
@@ -274,7 +292,7 @@ const SERVICE_PAGE_CONTENT = [
           'ALLL/ACL methodology validation and independent review',
           'Qualitative factor framework development and refinement',
           'Individually evaluated credit valuation',
-          'TDR (Troubled Debt Restructuring) accounting support, including post-CECL TDR elimination considerations',
+          'Identification and impairment valuation of Troubled Debt Restructured (TDR) loans, including post-CECL TDR elimination considerations',
           'OREO (Other Real Estate Owned) valuation and accounting',
           'Documentation review for examiner readiness',
           'External auditor coordination and support',
@@ -324,6 +342,8 @@ const SERVICE_PAGE_CONTENT = [
       { to: '/consulting-services/stress-testing', label: 'portfolio stress testing' },
       '. Pre-closing M&A engagements involve coordinated ',
       { to: '/consulting-services/due-diligence', label: 'credit due diligence' },
+      '. Training available for this topic: ',
+      { to: '/consulting-services/training', label: 'ALLL and credit risk training' },
       '.',
     ],
   },
@@ -396,7 +416,9 @@ const SERVICE_PAGE_CONTENT = [
       { to: '/consulting-services/alll', label: 'ALLL methodology review' },
       ', and ',
       { to: '/consulting-services/loan-review', label: 'independent loan review' },
-      ', whose risk rating findings feed the allowance calculation.',
+      ', whose risk rating findings feed the allowance calculation. Training available for this topic: ',
+      { to: '/consulting-services/training', label: 'CECL and ACL training' },
+      '.',
     ],
   },
 
@@ -482,7 +504,86 @@ const SERVICE_PAGE_CONTENT = [
       { to: '/consulting-services/loan-review', label: 'loan review findings' },
       '. Acquirers face day-one CECL calculations supported by ',
       { to: '/consulting-services/due-diligence', label: 'credit due diligence' },
+      '. Training available for this topic: ',
+      { to: '/consulting-services/training', label: 'credit risk management training' },
       '.',
+    ],
+  },
+
+  {
+    slug: 'training',
+    id: 'training',
+    icon: GraduationCap,
+    banner: bannerTraining,
+    bannerAlt: 'Professionals in a boardroom training session on credit risk management for financial institutions',
+    intro: [
+      'CRF Advisors provides credit risk management training for the credit, loan review, finance, and audit staff of banks, credit unions, non-profit organizations, and financial services companies. Curriculum spans the full allowance and credit analysis framework — ALLL methodology under ASC 450 and ASC 310, impaired loan valuation, CECL preparation and modeling, Troubled Debt Restructured (TDR) loans, and day-to-day credit analysis and monitoring — taught by the same senior credit professionals who perform our loan review and allowance engagements.',
+    ],
+    sections: [
+      {
+        heading: 'ALLL Methodology Training',
+        paragraphs: [
+          'Allowance methodology remains the estimate examiners and auditors scrutinize most closely. Training grounds staff in the accounting standards behind each component of the calculation:',
+        ],
+        items: [
+          { term: 'ASC 450 (FAS 5 General Reserve)', desc: 'Pooled reserves for incurred losses: segmentation, historical loss rates, and qualitative factor frameworks.' },
+          { term: 'ASC 310-10 (FAS 114 Loan Impairment)', desc: 'Individually evaluated impaired loans: identification triggers, measurement alternatives, and documentation.' },
+          { term: 'ASC 310-20 (FAS 91 Loans)', desc: 'Nonrefundable fees and origination costs: deferral, amortization, and their effect on carrying value.' },
+          { term: 'ASC 310-30 (SOP 03-3 Credit Impaired Loans)', desc: 'Purchased credit-impaired loans: accretable yield, nonaccretable difference, and post-acquisition accounting.' },
+          { term: 'ALLL Modeling', desc: 'Building and documenting the full calculation: pooling, loss rate derivation, Q-factors, and directional consistency.' },
+        ],
+      },
+      {
+        heading: 'Impaired Loan Valuation',
+        paragraphs: [
+          'Once a loan is identified as impaired, measurement drives the reserve. Training covers each valuation method and when it applies:',
+        ],
+        items: [
+          { term: 'Collateral valuation methods', desc: 'Appraisal review, discounting to disposition value, and costs to sell for collateral-dependent loans.' },
+          { term: 'Present value of future cash flows', desc: 'Building restructured payment expectations and discounting at the loan’s effective rate.' },
+          { term: 'Loan pricing method', desc: 'Observable market price measurement where an active market for the loan exists.' },
+        ],
+      },
+      {
+        heading: 'CECL Preparation, Data Requirements, and Modeling',
+        paragraphs: [
+          'For institutions preparing for or refining Current Expected Credit Loss adoption, training covers preparation and transition planning, loan-level data requirements — what your core systems must capture for lifetime loss estimation — and modeling approaches including vintage analysis, PD x LGD, and discounted cash flow.',
+        ],
+      },
+      {
+        heading: 'Troubled Debt Restructured (TDR) Loans',
+        paragraphs: [
+          'Modified loans remain a recurring examination focus. Training covers the identification of Troubled Debt Restructured (TDR) loans — borrower financial difficulty plus a concession the institution would not otherwise grant — and the impairment valuation that follows designation, including post-ASU 2022-02 loan modification disclosures for CECL adopters.',
+        ],
+      },
+      {
+        heading: 'Credit Analysis and Monitoring',
+        paragraphs: [
+          'Strong allowance work starts with strong underwriting and monitoring. Training builds analyst fundamentals:',
+        ],
+        items: [
+          { term: 'Credit policies and procedures', desc: 'How policy translates into consistent underwriting, risk rating, and exception handling.' },
+          { term: 'Financial statement analysis', desc: 'Reading borrower statements and tax returns for repayment capacity, leverage, and trends.' },
+          { term: 'DSCR and LTV calculation and analysis', desc: 'Debt service coverage and loan-to-value mechanics, stress sensitivity, and how each drives risk rating.' },
+        ],
+      },
+    ],
+    approach: [
+      { term: 'Taught by practitioners', desc: 'The professionals leading training perform loan review, ALLL, and CECL engagements year-round.' },
+      { term: 'Built on your portfolio', desc: 'Sessions use your institution’s policies, loss history, and loan examples wherever possible.' },
+      { term: 'Calibrated to the audience', desc: 'Technical depth for analysts; oversight frameworks for management, boards, and audit committees.' },
+      { term: 'Practical takeaways', desc: 'Staff leave with worksheets, checklists, and procedures they can apply the next business day.' },
+    ],
+    related: [
+      'Training reinforces the same frameworks we apply in ',
+      { to: '/consulting-services/loan-review', label: 'independent loan review' },
+      ', ',
+      { to: '/consulting-services/alll', label: 'ALLL methodology review' },
+      ', ',
+      { to: '/consulting-services/cecl-acl-review', label: 'CECL methodology and ACL review' },
+      ', and ',
+      { to: '/consulting-services/cecl', label: 'CECL implementation and modeling' },
+      ' engagements.',
     ],
   },
 ]
@@ -545,6 +646,12 @@ export const SERVICE_SOURCES = {
     { label: 'Interagency Policy Statement on Allowances for Credit Losses (2020)', url: 'https://www.ffiec.gov', verify: true },
     { label: 'FASB — ASU 2016-13 Financial Instruments — Credit Losses (Topic 326)', url: 'https://www.fasb.org', verify: true },
     { label: 'FASB — ASU 2022-02 TDRs and Vintage Disclosures', url: 'https://www.fasb.org', verify: true },
+  ],
+  'training': [
+    { label: 'FFIEC — Interagency Policy Statement on the ALLL', url: 'https://www.ffiec.gov/pdf/alll.pdf', verify: false },
+    { label: 'FASB — Accounting Standards Updates including ASC 326 (CECL)', url: 'https://www.fasb.org/page/PageContent?pageId=/standards/accounting-standards-updates.html', verify: false },
+    { label: 'OCC — Comptroller’s Handbook: Loan Portfolio Management', url: 'https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/loan-portfolio-management/pub-ch-loan-portfolio-mgmt.pdf', verify: false },
+    { label: 'Federal Reserve — SR 11-7: Guidance on Model Risk Management', url: 'https://www.federalreserve.gov/supervisionreg/srletters/sr1107.htm', verify: false },
   ],
 }
 

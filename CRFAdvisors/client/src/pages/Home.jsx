@@ -43,9 +43,9 @@ export default function Home() {
             </figcaption>
           </figure>
           <p className="hero__stats">
-            <span>33+ Clients</span>
+            <span>{CLIENT_COUNT}+ Clients</span>
             <span className="hero__stats-dot" aria-hidden="true">·</span>
-            <span>6 Service Lines</span>
+            <span>{SERVICES.length} Service Lines</span>
             <span className="hero__stats-dot" aria-hidden="true">·</span>
             <span>Tri-State &amp; Beyond</span>
           </p>
@@ -67,7 +67,7 @@ export default function Home() {
           <p className="section-sub">
             Your credit risk decisions shape your future. Ours help shape them.
           </p>
-          <div className="services-grid">
+          <div className="services-grid services-grid--4-3">
             {SERVICES.map(({ id, slug, name, summary }, i) => (
               <article key={id} className="card service-card">
                 <span className="service-card__num">{String(i + 1).padStart(2, '0')}</span>
@@ -84,6 +84,9 @@ export default function Home() {
             full <Link to="/consulting-services/loan-review">independent loan review</Link>,
             a targeted <Link to="/consulting-services/due-diligence">credit review for an acquisition</Link>,
             or an annual <Link to="/consulting-services/stress-testing">loan portfolio review and stress test</Link>.
+            CRF Advisors also provides assistance with 10-K and 10-Q financial
+            statement preparation and disclosures in compliance with GAAP and
+            SEC regulation.
           </p>
         </div>
       </section>
@@ -130,8 +133,9 @@ export default function Home() {
       <section className="section trust">
         <div className="container">
           <h2 className="trust__heading">
-            Trusted by {CLIENT_COUNT}+ banks, credit unions, and financial
-            institutions across the Tri-State area
+            Trusted by {CLIENT_COUNT}+ banks, credit unions, non-profit
+            organizations, and financial services companies across the
+            Tri-State area and beyond
           </h2>
           <ul className="trust__pills">
             {featuredClients.map(({ name, city }) => (

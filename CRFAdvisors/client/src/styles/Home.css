@@ -101,6 +101,29 @@
   margin-top: var(--sp-6);
 }
 
+/* When the card count leaves a lone card on the last 3-col row (e.g. 7
+   cards), center it instead of leaving it stranded left. Desktop only —
+   tablet/mobile grids have fewer columns. */
+@media (min-width: 1025px) {
+  .services-grid:not(.services-grid--4-3) .service-card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
+
+  /* Homepage variant: 7 equal-width cards as a row of 4 over a centered row
+     of 3. 24 tracks so the bottom row can offset by 1.5 card-widths. */
+  .services-grid--4-3 {
+    grid-template-columns: repeat(24, 1fr);
+  }
+
+  .services-grid--4-3 .service-card {
+    grid-column: span 6;
+  }
+
+  .services-grid--4-3 .service-card:nth-child(5) {
+    grid-column: 4 / span 6;
+  }
+}
+
 .service-card {
   padding: 28px 24px 24px;
   display: flex;

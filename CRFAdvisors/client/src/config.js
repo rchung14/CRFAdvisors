@@ -85,7 +85,9 @@ export const ORG_SCHEMA = {
       'Due Diligence',
       'Portfolio Stress Testing',
       'ALLL Methodology & Review',
-      'CECL Model & Implementation',
+      'CECL Methodology & ACL Review',
+      'CECL Implementation & Modeling',
+      'Training',
     ].map((name) => ({
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name },

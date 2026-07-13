@@ -21,8 +21,8 @@ const DIFFERENTIATORS = [
   },
   {
     icon: ShieldCheck,
-    title: 'Selective Client Acceptance',
-    body: 'Client acceptance is limited to institutions with high integrity management, protecting the independence our opinions depend on.',
+    title: 'Client Relationships Built on Trust',
+    body: 'We work with clients where management demonstrates a high degree of integrity and our independence can be fully maintained — the foundation every credible opinion rests on.',
   },
 ]
 
@@ -93,6 +93,11 @@ export default function About() {
               loans, TDRs, and OREO. We also provide assistance with preparation
               and review of 10-K and 10-Q financial statements and disclosures in
               compliance with GAAP and SEC regulation.
+            </p>
+            <p>
+              CRF Advisors engages only with clients where management
+              demonstrates a high degree of integrity and where our independence
+              can be fully maintained.
             </p>
           </div>
         </div>
