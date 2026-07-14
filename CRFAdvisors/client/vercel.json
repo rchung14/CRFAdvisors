@@ -6,9 +6,22 @@
     { "source": "/services/due-diligence", "destination": "/consulting-services/due-diligence", "permanent": true },
     { "source": "/services/portfolio-stress-testing", "destination": "/consulting-services/stress-testing", "permanent": true },
     { "source": "/services/alll-methodology", "destination": "/consulting-services/alll", "permanent": true },
-    { "source": "/services/cecl-implementation", "destination": "/consulting-services/cecl", "permanent": true }
+    { "source": "/services/cecl-implementation", "destination": "/consulting-services/cecl", "permanent": true },
+
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/loan-review", "destination": "/consulting-services/loan-review", "permanent": true },
+    { "source": "/due-diligence", "destination": "/consulting-services/due-diligence", "permanent": true },
+    { "source": "/portfolio-stress-testing", "destination": "/consulting-services/stress-testing", "permanent": true },
+    { "source": "/alll-methodology-review", "destination": "/consulting-services/alll", "permanent": true },
+    { "source": "/cecl-implementation-and-modeling", "destination": "/consulting-services/cecl", "permanent": true },
+    { "source": "/training", "destination": "/consulting-services/training", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/wp-content/(.*)", "destination": "/api/gone" },
+    { "source": "/wp-admin/(.*)", "destination": "/api/gone" },
+    { "source": "/wp-login.php", "destination": "/api/gone" },
+    { "source": "/xmlrpc.php", "destination": "/api/gone" },
     { "source": "/((?!api/).*)", "destination": "/spa-fallback.html" }
   ],
   "headers": [
