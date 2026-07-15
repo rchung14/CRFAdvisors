@@ -3,6 +3,7 @@ import Seo from '../components/Seo'
 import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import CTABanner from '../components/CTABanner'
+import FaqAccordion from '../components/FaqAccordion'
 import { SERVICE_PAGE_BY_SLUG, WHY_CRF, SERVICE_SOURCES } from '../data/servicePages'
 import '../styles/ServicePage.css'
 
@@ -86,9 +87,18 @@ export default function ServicePage() {
                 <p className="service-page__para">{section.itemsLead}</p>
               )}
             </div>
-            {section.items && (
-              <SectionList items={section.items} ordered={section.ordered} />
-            )}
+            {section.items &&
+              (section.heading === 'What You Receive' ? (
+                <ul className="deliverables">
+                  {section.items.map((item) => (
+                    <li key={item} className="deliverables__item">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <SectionList items={section.items} ordered={section.ordered} />
+              ))}
           </div>
         </section>
       ))}
@@ -97,14 +107,7 @@ export default function ServicePage() {
       <section className="section">
         <div className="container">
           <h2>{page.eyebrow} FAQ</h2>
-          <dl className="service-page__faq">
-            {page.faqs.map(({ q, a }) => (
-              <div key={q} className="service-page__faq-item">
-                <dt>{q}</dt>
-                <dd>{a}</dd>
-              </div>
-            ))}
-          </dl>
+          <FaqAccordion items={page.faqs} />
         </div>
       </section>
 

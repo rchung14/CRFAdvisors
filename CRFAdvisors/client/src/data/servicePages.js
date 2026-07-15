@@ -95,7 +95,7 @@ const SERVICE_PAGE_CONTENT = [
     ],
     approach: [
       { term: 'Independence is non-negotiable', desc: 'We do not accept engagements where independence is compromised by scope or relationship.' },
-      { term: 'Findings are graded by severity', desc: 'Not by criticism for its own sake. The goal is actionable insight, not exception-counting.' },
+      { term: 'Findings are graded by severity', desc: 'We grade findings by severity so management can prioritize what matters, rather than tallying exceptions for their own sake.' },
       { term: 'Practical recommendations beat theoretical perfection', desc: 'Findings come with realistic remediation paths.' },
       { term: 'Trend identification matters as much as individual loan findings', desc: 'Patterns across a portfolio reveal more than any single credit.' },
     ],
@@ -176,9 +176,9 @@ const SERVICE_PAGE_CONTENT = [
       },
     ],
     approach: [
-      { term: 'Speed without compromise', desc: 'M&A timelines are unforgiving, but accuracy matters more than expedience.' },
+      { term: 'Speed without compromise', desc: 'M&A timelines are unforgiving, and accuracy still matters more than expedience.' },
       { term: 'Direct communication', desc: 'With the deal team, counsel, and the acquirer’s board.' },
-      { term: 'Findings calibrated to inform negotiation', desc: 'Not to derail it for its own sake.' },
+      { term: 'Findings calibrated to inform negotiation', desc: 'Results are framed to guide the acquirer’s negotiation, pricing, and structure decisions.' },
       { term: 'Confidentiality protocols', desc: 'That protect both parties throughout the process.' },
     ],
     related: [
@@ -253,10 +253,10 @@ const SERVICE_PAGE_CONTENT = [
       },
     ],
     approach: [
-      { term: 'Models built to be understood', desc: 'Not black boxes.' },
-      { term: 'Documentation that supports examination', desc: 'Not just compliance.' },
-      { term: 'Scenarios calibrated to the institution’s actual portfolio', desc: 'Not generic templates.' },
-      { term: 'Findings that inform strategy', desc: 'Not just satisfy regulators.' },
+      { term: 'Models built to be understood', desc: 'Transparent enough for staff to follow, explain, and maintain.' },
+      { term: 'Documentation that supports examination', desc: 'Organized for examiner and auditor reliance.' },
+      { term: 'Scenarios calibrated to the institution’s actual portfolio', desc: 'Built around the institution’s actual concentrations and market footprint.' },
+      { term: 'Findings that inform strategy', desc: 'Framed to guide capital and portfolio decisions, not only regulatory sign-off.' },
     ],
     related: [
       'Stress testing findings often inform ',
@@ -326,8 +326,8 @@ const SERVICE_PAGE_CONTENT = [
       },
     ],
     approach: [
-      { term: 'Documentation built for examination', desc: 'Not just for filing.' },
-      { term: 'Qualitative factor frameworks that pass scrutiny', desc: 'Without overreaching.' },
+      { term: 'Documentation built for examination', desc: 'Organized for examiner and auditor reliance.' },
+      { term: 'Qualitative factor frameworks that pass scrutiny', desc: 'Supportable, well documented, and free of double-counting.' },
       { term: 'Practical methodology calibrated to institution size', desc: 'And portfolio complexity.' },
       { term: 'Direct coordination', desc: 'With audit and examination teams.' },
     ],
@@ -488,8 +488,8 @@ const SERVICE_PAGE_CONTENT = [
       },
     ],
     approach: [
-      { term: 'Methodology calibrated to the institution', desc: 'Not the vendor’s template.' },
-      { term: 'Documentation built for examination', desc: 'Not just filing.' },
+      { term: 'Methodology calibrated to the institution', desc: 'Sized to its portfolio, data, and operational capacity.' },
+      { term: 'Documentation built for examination', desc: 'Organized for auditor and examiner reliance.' },
       { term: 'Transparent assumptions', desc: 'That the institution can defend independently.' },
       { term: 'Practical implementation', desc: 'That operational staff can sustain.' },
     ],
@@ -602,9 +602,9 @@ export const SERVICE_PAGES = SERVICE_PAGE_CONTENT.map((p) => ({
 // before treating them as published fact.
 export const WHY_CRF = [
   { term: 'Independence by design', desc: 'Every engagement is structured to preserve the independence that gives our findings credibility with regulators, auditors, and boards. We decline engagements where independence cannot be maintained.' },
-  { term: 'Senior-led, senior-staffed', desc: 'Engagements are staffed at the proper experience level relative to portfolio complexity. The credit professionals reviewing your portfolio have decades of banking, audit, and regulatory experience, not entry-level analysts trained on your engagement.' },
+  { term: 'Senior-led, senior-staffed', desc: 'Engagements are staffed at the proper experience level relative to portfolio complexity. The credit professionals reviewing your portfolio have decades of banking, audit, and regulatory experience, so you are not paying to train junior analysts on your engagement.' },
   { term: 'Tri-State roots, national perspective', desc: 'Based in Fort Washington and serving institutions across Pennsylvania, New Jersey, Delaware, Maryland, and beyond, CRF Advisors brings cross-regional perspective informed by years of work with community banks, savings institutions, credit unions, and financial services companies.' },
-  { term: 'Practical over theoretical', desc: 'Findings come with realistic remediation paths. Recommendations are calibrated to what institutions can actually implement, not theoretical best practices that won’t survive contact with the operations team.' },
+  { term: 'Practical over theoretical', desc: 'Findings come with realistic remediation paths. Recommendations are calibrated to what institutions can actually implement and sustain, rather than an ideal the operations team has no way to put into practice.' },
   { term: 'Direct engagement', desc: 'The senior credit professional who scopes your engagement is the same one who delivers the findings to your board.' },
 ]
 

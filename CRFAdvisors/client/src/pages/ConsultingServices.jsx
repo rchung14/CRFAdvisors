@@ -23,6 +23,7 @@ export default function ConsultingServices() {
       {/* Service overview cards — each links to a dedicated deep-dive page */}
       <section className="section">
         <div className="container">
+          <p className="eyebrow">Services</p>
           <h2>Seven Core Credit Risk Services</h2>
           <p className="section-sub">
             Each engagement is independent and scoped to your institution. Explore
@@ -47,6 +48,7 @@ export default function ConsultingServices() {
       <section className="section approach-process">
         <div className="container approach-process__grid">
           <div>
+            <p className="eyebrow">Philosophy</p>
             <h2>How We Think About Credit Risk</h2>
             <ul className="approach-process__list">
               {APPROACH.map(({ title, body }) => (
@@ -58,6 +60,7 @@ export default function ConsultingServices() {
             </ul>
           </div>
           <div>
+            <p className="eyebrow">Process</p>
             <h2>From Portfolio to Report</h2>
             <ol className="approach-process__steps">
               {PROCESS_STEPS.map(({ title, body }, i) => (

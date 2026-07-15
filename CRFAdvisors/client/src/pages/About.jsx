@@ -17,7 +17,7 @@ const DIFFERENTIATORS = [
   {
     icon: Users,
     title: 'Staffed to Engagement Complexity',
-    body: 'Every engagement is staffed at the proper experience level relative to portfolio size and complexity, never trained on your time.',
+    body: 'Every engagement is staffed at the proper experience level relative to portfolio size and complexity, so you are not paying to train junior analysts.',
   },
   {
     icon: ShieldCheck,
@@ -56,6 +56,7 @@ export default function About() {
       {/* Firm overview */}
       <section className="section">
         <div className="container">
+          <p className="eyebrow">About</p>
           <h2>Independent Credit Risk Management Since 2010</h2>
           <div className="text-block firm-overview">
             <p>
@@ -90,9 +91,10 @@ export default function About() {
       {/* Team */}
       <section className="section section--off-white">
         <div className="container">
+          <p className="eyebrow">Team</p>
           <h2>Our Team</h2>
           <p className="section-sub">
-            Experienced credit professionals with deep roots in banking, audit, and
+            Experienced credit professionals with backgrounds in banking, audit, and
             regulatory compliance.
           </p>
           <div className="team-list">
@@ -106,6 +108,7 @@ export default function About() {
       {/* Why CRF */}
       <section className="section">
         <div className="container">
+          <p className="eyebrow">Why CRF</p>
           <h2>Why Institutions Choose CRF Advisors</h2>
           <div className="why-grid">
             {DIFFERENTIATORS.map(({ icon, title, body }) => {

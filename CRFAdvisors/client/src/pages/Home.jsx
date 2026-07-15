@@ -42,13 +42,20 @@ export default function Home() {
               Ted Ahn, Team Leader, CRF Advisors
             </figcaption>
           </figure>
-          <p className="hero__stats">
-            <span>{CLIENT_COUNT}+ Clients</span>
-            <span className="hero__stats-dot" aria-hidden="true">·</span>
-            <span>{SERVICES.length} Service Lines</span>
-            <span className="hero__stats-dot" aria-hidden="true">·</span>
-            <span>Tri-State &amp; Beyond</span>
-          </p>
+          <div className="hero__stats">
+            <div className="hero__stat">
+              <span className="hero__stat-value">{CLIENT_COUNT}+</span>
+              <span className="hero__stat-label">Clients</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-value">{SERVICES.length}</span>
+              <span className="hero__stat-label">Service Lines</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-value">Tri-State</span>
+              <span className="hero__stat-label">&amp; Beyond</span>
+            </div>
+          </div>
           <div className="hero__ctas">
             <Button to="/consulting-services" variant="white">
               Our Services
@@ -63,9 +70,11 @@ export default function Home() {
       {/* Services overview */}
       <section className="section">
         <div className="container">
+          <p className="eyebrow">Services</p>
           <h2>Credit Risk &amp; Loan Review Services</h2>
           <p className="section-sub">
-            Your credit risk decisions shape your future. Ours help shape them.
+            Independent, objective analysis to support the credit decisions
+            that matter most to your institution.
           </p>
           <div className="services-grid services-grid--4-3">
             {SERVICES.map(({ id, slug, name, summary }, i) => (
@@ -94,6 +103,7 @@ export default function Home() {
       {/* Approach: 3-col on blue gradient */}
       <section className="approach">
         <div className="container">
+          <p className="eyebrow eyebrow--light">Our Approach</p>
           <h2 className="approach__heading">
             Objective Insight, Consistent Methodology
           </h2>
@@ -114,6 +124,7 @@ export default function Home() {
       {/* Process snapshot */}
       <section className="section section--off-white">
         <div className="container">
+          <p className="eyebrow">Process</p>
           <h2>Our Loan Review Process</h2>
           <ol className="process">
             {PROCESS_STEPS.map(({ title, body }, i) => (
@@ -132,6 +143,7 @@ export default function Home() {
       {/* Client trust bar */}
       <section className="section trust">
         <div className="container">
+          <p className="eyebrow">Clients</p>
           <h2 className="trust__heading">
             Trusted by {CLIENT_COUNT}+ banks, credit unions, non-profit
             organizations, and financial services companies across the
