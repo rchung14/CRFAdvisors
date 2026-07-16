@@ -1,11 +1,17 @@
 import { SERVICE_PAGE_META_BY_SLUG } from './servicePagesMeta'
 import { FileSearch, Search, Activity, Calculator, ClipboardCheck, Layers, GraduationCap } from 'lucide-react'
 import bannerLoanReview from '../assets/svc-loan-review.webp'
+import bannerLoanReviewAvif from '../assets/svc-loan-review.avif'
 import bannerDueDiligence from '../assets/svc-due-diligence.webp'
+import bannerDueDiligenceAvif from '../assets/svc-due-diligence.avif'
 import bannerStressTesting from '../assets/svc-stress-testing.webp'
+import bannerStressTestingAvif from '../assets/svc-stress-testing.avif'
 import bannerAlll from '../assets/svc-alll.webp'
+import bannerAlllAvif from '../assets/svc-alll.avif'
 import bannerCecl from '../assets/svc-cecl.webp'
+import bannerCeclAvif from '../assets/svc-cecl.avif'
 import bannerTraining from '../assets/svc-training.webp'
+import bannerTrainingAvif from '../assets/svc-training.avif'
 
 // Long-form content for the six standalone service pages
 // (/consulting-services/:slug).
@@ -25,6 +31,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'loan-review',
     icon: FileSearch,
     banner: bannerLoanReview,
+    bannerAvif: bannerLoanReviewAvif,
     bannerAlt: 'Two credit professionals reviewing loan portfolio documents and financial statements',
     intro: [
       'Independent loan review is an objective, third-party assessment of a financial institution’s loan portfolio quality, designed to validate risk ratings, identify deteriorating credits early, and confirm compliance with the institution’s credit policies and applicable regulatory guidance. Unlike internal credit review, an independent loan review program is performed by professionals with no operational stake in the lending decisions being evaluated, satisfying the independence requirement reinforced throughout federal banking guidance.',
@@ -119,6 +126,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'due-diligence',
     icon: Search,
     banner: bannerDueDiligence,
+    bannerAvif: bannerDueDiligenceAvif,
     bannerAlt: 'Signing a transaction agreement, representing credit due diligence for mergers, acquisitions, and portfolio purchases',
     intro: [
       'Credit due diligence is the systematic pre-closing examination of a target institution’s loan portfolio to validate credit quality, identify concealed risk, confirm reserve adequacy, and inform acquisition pricing. For acquirers, comprehensive credit diligence is the difference between paying for a healthy book of business and inheriting a portfolio of problem credits that surface in the first post-closing examination cycle.',
@@ -197,6 +205,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'stress-testing',
     icon: Activity,
     banner: bannerStressTesting,
+    bannerAvif: bannerStressTestingAvif,
     bannerAlt: 'Financial data and analytics dashboard, representing scenario-based loan portfolio stress testing',
     intro: [
       'Loan portfolio stress testing is the quantitative modeling of credit losses under adverse economic scenarios, used to validate capital adequacy, inform strategic planning, and demonstrate sound risk management to regulators. While DFAST stress testing is mandatory only for institutions above $250 billion in assets, federal banking regulators expect community banks and credit unions to perform commensurate portfolio stress testing as part of sound risk management, particularly for institutions with material concentrations.',
@@ -274,6 +283,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'alll',
     icon: Calculator,
     banner: bannerAlll,
+    bannerAvif: bannerAlllAvif,
     bannerAlt: 'Calculator and accounting documents, representing ALLL/ACL allowance methodology and reserve calculation',
     intro: [
       'The Allowance for Loan and Lease Losses (ALLL) methodology, and its successor under CECL, the Allowance for Credit Losses (ACL), is the formal framework by which a financial institution estimates and reserves for expected credit losses in its loan portfolio. CRF Advisors provides independent review, validation, and implementation support for ALLL and ACL methodologies, ensuring compliance with the FFIEC Interagency Policy Statement on the Allowance for Credit Losses and applicable GAAP.',
@@ -353,6 +363,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'cecl-acl-review',
     icon: ClipboardCheck,
     banner: bannerAlll,
+    bannerAvif: bannerAlllAvif,
     bannerAlt: 'Accounting documents and calculator, representing independent review of the ACL calculation and CECL methodology',
     intro: [
       'CRF Advisors performs an independent review of the Allowance for Credit Losses (ACL) calculation and the Current Expected Credit Loss (CECL) methodology implemented by management. Our review procedures focus on the completeness of the ACL computation and its supporting documentation, and on conformity of the CECL methodology with the Interagency Policy Statement on the Allowance for Credit Losses and applicable accounting standards.',
@@ -427,6 +438,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'cecl',
     icon: Layers,
     banner: bannerCecl,
+    bannerAvif: bannerCeclAvif,
     bannerAlt: 'Financial analytics dashboard with charts, representing CECL model development and forecasting',
     intro: [
       'Current Expected Credit Loss (CECL), codified in ASC 326, replaced the incurred-loss model with a forward-looking expected-loss framework for accounting for credit losses. CRF Advisors provides end-to-end CECL model development, validation, and implementation support, calibrated to institution size and portfolio complexity, with documentation built to withstand both audit and examiner scrutiny.',
@@ -515,6 +527,7 @@ const SERVICE_PAGE_CONTENT = [
     id: 'training',
     icon: GraduationCap,
     banner: bannerTraining,
+    bannerAvif: bannerTrainingAvif,
     bannerAlt: 'Training room prepared for a credit risk management session, with financial charts on screen and materials at each seat',
     intro: [
       'CRF Advisors provides credit risk management training for the credit, loan review, finance, and audit staff of banks, credit unions, non-profit organizations, and financial services companies. Curriculum spans the full allowance and credit analysis framework — ALLL methodology under ASC 450 and ASC 310, impaired loan valuation, CECL preparation and modeling, Troubled Debt Restructured (TDR) loans, and day-to-day credit analysis and monitoring — taught by the same senior credit professionals who perform our loan review and allowance engagements.',

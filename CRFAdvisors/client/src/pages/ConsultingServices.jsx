@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import CTABanner from '../components/CTABanner'
 import { SERVICES, APPROACH, PROCESS_STEPS } from '../data/services'
 import hubBanner from '../assets/svc-hub.webp'
+import hubBannerAvif from '../assets/svc-hub.avif'
 import '../styles/Services.css'
 
 export default function ConsultingServices() {
@@ -17,6 +18,7 @@ export default function ConsultingServices() {
         breadcrumb="Consulting Services"
         subtext="Independent, objective credit risk management consulting for banks, credit unions, non-profit organizations, and financial services companies."
         image={hubBanner}
+        imageAvif={hubBannerAvif}
         imageAlt="Professionals in a boardroom presentation, representing CRF Advisors' credit risk and loan review consulting services"
       />
 

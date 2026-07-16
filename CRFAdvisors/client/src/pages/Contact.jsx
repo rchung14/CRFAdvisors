@@ -6,6 +6,7 @@ import { ROUTES_META } from '../seo/routesMeta'
 import PageHero from '../components/PageHero'
 import { API_URL, CONTACT } from '../config'
 import heroImg from '../assets/page-contact.webp'
+import heroImgAvif from '../assets/page-contact.avif'
 import '../styles/Contact.css'
 
 const SERVICE_OPTIONS = [
@@ -110,6 +111,7 @@ export default function Contact() {
         breadcrumb="Contact Us"
         subtext="Looking to see if a CRF Advisors service is a good fit? Fill out the form and we'll follow up promptly."
         image={heroImg}
+        imageAvif={heroImgAvif}
         imageAlt="Business professionals in discussion, representing a consultation with CRF Advisors"
       />
 

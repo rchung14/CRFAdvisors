@@ -6,6 +6,7 @@ import CTABanner from '../components/CTABanner'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
 // import { ENGAGEMENTS } from '../data/engagements' // re-enable with the engagement summaries section below
 import heroImg from '../assets/page-clients.webp'
+import heroImgAvif from '../assets/page-clients.avif'
 import '../styles/Clients.css'
 
 export default function Clients() {
@@ -18,6 +19,7 @@ export default function Clients() {
         breadcrumb="Clients"
         subtext="25+ years of independent credit review engagements with community banks, savings institutions, and credit unions."
         image={heroImg}
+        imageAvif={heroImgAvif}
         imageAlt="Advisory meeting between a CRF Advisors consultant and a client institution"
       />
 

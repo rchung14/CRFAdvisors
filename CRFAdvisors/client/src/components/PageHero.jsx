@@ -5,12 +5,24 @@ import { Link } from 'react-router-dom'
  * overlay when `image` is provided. Breadcrumb + white Playfair H1.
  * Pass `parent={{ label, to }}` for an intermediate breadcrumb crumb.
  */
-export default function PageHero({ title, breadcrumb, subtext, parent, image, imageAlt }) {
+export default function PageHero({ title, breadcrumb, subtext, parent, image, imageAvif, imageAlt }) {
   return (
     <section className={`page-hero${image ? ' page-hero--photo' : ''}`}>
       {image && (
         <>
-          <img className="page-hero__photo" src={image} alt={imageAlt || ''} aria-hidden={!imageAlt} />
+          <picture>
+            {imageAvif && <source srcSet={imageAvif} type="image/avif" />}
+            <source srcSet={image} type="image/webp" />
+            <img
+              className="page-hero__photo"
+              src={image}
+              alt={imageAlt || ''}
+              aria-hidden={!imageAlt}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
           <div className="page-hero__overlay" aria-hidden="true" />
         </>
       )}

@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero'
 import CTABanner from '../components/CTABanner'
 import { TEAM } from '../data/team'
 import heroImg from '../assets/page-about.webp'
+import heroImgAvif from '../assets/page-about.avif'
 import '../styles/About.css'
 
 const DIFFERENTIATORS = [
@@ -50,6 +51,7 @@ export default function About() {
         title="About CRF Advisors, Inc."
         breadcrumb="About Us"
         image={heroImg}
+        imageAvif={heroImgAvif}
         imageAlt="CRF Advisors team meeting in a boardroom"
       />
 
