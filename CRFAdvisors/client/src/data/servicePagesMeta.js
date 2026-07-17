@@ -1,10 +1,20 @@
 // SEO meta + FAQ data for the service pages. Split from servicePages.js so
 // routesMeta.js (loaded on every route for <head> management and prerender)
 // doesn't drag the long-form page content into the shared bundle.
+//
+// bannerAvif is included here (not just in servicePages.js) so routesMeta.js
+// can preload each service page's hero image without importing that file.
+import bannerLoanReviewAvif from '../assets/svc-loan-review.avif'
+import bannerDueDiligenceAvif from '../assets/svc-due-diligence.avif'
+import bannerStressTestingAvif from '../assets/svc-stress-testing.avif'
+import bannerAlllAvif from '../assets/svc-alll.avif'
+import bannerCeclAvif from '../assets/svc-cecl.avif'
+import bannerTrainingAvif from '../assets/svc-training.avif'
 
 export const SERVICE_PAGE_META_LIST = [
   {
     slug: 'loan-review',
+    bannerAvif: bannerLoanReviewAvif,
     eyebrow: 'Loan Review',
     breadcrumb: 'Independent Loan Review',
     h1: 'Independent Loan Review for Banks and Financial Institutions',
@@ -21,6 +31,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'due-diligence',
+    bannerAvif: bannerDueDiligenceAvif,
     eyebrow: 'Due Diligence',
     breadcrumb: 'Credit Due Diligence',
     h1: 'Credit Due Diligence for Mergers, Acquisitions, and Portfolio Transactions',
@@ -37,6 +48,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'stress-testing',
+    bannerAvif: bannerStressTestingAvif,
     eyebrow: 'Portfolio Stress Testing',
     breadcrumb: 'Portfolio Stress Testing',
     h1: 'Loan Portfolio Stress Testing for Regulatory Compliance and Capital Planning',
@@ -52,6 +64,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'alll',
+    bannerAvif: bannerAlllAvif,
     eyebrow: 'ALLL Methodology & Review',
     breadcrumb: 'ALLL Methodology',
     h1: 'ALLL/ACL Methodology Review and FFIEC Compliance Support',
@@ -68,6 +81,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'cecl-acl-review',
+    bannerAvif: bannerAlllAvif,
     eyebrow: 'CECL Methodology & ACL Review',
     breadcrumb: 'CECL Methodology & ACL Review',
     h1: 'Independent CECL Methodology and ACL Review',
@@ -84,6 +98,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'cecl',
+    bannerAvif: bannerCeclAvif,
     eyebrow: 'CECL Implementation & Modeling',
     breadcrumb: 'CECL Implementation & Modeling',
     h1: 'CECL Implementation and Modeling for Financial Institutions',
@@ -100,6 +115,7 @@ export const SERVICE_PAGE_META_LIST = [
   },
   {
     slug: 'training',
+    bannerAvif: bannerTrainingAvif,
     eyebrow: 'Training',
     breadcrumb: 'Credit Risk Training',
     h1: 'Credit Risk Management Training for Financial Institution Staff',

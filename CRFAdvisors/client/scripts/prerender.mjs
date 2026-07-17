@@ -14,6 +14,18 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const escapeHtml = (s) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
+// Single LCP image preload per page, swapped into the <!--HERO_IMAGE_PRELOAD-->
+// marker near the top of <head> (see index.html) — the prerendered
+// <img>/<picture> markup sits too deep in <body> for the preload scanner to
+// find it early on its own (see routesMeta.js heroImageAvif comment), and
+// appending it at the end of <head> would put it after the ~25 KiB inlined
+// stylesheet, again too late for early discovery.
+function heroPreloadTag({ heroImageAvif }) {
+  return heroImageAvif
+    ? `<link rel="preload" as="image" type="image/avif" href="${heroImageAvif}" fetchpriority="high" />`
+    : ''
+}
+
 function headTags({ path: routePath, title, description, schemas }) {
   const url = `${SITE_URL}${routePath === '/' ? '' : routePath}`
   const tags = [
@@ -91,8 +103,12 @@ const css = fs.readFileSync(path.join(root, 'dist', cssLink[1]), 'utf-8')
 template = template.replace(cssLink[0], `<style>${css}</style>`)
 
 // Template kept as the SPA fallback for unknown URLs (see vercel.json
-// rewrites) — an empty root div avoids hydration mismatches.
-fs.writeFileSync(path.join(root, 'dist/spa-fallback.html'), template)
+// rewrites) — an empty root div avoids hydration mismatches, and there's no
+// single route to preload a hero image for.
+fs.writeFileSync(
+  path.join(root, 'dist/spa-fallback.html'),
+  template.replace('<!--HERO_IMAGE_PRELOAD-->', '')
+)
 
 for (const meta of Object.values(ROUTES_META)) {
   const appHtml = await render(meta.path)
@@ -102,6 +118,7 @@ for (const meta of Object.values(ROUTES_META)) {
       /(<meta\s+name="description"\s+content=")[^"]*(")/,
       `$1${escapeHtml(meta.description)}$2`
     )
+    .replace('<!--HERO_IMAGE_PRELOAD-->', heroPreloadTag(meta))
     .replace('</head>', `${headTags(meta)}${preloadTags(meta.path).join('\n    ')}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
 

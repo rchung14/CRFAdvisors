@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import CTABanner from '../components/CTABanner'
 import { SERVICES, APPROACH, PROCESS_STEPS } from '../data/services'
 import { CLIENT_GROUPS, CLIENT_COUNT } from '../data/clients'
-import heroPhoto from '../assets/test.avif'
+import heroPhoto from '../assets/financial-district-skyline-hero.avif'
 import '../styles/Home.css'
 
 export default function Home() {

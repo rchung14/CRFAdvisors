@@ -3,10 +3,20 @@ import { SERVICES } from '../data/services'
 import { SERVICE_PAGE_META_LIST } from '../data/servicePagesMeta'
 import { TEAM } from '../data/team'
 import { CLIENT_COUNT } from '../data/clients'
+import homeHeroAvif from '../assets/financial-district-skyline-hero.avif'
+import aboutHeroAvif from '../assets/page-about.avif'
+import clientsHeroAvif from '../assets/page-clients.avif'
+import contactHeroAvif from '../assets/page-contact.avif'
+import consultingServicesHeroAvif from '../assets/svc-hub.avif'
 
 // Single source of truth for per-route SEO metadata. Consumed by:
 //  - the Seo component at runtime (client-side navigation)
 //  - scripts/prerender.mjs at build time (static HTML for crawlers)
+//
+// heroImageAvif (where present) is each route's LCP image, used to emit a
+// single <link rel="preload"> in <head> at prerender time — the page's own
+// <img>/<picture> markup renders too far into <body> for the preload scanner
+// to discover it early enough on its own.
 
 const WEBSITE_SCHEMA = {
   '@context': 'https://schema.org',
@@ -68,6 +78,7 @@ const SERVICE_PAGE_META = Object.fromEntries(
         },
         faqSchema(p.faqs),
       ],
+      heroImageAvif: p.bannerAvif,
     },
   ])
 )
@@ -79,6 +90,7 @@ export const ROUTES_META = {
     description:
       'Independent loan review, credit review, and portfolio stress testing for banks, credit unions, non-profit organizations, and financial services companies in the Tri-State area.',
     schemas: [ORG_SCHEMA, WEBSITE_SCHEMA],
+    heroImageAvif: homeHeroAvif,
   },
   '/consulting-services': {
     path: '/consulting-services',
@@ -90,12 +102,14 @@ export const ROUTES_META = {
       breadcrumbSchema('Consulting Services', '/consulting-services'),
       ...SERVICE_SCHEMAS,
     ],
+    heroImageAvif: consultingServicesHeroAvif,
   },
   '/clients': {
     path: '/clients',
     title: 'Our Clients | Loan Review for Banks & Credit Unions | CRF Advisors',
     description: `CRF Advisors has provided independent loan review and credit review to ${CLIENT_COUNT}+ banks, credit unions, non-profit organizations, and financial services companies. References available upon request.`,
     schemas: [ORG_SCHEMA, breadcrumbSchema('Clients', '/clients')],
+    heroImageAvif: clientsHeroAvif,
   },
   '/about': {
     path: '/about',
@@ -103,6 +117,7 @@ export const ROUTES_META = {
     description:
       'Meet the CRF Advisors team. Independent loan review, credit review, and CECL expertise serving banks, credit unions, non-profit organizations, and financial services companies.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('About Us', '/about'), ...PERSON_SCHEMAS],
+    heroImageAvif: aboutHeroAvif,
   },
   '/contact': {
     path: '/contact',
@@ -110,6 +125,7 @@ export const ROUTES_META = {
     description:
       'Contact CRF Advisors to discuss independent loan review, credit review, CECL implementation, or portfolio stress testing for your financial institution.',
     schemas: [ORG_SCHEMA, breadcrumbSchema('Contact Us', '/contact')],
+    heroImageAvif: contactHeroAvif,
   },
   '/privacy': {
     path: '/privacy',
