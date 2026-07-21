@@ -38,6 +38,8 @@ function headTags({ path: routePath, title, description, schemas }) {
     `<meta property="og:locale" content="en_US" />`,
     `<meta property="og:image" content="${SITE_URL}/og-card.png" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     `<meta name="robots" content="index, follow, max-image-preview:large" />`,
     // data-seo-jsonld lets the runtime Seo component replace these on
     // client-side navigation without duplicating schemas.
